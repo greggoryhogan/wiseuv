@@ -3,7 +3,7 @@
 wp-config.php
 .htaccess
 
-#WP Specific
+#WP Specific files to keep repo clean
 /wp-admin/*
 /wp-includes/*
 /index.php
