@@ -1,2 +1,4 @@
 #hide mac files
 .DS_Store
+wp-config.php
+.htaccess
