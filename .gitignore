@@ -25,3 +25,4 @@ wp-config.php
 wp-content/mu-plugins/*
 wp-content/upgrade/*
 wp-content/ai1wm-backups/*
+wp-content/wp-migrate-db/*
