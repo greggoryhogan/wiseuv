@@ -24,3 +24,4 @@ wp-config.php
 /xmlrpc.php 
 wp-content/mu-plugins/*
 wp-content/upgrade/*
+wp-content/ai1wm-backups/*
