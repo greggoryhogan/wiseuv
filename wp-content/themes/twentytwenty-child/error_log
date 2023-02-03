@@ -1,0 +1,4 @@
+[07-Sep-2021 20:05:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function language_attributes() in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty-child/header.php:14
+Stack trace:
+#0 {main}
+  thrown in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty-child/header.php on line 14

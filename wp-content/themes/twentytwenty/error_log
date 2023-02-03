@@ -1,0 +1,8 @@
+[17-Jun-2022 10:54:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty/404.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty/404.php on line 10
+[21-Sep-2022 03:49:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home2/wiseuvor/public_html/wp-content/themes/twentytwenty/index.php on line 17
