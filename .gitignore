@@ -22,5 +22,5 @@ wp-config.php
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php 
-/mu-plugins/*
-/upgrade/*
+wp-content/mu-plugins/*
+wp-content/upgrade/*
