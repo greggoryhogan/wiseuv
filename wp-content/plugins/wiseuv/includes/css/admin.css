@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+#adminmenuwrap {
+    margin-top: 0!important;
+}
+
+.wise-settings-panel .input-text-wrap {
+    margin-bottom: .5rem;
+}
+.wise-settings-panel .input-text-wrap label {
+    margin-bottom: 4px;
+    display: inline-block;
+}
+.wise-settings .submit,
+.postbox-container.clearfix {
+    clear: both;
+}
+.clear {
+    height: 0px;
+    clear: both;
+}
+.wise-settings-panel .inline-radios input {
+    width: auto!important;
+}
+.wise-settings-panel.postbox-container-2 {
+    float: right;
+    width: 50.5%;
+}
+.wise-logo {
+    width: 200px;
+}
+.inline-radios  {
+    margin-bottom: 7px;
+}
+.explanation {
+    font-size: .8em;
+    font-style: italic;
+    margin: 0 0 4px 0;
+}
+.wise-settings-panel textarea {
+    width: 100%;
+    border:1px solid #eee;
+}
+.onboarding ol {
+    margin-top: 5px;
+}
+
+/*tabs*/
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+}
+
+.tabset .wise-tab-panel {
+    display: none;
+}
+
+.tabset > input:first-child:checked ~ .wise-tab-panels > .wise-tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .wise-tab-panels > .wise-tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .wise-tab-panels > .wise-tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .wise-tab-panels > .wise-tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .wise-tab-panels > .wise-tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .wise-tab-panels > .wise-tab-panel:nth-child(6) {
+    display: block;
+}
+.tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 10px 25px 10px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+.tabset > label:hover,
+.tabset > input:focus + label {
+    color: #d35e61;
+}
+.tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    background: #fff;
+}
+.wise-tab-panels {
+    background: #fff;
+    padding: 10px 20px 20px 20px;
+    border: 1px solid #ccc;
+} 
+.wise-tab-panels .postbox {
+   margin-bottom: 0px;
+   /*border-color: #d35e61;*/
+   border-color:#fff;
+   padding-right: 10px;
+   margin-bottom: 10px;
+}
+.postbox-container-2 .postbox {
+    padding-right: 0;
+    padding-left: 10px;
+}
+.wise-tab-panels .postbox .hndle {
+    padding-left: 0px!important;
+}
+.wise-tab-panels .postbox .inside {
+   /* background: #d35e61; 
+    color: #fff; */
+    padding: 0;
+}
+.wise-tab-panels .postbox .postbox-header {
+    /* border-color:#d35e61; */
+    padding: 0;
+}
+.wise-settings-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+.wise-settings-panel.full-width {
+    grid-template-columns: 1fr;
+}
+.wise-workbook-input [data-type="radio"] input + label .feather-icon,
+.wise-workbook-input [data-type="checkbox"] input + label .feather-icon {
+    opacity: 0;
+    position: relative;
+}
+.gutenberg-workbook-section .workbook-section-heading,
+.gutenberg-workbook-section .workbook-section-subheading {
+    text-align: left!important;
+}
+
+.gutenberg-workbook-section.no-headings .workbook-section-heading,
+.gutenberg-workbook-section.no-headings .workbook-section-subheading {
+    display: none!important;
+}
+.icons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+.icons-container div {
+    display: flex;
+    margin: 0 0 10px 0;
+    column-gap: 10px;
+}
+.post-box-heading {
+    font-size: 13px;
+    padding: 10px 0;
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+.feather-icon {
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+    position: relative; 
+    width: 25px; 
+    padding: 0;
+    height: 20px;
+    margin-bottom: -5px;
+}
+.feather-icon svg {
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+}
+.feather-icon.circle {
+    border-radius: 50%;
+    height: 0; 
+    padding-bottom: 100%; 
+    margin-bottom: 0px;
+}
+.feather-icon.circle svg {
+    height: 82%; 
+    width: 82%;
+    top: 8%;
+    left: 8%; 
+}
+.feather-icon.circle.padded svg {
+    height: 60%;
+    width: 60%;
+    top: 17%;
+    left: 20%;
+}
+div.aligncenter {
+    text-align: center;
+}
+div.alignright {
+    text-align: right;
+}
+.d-flex {
+    display: flex !important;
+}
+.mc-signup .flex-1 {
+    flex: 1;
+}
+#teachable-users-table {
+    margin-top: 20px!important;
+}
+#teachable-users-table tr, 
+#teachable-users-table th,
+#teachable-users-table td {
+    text-align: left;
+    padding: 10px 10px 0 0;
+}
+
+.publishing-content-list ol ul {
+    margin: 7px 12px;
+    padding: 0;
+    list-style-type: circle;
+}
+.publishing-content-list ol ul ul {
+    margin: 5px 25px;
+}
+.publishing-content-list ol > li {
+    font-weight: bold;
+}
+.publishing-content-list ol ul li {
+    font-weight: normal;
+}
+.single-add h1,
+.single-add .woocommerce-product-details__short-description {
+    display: none!important;
+}
