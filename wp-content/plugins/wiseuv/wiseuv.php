@@ -80,8 +80,8 @@ function enqueue_wise_scripts() {
 	wp_enqueue_script('wise-plugin');
 
     //AOS
-    wp_enqueue_style( 'aos-css', WISE_URL . '/assets/aos-master/dist/aos.css',null,'3.0.0' );
-    wp_enqueue_script( 'aos-js', WISE_URL. '/assets/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
+    wp_enqueue_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
+    wp_enqueue_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
     
 	
 	/*Add church affiliations dropdown available in site.js*/
