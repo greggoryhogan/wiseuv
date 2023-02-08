@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "node-sass --watch wp-content/plugins/wiseuv/includes/scss -o wp-content/plugins/wiseuv/includes/css --output-style compressed",
+    "COMMENT": "ADD && node-sass --watch wp-content/plugins/wiseuv/includes/scss -o wp-content/plugins/wiseuv/includes/css --output-style compressed FOR MULTIPLE PROCESSES",
     "compressjs": "uglifyjs wp-content/plugins/wiseuv/includes/js/wiseuv.js --compress --mangle --warn --output wp-content/plugins/wiseuv/includes/js/wiseuv.min.js"
   },
   "author": "",
