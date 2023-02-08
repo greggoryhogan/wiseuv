@@ -239,3 +239,13 @@ function wise_custom_password_form() {
 	return $output;
 }
 add_filter('the_password_form', 'wise_custom_password_form', 99);
+
+/** Filter input content */
+function wise_content_filters($content,$span = true) {
+    if(!$span) {
+        return do_shortcode(str_replace('^',' ',$content));
+    } else {
+        return do_shortcode('<span class="br">'.str_replace('^','</span><span class="br">',$content) .'</span>');
+    }
+}
+add_filter('wise_content','wise_content_filters');

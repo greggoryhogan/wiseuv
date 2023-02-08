@@ -68,8 +68,8 @@ function enqueue_wise_scripts() {
     $plugin_version = $plugin_data['Version'];
 
     //CSS for Plugin
-    //wp_register_style( 'wise-styles', WISE_URL .'includes/css/wise.css', array(), $plugin_version);
-    //wp_enqueue_style( 'wise-styles' );
+    wp_register_style( 'wise-plugin-flexible-content', WISE_URL .'includes/css/flexible-content.css', array(), $plugin_version);
+    wp_enqueue_style( 'wise-plugin-flexible-content' );
 
     //lozad
 	wp_register_script('lozad-js', WISE_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
