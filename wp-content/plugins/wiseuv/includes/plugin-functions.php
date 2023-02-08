@@ -226,3 +226,16 @@ function is_staging() {
         return false; //default, allow all functionalit
     }
 }
+
+/** Change passwoird protected message */
+function wise_custom_password_form() {
+    global $post;
+    $post   = get_post( $post );
+	$label  = 'pwbox-' . ( empty( $post->ID ) ? wp_rand() : $post->ID );
+	$output = '<p class="post-password-message">' . esc_html__( 'Please enter the password to view this content.', 'wiseuv' ) . '</p>
+	<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">
+	<p><label class="post-password-form__label" for="' . esc_attr( $label ) . '">' . esc_html_x( 'Password', 'Post password form', 'twentytwentyone' ) . '<input class="post-password-form__input" name="post_password" id="' . esc_attr( $label ) . '" type="password" size="20" /></label><input type="submit" class="post-password-form__submit" name="' . esc_attr_x( 'Submit', 'Post password form', 'twentytwentyone' ) . '" value="' . esc_attr_x( 'Enter', 'Post password form', 'twentytwentyone' ) . '" /></p></form>
+	';
+	return $output;
+}
+add_filter('the_password_form', 'wise_custom_password_form', 99);
