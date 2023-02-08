@@ -3,7 +3,7 @@
 Plugin Name:  WISE Core
 Plugin URI:	  https://wise.org/
 Description:  This plugin separates core functionality for the website from the theme to a plugin.
-Version:	  1.0.2
+Version:	  1.0.3
 Author:		  Gregg Hogan
 Author URI:   https://mynameisgregg.com
 License:      GPL2

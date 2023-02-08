@@ -166,11 +166,6 @@ section {
             .two-column-content {
                 display: flex;
                 flex-direction: column-reverse;
-                .right {
-                    .image {
-                        margin-top: 0!important;
-                    }
-                }
             }
         }
         @media all and (max-width: $tablet) {
@@ -190,8 +185,6 @@ section {
                                 display: block;
                                 width: 100%!important;
                                 max-width: 100%;
-                                margin-top: $gutter!important;
-                                overflow: hidden;
                                 img {
                                     width: 100%;
                                     display: block;
@@ -256,10 +249,6 @@ section {
                 align-items: flex-start;
             }
         }
-        .eyebrow {
-            text-transform: uppercase;
-            margin-bottom: $gutter;
-        }
     }
     /** CONTENT BLOCKS **/
     .flexible-content {
@@ -287,7 +276,6 @@ section {
             }
             &.drop-shadow__red {
                 position: relative;
-                margin-bottom: 3rem!important;
                 img {
                     z-index: 2;
                     position: relative;
@@ -362,9 +350,6 @@ section {
                             width: 50%;
                         }
                     }
-                }
-                p:last-child {
-                    margin-bottom: 0;
                 }
             }
             .image {
