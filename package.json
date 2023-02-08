@@ -1,0 +1,16 @@
+{
+  "name": "rb",
+  "version": "1.0.0",
+  "description": "NPM for Wise UV",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass --watch wp-content/plugins/wiseuv/includes/scss -o wp-content/plugins/wiseuv/includes/css --output-style compressed",
+    "compressjs": "uglifyjs wp-content/plugins/wiseuv/includes/js/wiseuv.js --compress --mangle --warn --output wp-content/plugins/wiseuv/includes/js/wiseuv.min.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1",
+    "uglify-js": "^3.15.3"
+  }
+}
