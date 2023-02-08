@@ -257,117 +257,12 @@ section {
             }
         }
         .eyebrow {
-            font-size: $gutter * 1.2;
             text-transform: uppercase;
             margin-bottom: $gutter;
         }
     }
     /** CONTENT BLOCKS **/
     .flexible-content {
-        h1, .font-biggest, .text__xl {
-            font-size: 3.1875rem;
-            line-height: 3.885rem;
-            margin: 1rem 0 1rem 0;
-            font-weight: 500;
-            @media all and (max-width: $tablet) { 
-                font-size: 2.25rem;
-                line-height: 2.4rem;
-            }
-            @media all and (max-width: $mobile) { 
-                font-size: 1.875rem;
-                line-height: 2.0625rem;
-                max-width: 100%;
-            }
-        }
-        h2, .font-bigger, .text__lg {
-            font-size: 2.8125rem;
-            line-height: 3.47rem;
-            margin: 2rem 0;
-            @media all and (max-width: $tablet) { 
-                font-size: 1.6875rem;
-                line-height: 1.6875rem;
-                margin: 1rem 0;
-            }
-            @media all and (max-width: $mobile) { 
-                font-size: 1.5rem;
-                line-height: 1.6875rem;
-            }
-        }
-        .cart_totals {
-            h2 {
-                font-size: 1.6875rem;
-                line-height: 1.6875rem;
-            }
-        }
-        .font-blog {
-            font-size: 1.3575rem;
-            line-height: 1.6875rem;
-        }
-        h3, .font-normal,
-        h1.normal,
-        h2.normal,
-        h3.normal,
-        h4.normal,
-        h5.normal,
-        h6.normal {
-            font-size: 1.875rem;
-            line-height: 2.295rem;
-            margin: 1.5rem 0;
-            @media all and (max-width: $tablet) { 
-                font-size: 1.4rem;
-                line-height: 1.72rem;
-            }
-        }
-        .font-small {
-            font-size: 1.3125rem;
-            line-height: 1.59375rem;
-        }
-        h4, .font-smaller {
-            font-size: .9375rem;
-            line-height: 1.125rem;
-            margin: 1.125rem 0;
-        }
-        h5, .font-smallest {
-            font-size: .75rem;
-            line-height: .75rem;
-            margin: 1rem 0;
-            @media all and (max-width: $mobile) { 
-                font-size: .675rem;
-                line-height: .675rem;
-            }
-        }
-        h6 {
-            font-size: .6rem;
-            line-height: .6rem;
-            margin: .8rem 0;
-            @media all and (max-width: $mobile) { 
-                font-size: .5625rem;
-                line-height: .5625rem;
-            }
-        }
-        .font-size {
-            &__bigger {
-                font-size: 1.07rem;
-            }
-        }
-        .font-weight-light {
-            font-weight: 400;
-        }
-
-        .font-weight-bold {
-            font-weight: 600;
-        }
-        .font-weight-extra-bold {
-            font-weight: 800;
-        }
-        .text-center {
-            text-align: center;
-        }
-        @media all and (min-width: $tablet) {
-            .btn {
-                padding: $gutter * 1.5 $gutter-sm * 3.5;
-            }
-        }
         .responsive-video {
             width: 100%;
             height: 0;
@@ -390,28 +285,12 @@ section {
                     overflow: hidden;
                 }
             }
-            &.border-radius__sm {
-                img {
-                    border-radius: $border-radius-sm;
-                }
-            }
-            &.border-radius__md {
-                img {
-                    border-radius: $border-radius-md;
-                }
-            }
-            &.border-radius__lg {
-                img {
-                    border-radius: $border-radius-lg;
-                }
-            }
             &.drop-shadow__red {
                 position: relative;
                 margin-bottom: 3rem!important;
                 img {
                     z-index: 2;
                     position: relative;
-                    border-radius: $border-radius-md;
                     overflow: hidden;
                     display: block;
                 }
@@ -436,16 +315,6 @@ section {
                 display: block;
             }
         }
-        &.contact-form {
-            @media all and (min-width: $tablet) {
-                &.position-right {
-                    padding-left: 40%;
-                }
-                &.position-left {
-                    padding-right: 40%;
-                }
-            }
-        }
         &.two-column-content {
             @media (min-width: $mobile) {
                 display: flex;
@@ -462,11 +331,8 @@ section {
                     > div {
                         flex: 1;
                         max-width: 50%;
-                        padding-right: $gutter * 2;
                         &.right {
                             width: 50%;
-                            padding-left: $gutter * 2;
-                            padding-right: 0;
                         }
                     }
                 }
@@ -474,9 +340,6 @@ section {
                     > div {
                         &:first-of-type {
                             flex: 1;
-                            .image {
-                                padding: 0 $gutter * 2;
-                            }
                         }
                         &:last-of-type {
                             width: 60%;
@@ -487,53 +350,21 @@ section {
                     > div {
                         flex: 1;
                         width: 50%;
-                        padding-right: $gutter * 2;
                         &.right {
                             width: 50%;
-                            padding-left: $gutter * 2;
-                            padding-right: 0;
                         }
                     }
                 }
                 &.row-reverse {
                     flex-direction: row-reverse;
                     > div {
-                        padding-right: 0;
-                        padding-left: $gutter * 2;
                         &.right {
                             width: 50%;
-                            padding-right: $gutter * 2;
-                            padding-left: 0;
                         }
                     }
                 }
                 p:last-child {
                     margin-bottom: 0;
-                }
-            }
-            h1,h2,h3,h4,h5 {
-                margin-top: 0;
-            }
-            .subheading {
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: $gutter * 2;
-            }
-            h3:first-of-type,
-            p:first-of-type {
-                margin-top: 0;
-            }
-            @media all and (min-width: $tablet) {
-                .btn {
-                    margin-top: $gutter-sm * 5;
-                }
-            }
-            .btn {
-                @media all and (min-width: $mobile) and (max-width: $tablet) {
-                    margin-top: $gutter * 2;
-                }
-                @media all and (max-width: $mobile) {
-                    margin-bottom: $gutter * 2;
                 }
             }
             .image {
@@ -542,15 +373,6 @@ section {
                 &.full-width {
                     img {
                         width: 100%;
-                    }
-                }
-                margin-bottom: $gutter;
-                @media all and (max-width: $mobile) { 
-                    margin-bottom: $gutter * 2;
-                }
-                @media all and (min-width: $mobile) { 
-                    &.no-margin {
-                        margin-bottom: 0;
                     }
                 }
                 @media all and (min-width: $mobile) {
@@ -564,9 +386,6 @@ section {
                     .hide-second-border {
                         display: none;
                     }
-                    .image {
-                        margin-top: $gutter;
-                    }
                 }
                 .contain-content {
                     max-width: 100%!important;
@@ -577,7 +396,6 @@ section {
         &.grid-content {
             @media (min-width: $mobile) {
                 display: grid;
-                gap: $gutter * 2;
                 &.columns {
                     &__one {
                         grid-template-columns: 1fr;
@@ -595,9 +413,6 @@ section {
                         }
                     }
                 }
-                p:last-child {
-                    margin-bottom: 0;
-                }
             }
             .grid-item {
                 position: relative;
@@ -609,30 +424,6 @@ section {
                     height: 100%;
                     z-index: 2;
                 }
-                h1,h2,h3,h4,h5 {
-                    margin-top: 0;
-                }
-                .subheading {
-                    text-transform: uppercase;
-                }
-                h3:first-of-type,
-                p:first-of-type {
-                    margin-top: 0;
-                }
-                @media all and (min-width: $tablet) {
-                    .btn {
-                        margin-top: $gutter;
-                    }
-                }
-                @media all and (max-width: $tablet) {
-                    margin-bottom: $gutter * 2;
-                    &:last-of-type {
-                        margin-bottom: 0;
-                    }
-                    .btn {
-                        margin-top: $gutter-sm;
-                    }
-                }
                 .image {
                     width: auto;
                     &.full-width {
@@ -640,46 +431,9 @@ section {
                             width: 100%;
                         }
                     }
-                    margin-bottom: $gutter;
-                        @media all and (min-width: $mobile) { 
-                        &.no-margin {
-                            margin-bottom: 0;
-                        }
-                    }
                     @media all and (min-width: $mobile) {
                         &.fill-space {
                             display: none;
-                        }
-                    }
-                    a {
-                        img {
-                            transform: translateX(1);
-                            transition: .2s transform;
-                        } 
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            img {
-                                transform: translateY(-$gutter-sm);
-                            }
-                        }
-                    }
-                }
-                &.has-block-link {
-                    .image {
-                        img {
-                            transform: translateX(1);
-                            transition: .2s transform;
-                        }
-                        
-                    }
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        .image {
-                            img {
-                                transform: translateY(-$gutter-sm);
-                            }
                         }
                     }
                 }
@@ -688,30 +442,17 @@ section {
         &.team-members {
             display: flex;
             flex-direction: column;
-            gap: $gutter * 3;
-            @media all and (max-width: $mobile) {
-                gap: $gutter;
-            }
             .team-member {
                 display: flex;
-                gap: 5%;
                 align-items: flex-start;
-                padding: 5%;
-                border-radius: $border-radius-lg;
-                background: $white;
                 @media all and (max-width: $mobile) {
                     flex-direction: column;
-                    padding: 0;
-                    gap: $gutter-sm;
                 }
                 .image {
                     flex: 1;
                     overflow: hidden;
-                    aspect-ratio: 1 / 1;
-                    margin: 0 $gutter * 2;
                     width: auto;
                     @media all and (max-width: $mobile) {
-                        margin: $gutter auto;
                         max-width: 50%;
                     }
                     img {
@@ -720,66 +461,11 @@ section {
                         object-fit: cover;
                         object-position: top;
                         display: block;
-                        border-radius: 50%;
                     }
                 }
                 .member-details {
                     @media all and (min-width: $mobile) {
                         width: 60%;
-                    }
-                    .position {
-                        margin: 0;
-                        line-height: 1.78125rem;
-                    }
-                    p {
-                        &:first-of-type {
-                            margin-top: $gutter-sm * 1;
-                        }
-                    }
-                    .description {
-                        &.no-heading {
-                            p {
-                                &:first-of-type {
-                                    margin-top: 0;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            &.style-highlighted {
-                .team-member {
-                    @media all and (max-width: $mobile) {
-                        padding: $gutter;
-                    }
-                    @media all and (min-width: $tablet) {
-                        margin-bottom: $gutter * 4;
-                    }
-                    @media all and (max-width: $tablet) {
-                        margin-bottom: $gutter * 2;
-                    }
-                    .image {
-                        position: relative;
-                        overflow: visible;
-                        padding: 0;
-                        margin: 0 $gutter-sm;
-                        @media all and (max-width: $mobile) {
-                            margin: $gutter auto;
-                        }
-                        &:before {
-                            content: '';
-                            border: 4px solid $black;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 50%;
-                            position: absolute;
-                            top: -20px;
-                            left: -$gutter;
-                            @media all and (max-width: $tablet) {
-                                top: -10px;
-                                left: -20px;
-                            }
-                        }
                     }
                 }
             }
@@ -790,7 +476,6 @@ section {
         &.icon-blocks {
             @media all and (min-width: $mobile) {
                 display: flex;
-                gap: $gutter * 5;
                 flex-wrap: wrap;
                 &.align-center {
                     justify-content: center;
@@ -817,42 +502,23 @@ section {
                 }
                 .icon-block {
                     flex: 1;
-                    /*width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * #{$gutter * 4}));*/
                 }
             }
             @media all and (max-width: $tablet) and (min-width: $mobile) {
-                gap: $gutter * 4;
                 &.columns-three,
                 &.columns-four {
-                    --flex-items: 2; /* Number of flex items*/
-                    
+                    --flex-items: 2; /* Number of flex items*/    
                 }
                 .icon-block {
                     flex: 1;
-                    /*width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * #{$gutter * 2}));*/
-                }
-            }
-            @media all and (max-width: $mobile) {
-                .icon-block {
-                    margin-bottom: $gutter * 2;
                 }
             }
             .icon-block {
                 overflow: hidden;
                 position: relative;
-                padding: $gutter * 2 $gutter;
                 display: flex;
                 flex-direction: column;
                 .icon-image {
-                    max-width: 55%;
-                    @media all and (max-width: $tablet) and (min-width: $mobile) {
-                        max-width: 75%;
-                    }
-                    margin: 0 auto;
-                    padding: $gutter * 4 0;
-                    @media all and (max-width: $mobile) {
-                        padding: $gutter 0;
-                    }
                     img {
                         width: 100%;
                         height: 100%;
@@ -865,10 +531,6 @@ section {
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
-                }
-                .btn {
-                    padding: $gutter-sm $gutter;
-                    margin-top: $gutter;
                 }
                 &.has-link{
                     a.block-link {
@@ -909,96 +571,21 @@ section {
         &.align-right {
             text-align: right;
         }
-        &.cta-buttons {
-            .btn {
-                margin: 0 .5 * $gutter-sm;
-            }
-            &.align-left {
-                .btn:first-of-type {
-                    margin-left: 0;
-                }
-            }
-            &.align-right {
-                .btn:last-of-type {
-                    margin-right: 0;
-                }
-            }
-        }
         &.features-list {
             .feature-row {
-                padding: $gutter 0;
-                &:first-of-type {
-                    padding-top: 0;
-                }
-                border-bottom: 1px solid $black;
                 @media all and (min-width: $mobile) { 
                     display: flex;
                     align-items:flex-start;
                 }
                 div {
                     flex: 1;
-                    &.feature-heading {
-                        @media all and (min-width: $mobile) { 
-                            width: 50%;
-                            padding-right: $gutter;
-                        }
-                        h3 {
-                            display: inline-block;
-                            margin-top: 0;
-                            @media all and (min-width: $mobile) { 
-                                margin-bottom: 0;
-                            }
-                        }
-                        a {
-                            h3 {
-                                text-decoration: underline;
-                            }
-                            &:hover,
-                            &:focus,
-                            &:active {
-                                h3 {
-                                    text-decoration: none;
-                                }
-                            }
-                        }
-                        .categories {
-                            margin-top: $gutter-sm;
-                            @media all and (max-width: $mobile) { 
-                                margin-top: -$gutter-sm;
-                            }
-                        }
-                    }
-                    @media all and (min-width: $mobile) { 
-                        &.feature-content {
-                            p {
-                                margin-top: 0;
-                            }
-                        }
-                    }
                     @media all and (min-width: $tablet) { 
                         &.feature-content {
                             &.has-link {
                                 display: grid;
                                 grid-template-columns: auto 40%;
-                                .link {
-                                    text-align: right;
-                                    .btn {
-                                        margin-top: 0;
-                                    }
-                                }
                             }
                         }
-                    }
-                }
-            }
-            &.top-border {
-                border-top: 1px solid $black;
-                padding-top: $gutter;
-            }
-            &.no-bottom-border {
-                .feature-row {
-                    &:last-of-type {
-                        border-bottom: none;
                     }
                 }
             }
@@ -1008,15 +595,11 @@ section {
                 @media all and(min-width: $mobile) {
                     display: grid;
                     grid-template-columns: auto auto auto;
-                    gap: $gutter-sm;
                 }
                 .grid-item {
                     position: relative;
                     padding-bottom: 100%;
                     overflow: hidden;
-                    @media all and(max-width: $mobile) {
-                        margin-bottom: $gutter-sm;
-                    }
                     .grid-image {
                         background-size: cover;
                         background-position: center center;
@@ -1026,18 +609,14 @@ section {
                         width: 100%;
                         height: 100%;
                         z-index: 1;
-                        transform: scale(1);
-                        transition: .2s transform;
                     }
                     .grid-hover {
-                        background: $black;
                         position: absolute;
                         left: 0;
                         top: 0;
                         width: 100%;
                         height: 100%;
                         opacity: 0;
-                        transition: .2s opacity;
                         z-index: 2;
                     }
                     .grid-content {
@@ -1046,16 +625,10 @@ section {
                         width: calc(100% - #{$gutter * 2});
                         left: $gutter;
                         z-index: 3;
-                        .read-more {
-                            font-weight: bold;
-                        }
                         @media all and(min-width: $tablet) {
                             display: flex;
                             justify-content: space-between;
                             align-items: end;
-                            .read-more {
-                                margin-left: $gutter;
-                            }
                         }
                         @media all and(max-width: $tablet) {
                             bottom: $gutter-sm;
@@ -1064,13 +637,6 @@ section {
                         }
                         .grid-heading {
                             flex: 1;
-                        }
-                        .read-more {
-                            text-decoration: underline;
-                            margin-top: $gutter-sm;
-                            @media all and(max-width: $tablet) {
-                                margin-top: $gutter-sm / 2;
-                            }
                         }
                     }
                     a {
@@ -1081,42 +647,22 @@ section {
                         top: 0;
                         z-index: 4;
                     }
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        .grid-image {
-                            transform: scale(1.05);
-                        }
-                        .grid-hover {
-                            opacity: .7;
-                        }
-                        .read-more {
-                            text-decoration: none;
-                        }
-                    }
                 }
             }
             &.content-w-image {
                 &.features-list {
                     .feature-row {
                         align-items: center;
-                        @media all and (min-width: $mobile) {
-                            margin-bottom: 2 * $gutter;
-                        }
                         @media all and (max-width: $mobile) {
                             display: flex;
                             flex-direction: column;
                             flex-direction: column-reverse;
-                        }
-                        &.no-bottom-border {
-                            border-bottom: none;
                         }
                         .feature-image {
                             width: 100%;
                             padding-bottom: 30%;
                             @media all and (max-width: $mobile) {
                                 padding-bottom: 61%;
-                                margin-bottom: $gutter;
                             }
                             position: relative;
                             overflow: hidden;
@@ -1126,9 +672,6 @@ section {
                                 height: 100%;
                                 top: 0;
                                 left: 0;
-                                background: $black;
-                                opacity: 0;
-                                transition: .2s opacity;
                                 z-index: 2;
                             }
                             .image-container {
@@ -1139,95 +682,31 @@ section {
                                 height: 100%;
                                 top: 0;
                                 left: 0;
-                                transform: scale(1);
-                                transition: .2s transform;
-                                z-index: 1;
-                                
-                            }
-                            &.is-hovered,
-                            &:hover,
-                            &:focus,
-                            &:active {
-                                .image-container {
-                                    transform: scale(1.05);
-                                }
-                                a {
-                                    opacity: .7
-                                }
+                                z-index: 1;   
                             }
                         }
-                        .feature-heading {
-                            @media all and (min-width: $mobile) {
-                                .link {
-                                    margin-top: $gutter;
-                                }
-                            }
-                            @media all and (max-width: $mobile) {
-                                width: 100%;
-                            }
-                        }
-                        
                     }
                 }
             }
         }
         &.posts-cta {
-            @media all and (min-width: $mobile) {
-                padding: $gutter-sm * 2 $gutter * 4.5 $gutter * 3;
-            }
-            @media all and (max-width: $mobile) {
-                padding: 0;
-            }
             .cta-content {
                 display: flex;
                 @media all and (max-width: $tablet) {
                     flex-direction: column;
                 }
-                @media all and (min-width: $tablet) {
-                    gap: $gutter * 4;
-                }
-                .cta {
-                    @media all and (min-width: $tablet) {
-                        width: 20%;
-                    }
-                    @media all and (max-width: $tablet) {
-                        margin-bottom: $gutter;
-                    }
-                    h2 {
-                        @media all and (min-width: $mobile) {
-                            margin-top: $gutter-sm;
-                        }
-                        margin-top: 0;
-                    }
-                    .btn {
-                        width: 100%;
-                        padding-left: 0;
-                        padding-right: 0;
-                        text-align: center;
-                        @media all and (min-width: $tablet) {
-                            margin-top: $gutter;
-                        }
-                    }
-                }
                 .cta-posts {
                     @media all and (min-width: $mobile) {
                         display: flex;
                         flex: 1;
-                        gap: $gutter * 3;
-                        margin-bottom: $gutter;
                         flex-wrap: wrap;
                     }
                     .cta-post {
-                        overflow: hidden;
                         flex: 1;
                         min-width: 31%;
                         display: flex;
                         flex-direction: column;
                         position: relative;
-                        @media all and (max-width: $mobile) {
-                            margin: $gutter 0 $gutter * 2 0;
-                            
-                        }
                         a.block-link {
                             position: absolute;
                             top: 0;
@@ -1250,7 +729,6 @@ section {
                                 background-position: center;
                                 &:before {
                                     content: '';
-                                    background-image: linear-gradient(to top,$black,transparent);
                                     width: 100%;
                                     height: 100%;
                                     position: absolute;
@@ -1264,7 +742,6 @@ section {
                             position: absolute;
                             bottom: 0;
                             align-items: flex-end;
-                            padding: 0 $gutter $gutter;
                             width: 100%;
                             .author {
                                 flex: 1;
@@ -1272,19 +749,11 @@ section {
                                     white-space: nowrap;
                                 }
                             }
-                            img {
-                                max-width: $gutter * 2;
-                                margin-left: $gutter-sm;
-                            }
                         }
                         &__details {
-                            padding: $gutter * 2 $gutter * 2.5;
                             display: flex;
                             flex-direction: column;
                             flex: 1;
-                            h3 {
-                                margin-top: 0;
-                            }
                             .excerpt {
                                 flex: 1;
                             }
@@ -1299,7 +768,6 @@ section {
                 @media all and (min-width: $mobile) {
                     display: flex;
                     justify-content: center;
-                    gap: $gutter * 2;
                 }
                 @media all and (max-width: $mobile) {
                     display: flex;
@@ -1308,19 +776,7 @@ section {
                 }
                 .data {
                     position: relative;
-                    @media all and (max-width: $mobile) {
-                        padding-top: $gutter;
-                        &:first-of-type {
-                            padding-top: 0;
-                        }
-                    }
-                    .title {
-                        @media all and (min-width: $mobile) {
-                            padding: 0 $gutter $gutter-sm;
-                        }
-                    }
                     .stat {
-                        padding: $gutter $gutter $gutter-sm * 3 $gutter;
                         position: relative;
                         display: flex;
                         align-items: flex-start;
@@ -1332,44 +788,6 @@ section {
                                 height: 100%;
                                 top: 0;
                                 left: 0;
-                            }
-                        }
-                    }
-                    &:first-of-type {
-                        .stat {
-                            &:before {
-                                @media all and (min-width: $mobile) {
-                                    border-left: none;
-                                }
-                                @media all and (max-width: $mobile) {
-                                    border-top: none;
-                                }
-                            }
-                        }
-                    }
-                    text-align: center;
-                    &.align-left {
-                        @media all and (min-width: $mobile) {
-                            text-align: left;
-                        }
-                    }
-                    &.red-circle {
-                        .stat {
-                            &:after {
-                                content: '';
-                                position: absolute;
-                                @media all and (min-width: $mobile) {
-                                    top: -20%;
-                                    left: 0;
-                                    width: 110%;
-                                    height: 110%;
-                                }
-                                @media all and (max-width: $mobile) {
-                                    top: -13%;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                }
                             }
                         }
                     }
@@ -1392,15 +810,9 @@ section {
             }
             .attribution-image {
                 display: block;
-                margin: $gutter auto 0 auto;
-                height: $gutter * 2.5;
                 width: auto;
                 object-fit: contain;
             }
-        }
-        &.hr {
-            height: 1px;
-            background-color: $black;
         }
         &.testimonials {
             @media all and (min-width: $mobile) {
@@ -1410,30 +822,8 @@ section {
                     justify-content: center;
                     .testimonial {
                         flex: 0 0 50%;
-                        div {
-                            p {
-                                margin: 0 0 $gutter 0;
-                            }
-                        }
                     }
                 }
-            }
-            .testimonial {
-                text-align: center;
-                padding: 0 #{$gutter * 2} $gutter;
-                @media all and (max-width: $tablet) {
-                    padding: 0 $gutter $gutter;
-                }
-                @media all and (max-width: $mobile) {
-                    
-                    &:first-of-type {
-                        padding-top: 0;
-                    }
-                    &:last-of-type {
-                        padding-bottom: 0;
-                    }
-                }
-                
             }
         }
         &.post-details {
@@ -1442,11 +832,8 @@ section {
                 > div {
                     flex: 1;
                     width: 50%;
-                    padding-right: 1rem;
                     &.details {
                         width: 50%;
-                        padding-left: 1rem;
-                        padding-right: 0;
                     }
                 }
                 .post-description-area {
@@ -1459,14 +846,6 @@ section {
                     flex: 1;
                 }
             }
-            @media (max-width: $mobile) {
-                .post-description-area {
-                    margin-top: 0;
-                }
-                p {
-                    margin-top: .5 * $gutter-sm;
-                }
-            }
         }
         &.gallery {
             .gallery-content {
@@ -1474,22 +853,14 @@ section {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    @media (min-width: $tablet) {
-                        gap: $gutter-sm * 3;
-                    }
-                    @media (max-width: $tablet) {
-                        gap: $gutter;
-                    }
                     @media (max-width: $mobile) {
                         flex-wrap: wrap;
-                        row-gap: $gutter-sm;
                     }
                     div {
                         img {
                             width: 100%;
                             height: 100%;
-                            display: block;
-                            object-fit: contain;
+                            
                         }
                         @media (max-width: $mobile) {
                             max-width: 20%;
@@ -1498,7 +869,6 @@ section {
                 }
                 &.display-grid {
                     display: grid;
-                    gap: $gutter;
                     &.columns-one {
                         grid-template-columns: 1fr;
                     }
@@ -1512,92 +882,10 @@ section {
                         grid-template-columns: 1fr 1fr 1fr 1fr;
                     }
                 }
-                &.hover-gray-to-color {
-                    img {
-                        filter: grayscale(100%); 
-                        opacity: .5;
-                        transition: .2s filter, .2s opacity;
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            opacity: 1;
-                            filter: none;
-                        }
-                    }
-                }
-                &.hover-gray-to-gray {
-                    img {
-                        filter: grayscale(100%); 
-                        opacity: .5;
-                        transition: .2s filter, .2s opacity;
-                    }
-                }
-            }
-        }
-        &.wysiwyg {
-            text-align: inherit;
-            &.align-center {
-                .wysiwyg-content {
-                    margin: 0 auto;
-                }
-            }
-            @media all and (max-width:$mobile) {
-                .wysiwyg-content {
-                    max-width: 100%!important;
-                }
-            }
-            a {
-                text-decoration: underline;
-                &:hover,
-                &:active,
-                &:focus {
-                    text-decoration: none;
-                }
-            }
-            img {
-                &.alignnone {
-                    width: 100%!important;
-                }
-            }
-            blockquote {
-                padding: $gutter-sm $gutter;
-                margin: $gutter * 2 $gutter;
-                p {
-                    margin: $gutter * 1.5 0;
-                }
             }
         }
         &.blog-section {
-            &.blog-featured {
-                @media all and (min-width: $mobile) {
-                    padding: $gutter-sm 0 $gutter * 4;
-                }
-                @media all and (max-width: $mobile) {
-                    padding: $gutter-sm 0 $gutter * 3;
-                }
-                .btn {
-                    margin-top: $gutter * 2;
-                }
-                @media all and (min-width: $mobile) {
-                    .read-more {
-                        text-align: right;
-                    }
-                }
-                .post-meta {
-                    margin: $gutter * 1.2 0 $gutter * 1.5!important;
-                }
-            }
-            &.blog-single {
-                padding: $gutter 0 $gutter * 5 0;
-                .btn {
-                    margin-top: $gutter * 1.5;
-                    padding: $gutter * .4 $gutter * 2.5;
-                }
-            }
             &.single-post {
-                padding: $gutter * 3 0;
-                min-height: 30vw;
-                max-height: $gutter * 25;
                 display: flex;
                 align-items: flex-end;
                 .post-details {
@@ -1605,90 +893,37 @@ section {
                 }
             }
             &.post-footer {
-                border-top: 1px solid $black;
-                padding: $gutter 0 $gutter * 4;
-                margin-top: $gutter;
                 display: flex;
                 .col {
                     flex: 1;
-                    &:last-of-type {
-                        text-align: right;
-                        a {
-                            display: inline-block;
-                            padding: $gutter-sm / 2 $gutter;
-                            margin-left: $gutter-sm / 2;
-                            &:first-of-type {
-                                margin-left: $gutter-sm;
-                            }
-                        }
-                    }
                     p {
-                        &.tagged {
-                            margin-top: 28px;
-                            &.less-margin {
-                                margin-top: 5px;
-                            }
-                        }
-                        .highlight {
-                            text-transform: uppercase;
-                        }
                         &.flex {
                             display: flex;
-                            align-items: center;
-                            gap: $gutter-sm / 2;
-                        }
-                        img {
-                            width: 42px;
-                            height: 42px;
-                            object-fit: contain;
-                            object-position: center;
-                            margin-left: $gutter-sm / 2;
-                        }
-                    }
-                    .post-credits {
-                        a {
-                            text-decoration: underline;
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                text-decoration: none;
-                            }
                         }
                     }
                 }
-            }
-            h2 {
-                margin: 0;
             }
             &.blog-single,
             &.blog-featured {
                 @media all and (min-width: $tablet) {
                     > div {
-                        padding-right: $gutter * 3!important;
                         &:last-of-type {
                             flex: 1;
-                            padding-left: $gutter!important;
-                        }
-                        &:first-of-type {
-                            max-width: 45%;
                         }
                     }
                 }
             }
             .post-meta {
-                margin: $gutter-sm * .5 0 $gutter;
                 display: flex;
                 @media all and (min-width: $mobile) {
                     align-items: center;
                 }
                 @media all and (max-width: $mobile) {
                     flex-direction: column-reverse;
-                    gap: $gutter-sm;
                 }
                 span {
                     &.sep {
                         @media all and (min-width: $mobile) {
-                            padding: 0 $gutter-sm / 2;
                             &:before {
                                 content: '|';
                             }
@@ -1697,26 +932,6 @@ section {
                             display: none;
                         }
                     }
-                }
-                img {
-                    width: 42px;
-                    height: 42px;
-                    object-fit: contain;
-                    object-position: center;
-                    @media all and (min-width: $mobile) {
-                        margin-left: $gutter-sm * 1.5;
-                    }
-                }
-                a {
-                    text-decoration: none;
-                }
-            }
-            a {
-                text-decoration: none;
-            }
-            @media all and (max-width: $mobile) {
-                .read-more {
-                    margin-top: $gutter;
                 }
             }
         }
