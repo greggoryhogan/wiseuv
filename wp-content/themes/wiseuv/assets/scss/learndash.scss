@@ -1,0 +1,148 @@
+@import 'variables';
+.site {
+    /**PATCH UNTIL LEARNDASH IS DONE*/
+    .learndash-content-area {
+        .container {
+            width: 100%;
+            .row {
+                width: 100%;
+            }
+        }
+        iframe {
+            border: none;
+        }
+        .wp-block-embed__wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
+        .wp-block-embed__wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .wp-block-pullquote {
+            clear: both;
+            padding: 0!important;
+        }
+        blockquote {
+            font-size: 24px;
+            padding: 15px 25px 15px 25px;
+            margin: 25px 0;
+        }
+        blockquote p {
+            margin-bottom: 0;
+        }
+        blockquote cite {
+            font-weight: normal;
+            font-size: 14px;
+            margin-bottom: 2px;
+            display: block; 
+            font-style: normal;
+        }
+    }
+    .learndash-actions {
+        @media all and (min-width: $mobile) {
+            font-size: 1rem;
+        }
+        @media all and (max-width: $mobile) {
+            font-size: .9rem;
+        }
+    }
+    .back-to-course {
+        position: absolute;
+        left: 10px;
+        top: 9px;
+        opacity: .9;
+        transition: .2s opacity;
+    }
+    .back-to-course:hover {
+        opacity: 1;
+    }
+}
+.single-sfwd-topic,
+.single-sfwd-lessons {
+    .learndash-content-area {
+        padding-top: $gutter;
+    }
+}
+
+.workbook-nav {
+    .fullwidth {
+        .container {
+            > .d-flex {
+                @media all and (min-width: $mobile) {
+                    width: 100%;
+                }
+                @media all and (max-width: $mobile) {
+                    flex-direction: column;
+                    gap: $gutter;
+                }
+            }
+        }
+    }
+}
+.has-text-align-center,.aligncenter {
+    text-align: center;
+}
+.single-sfwd-courses {
+    .container-content {
+        max-width: $wrapper-xs;
+    }
+}
+.primary-bg {
+    background: $orange!important;
+}
+.tertiary-bg,
+.progressbar-fill {
+    background: $logo-blue!important;
+}
+.learndash-content-area {
+    .btn {
+        font-size: 1rem;
+        &.course-show-workbook,
+        &.btn-edit-post {
+            @media all and (max-width: $mobile) {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .container {
+        .container {
+            padding: 0;
+            width: 100%;
+            height: auto;
+            .container-content {
+                width: 100%;
+            }
+        }
+    }
+}
+.save-status {
+    color: $orange!important;
+}
+@media all and (max-width: $mobile) {
+    .ld-buy-course {
+        width: 100%;
+        .btn {
+            width: 100%;
+            margin: 0 0 15px 0 !important;
+        }
+    }
+}
+.single-workbook {
+    .primary {
+        padding: 0;
+        width: 100%;
+        height: auto;
+        .row, .col-12 {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

@@ -8,7 +8,7 @@ function wise_login_logo() { ?>
     <style type="text/css">
         body {background: #fff!important;}
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo wiseC_URL; ?>includes/img/redeeming-wise-logo.jpg);
+            background-image: url(<?php echo WISE_URL; ?>includes/img/redeeming-wise-logo.jpg);
             height:60px;
             width:250px;
             background-size: contain;
