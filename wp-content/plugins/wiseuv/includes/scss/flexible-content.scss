@@ -922,3 +922,49 @@ section {
         }
     }
 }
+
+.feather-icon {
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+    position: relative; 
+    width: 25px; 
+    padding: 0;
+    height: 20px;
+    margin-bottom: -5px;
+}
+.feather-icon svg {
+    position: absolute; 
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0;
+}
+.feather-icon.circle {
+    border-radius: 50%;
+    height: 0; 
+    padding-bottom: 100%; 
+    margin-bottom: 0px;
+}
+.feather-icon.circle svg {
+    height: 82%; 
+    width: 82%;
+    top: 8%;
+    left: 8%; 
+}
+.feather-icon.circle.padded svg {
+    height: 60%;
+    width: 60%;
+    top: 17%;
+    left: 20%;
+}
+.feather-icon.inline-icon.small {
+    width: 20px;
+    height: 20px;
+    padding-bottom: 0;
+    font-size: 20px;
+}
+.backtolink .feather-icon {
+    margin-bottom: -5px!important;
+    margin-right: 5px;   
+}

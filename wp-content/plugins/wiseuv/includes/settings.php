@@ -10,44 +10,10 @@ Functions related to overall plugin functionality
  */
 function wise_register_settings() {
 
-    //Thank you page
-    add_option( 'wise_group_leader_invite_content', '<p>Hello,</p><p>You have been assigned as a group leader on Redeeming wise. To join the group, please click the url below, or enter it in your web browser.</p><p>[invite_link]</p>');
-    register_setting( 'wise_settings', 'wise_group_leader_invite_content' );
-
-    //Thank you page
-    add_option( 'wise_thankyou_content', 'Thank you. Your order has been received.');
-    register_setting( 'wise_settings', 'wise_thankyou_content' );
-
-    //labels
-    add_option( 'wise_label_my-products', '');
-    register_setting( 'wise_settings', 'wise_label_my-products' );
-    add_option( 'wise_label_my-groups', '');
-    register_setting( 'wise_settings', 'wise_label_my-groups' );
-
-    //Misc
-    add_option( 'wise_new_user_text', 'Welcome to Redeeming wise. Please take a minute to familiarize yourself with our new look.');
-    register_setting( 'wise_settings', 'wise_new_user_text' );
-
-    //Mailchimp
-    add_option( 'mailchimp_heading_text', 'Join Our Mailing List');
-    register_setting( 'wise_settings', 'mailchimp_heading_text' );
-    add_option( 'mailchimp_body_text', '');
-    register_setting( 'wise_settings', 'mailchimp_body_text' );
-    add_option( 'mailchimp_success', 'Thank you for joining our mailing list!');
-    register_setting( 'wise_settings', 'mailchimp_success' );
-    add_option( 'mailchimp_api_key', '');
-    register_setting( 'wise_settings', 'mailchimp_api_key' );
-    add_option( 'mailchimp_list_id', '');
-    register_setting( 'wise_settings', 'mailchimp_list_id' );
-
     add_option( 'google_analytics_code', '');
     register_setting( 'wise_settings', 'google_analytics_code' );
     add_option( 'footer_scripts', '');
     register_setting( 'wise_settings', 'footer_scripts' );
-
-    //Discussion
-    add_option( 'globally_disable_comments', '');
-    register_setting( 'wise_settings', 'globally_disable_comments' );
 
     //Social
     //Discussion
@@ -57,37 +23,37 @@ function wise_register_settings() {
     register_setting( 'wise_settings', 'social_media_facebook' );
     add_option( 'social_media_instagram', '');
     register_setting( 'wise_settings', 'social_media_instagram' );
+    add_option( 'social_media_email', '');
+    register_setting( 'wise_settings', 'social_media_email' );
 
-    //Podcasts
-    add_option( 'podcast_apple', '');
-    register_setting( 'wise_settings', 'podcast_apple' );
-    add_option( 'podcast_spotify', '');
-    register_setting( 'wise_settings', 'podcast_spotify' );
-    add_option( 'podcast_youtube', '');
-    register_setting( 'wise_settings', 'podcast_youtube' );
-    add_option( 'podcast_stitcher', '');
-    register_setting( 'wise_settings', 'podcast_stitcher' );
-    add_option( 'podcast_dispatch', '');
-    register_setting( 'wise_settings', 'podcast_dispatch' );
+    //containers
+    add_option( 'default_container_width', 'normal');
+    register_setting( 'wise_settings', 'default_container_width' );
+    
+    //Contact
+    add_option( 'contact_program_center', '38 Bank St. Lebanon, NH 03766');
+    register_setting( 'wise_settings', 'contact_program_center' );
+    add_option( 'contact_fax', '603-448-2799');
+    register_setting( 'wise_settings', 'contact_fax' );
+    add_option( 'contact_tel', '603-448-5922');
+    register_setting( 'wise_settings', 'contact_tel' );
+    add_option( 'contact_text', '603-448-5922');
+    register_setting( 'wise_settings', 'contact_text' );
+    add_option( 'contact_crisis_line_text', '866-348-WISE');
+    register_setting( 'wise_settings', 'contact_crisis_line_text' );
+    add_option( 'contact_crisis_line_number', '866-348-9473');
+    register_setting( 'wise_settings', 'contact_crisis_line_number' );
 
-    //woo container width
-    add_option( 'woo_container_width', 'xs');
-    register_setting( 'wise_settings', 'woo_container_width' );
-    //post container width
-    add_option( 'post_container_width', 'xs');
-    register_setting( 'wise_settings', 'post_container_width' );
-    //course container width
-    add_option( 'course_container_width', 'xs');
-    register_setting( 'wise_settings', 'course_container_width' );
-    
-    //subscribe modal
-    add_option( 'subscribe_modal_heading', 'Subscribe to Redeeming wise');
-    register_setting( 'wise_settings', 'subscribe_modal_heading' );
-    add_option( 'subscribe_modal_text', '');
-    register_setting( 'wise_settings', 'subscribe_modal_text' );
-    
+    //Links
+    add_option( 'see_how_we_can_help_url', '');
+    register_setting( 'wise_settings', 'see_how_we_can_help_url' );
+    add_option( 'live_chat_url', 'https://www.resourceconnect.com/wiseuv/chat');
+    register_setting( 'wise_settings', 'live_chat_url' );
+    add_option( 'exit_site_url', 'https://wisesnacks.com');
+    register_setting( 'wise_settings', 'exit_site_url' );
+
 }
-//add_action( 'admin_init', 'wise_register_settings' );
+add_action( 'admin_init', 'wise_register_settings' );
 
 /*
  *
@@ -95,11 +61,11 @@ function wise_register_settings() {
  * 
  */
 function wise_core_admin_pages() {
-    add_menu_page('Redeeming wise', 'Redeeming wise', 'administrator', 'redeeming-wise-settings', 'wise_settings_content','',2);
-    add_submenu_page('redeeming-wise-settings', 'Redeeming wise Settings', 'Settings', 'administrator', 'redeeming-wise-settings', 'wise_settings_content' );
-    //add_submenu_page('redeeming-wise-settings', 'Redeeming wise Documentation', 'Documentation', 'administrator', 'redeeming-wise-documentation', 'wise_documentation_content' );
+    add_menu_page('WISE UV', 'WISE UV', 'administrator', 'wise-settings', 'wise_settings_content','',2);
+    add_submenu_page('wise-settings', 'Redeeming wise Settings', 'Settings', 'administrator', 'wise-settings', 'wise_settings_content' );
+    //add_submenu_page('wise-settings', 'Redeeming wise Documentation', 'Documentation', 'administrator', 'wise-documentation', 'wise_documentation_content' );
 }
-//add_action( 'admin_menu', 'wise_core_admin_pages' );    
+add_action( 'admin_menu', 'wise_core_admin_pages' );    
     
 /*
  *
@@ -108,7 +74,7 @@ function wise_core_admin_pages() {
  */
 function wise_settings_content() { ?> 
     <div class="wrap">
-        <h1 class="wp-heading-inline">Redeeming wise Settings</h1>
+        <h1 class="wp-heading-inline">WISE UV Site Options</h1>
         <?php settings_errors(); ?>
         <div class="metabox-holder wrap" id="dashboard-widgets">
             <form method="post" action="options.php" class="wise-settings">
@@ -116,130 +82,96 @@ function wise_settings_content() { ?>
 
                 <div class="tabset">
                     <input type="radio" name="tabset" id="tab1" aria-controls="defaults" checked>
-                    <label for="tab1">Defaults</label>
+                    <label for="tab1">General</label>
 
-                    <input type="radio" name="tabset" id="tab2" aria-controls="learndash">
-                    <label for="tab2">Learndash</label>
+                    <input type="radio" name="tabset" id="tab2" aria-controls="defaults">
+                    <label for="tab2">Defaults</label>
 
-                    <input type="radio" name="tabset" id="tab3" aria-controls="woocommerce">
-                    <label for="tab3">Woocommerce</label>
+                    <input type="radio" name="tabset" id="tab3" aria-controls="scripts">
+                    <label for="tab3">Scripts</label>
 
                     <div class="wise-tab-panels">
-                        <section id="defaults" class="wise-tab-panel">
+                        <section id="about" class="wise-tab-panel">
                             <div class="wise-settings-panel">
                                 <!--labels-->
                                 <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">General</h2></div>
+                                    <div class="postbox-header"><h2 class="post-box-heading">Contact</h2></div>
                                     <div class="inside">
                                         <div class="input-text-wrap">
-                                            <label>Twitter URL</label>
-                                            <input type="text" name="social_media_twitter" value="<?php echo get_option('social_media_twitter'); ?>" />
+                                            <label>Program Center</label>
+                                            <input type="text" name="contact_program_center" value="<?php echo get_option('contact_program_center'); ?>" />
+                                        </div>    
+                                        <div class="input-text-wrap">
+                                            <label>Fax</label>
+                                            <input type="text" name="contact_fax" value="<?php echo get_option('contact_fax'); ?>" />
                                         </div>
+                                        <div class="input-text-wrap">
+                                            <label>Telephone</label>
+                                            <input type="text" name="contact_tel" value="<?php echo get_option('contact_tel'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>Text</label>
+                                            <input type="text" name="contact_text" value="<?php echo get_option('contact_text'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>Crisis Line (Display)</label>
+                                            <input type="text" name="contact_crisis_line_text" value="<?php echo get_option('contact_crisis_line_text'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>Crisis Line (Number)</label>
+                                            <input type="text" name="contact_crisis_line_number" value="<?php echo get_option('contact_crisis_line_number'); ?>" />
+                                        </div>
+                                    </div>
+                                    <p><em>Note: Sticky Footer menu is managed under <a href="<?php echo get_bloginfo('url'); ?>/wp-admin/nav-menus.php">Appearance &gt; Menus</a> </em></p>    
+                                </div>
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2 class="post-box-heading">Links</h2></div>
+                                    <div class="inside">
+                                        <div class="input-text-wrap">
+                                            <label>See How We Can Help URL</label>
+                                            <input type="text" name="see_how_we_can_help_url" value="<?php echo get_option('see_how_we_can_help_url'); ?>" />
+                                        </div>    
+                                        <div class="input-text-wrap">
+                                            <label>Live Chat URL</label>
+                                            <input type="text" name="live_chat_url" value="<?php echo get_option('live_chat_url'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>Exit Site URL</label>
+                                            <input type="text" name="exit_site_url" value="<?php echo get_option('exit_site_url'); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="postbox-header"><h2 class="post-box-heading">Social</h2></div>
+                                    <div class="inside">
                                         <div class="input-text-wrap">
                                             <label>Facebook URL</label>
                                             <input type="text" name="social_media_facebook" value="<?php echo get_option('social_media_facebook'); ?>" />
+                                        </div>    
+                                        <div class="input-text-wrap">
+                                            <label>Twitter URL</label>
+                                            <input type="text" name="social_media_twitter" value="<?php echo get_option('social_media_twitter'); ?>" />
                                         </div>
                                         <div class="input-text-wrap">
                                             <label>Instagram URL</label>
                                             <input type="text" name="social_media_instagram" value="<?php echo get_option('social_media_instagram'); ?>" />
                                         </div>
                                         <div class="input-text-wrap">
-                                            <label>Imported User Welcome Text</label>
-                                            <input type="text" name="wise_new_user_text" value="<?php echo get_option('wise_new_user_text'); ?>" />
+                                            <label>Email</label>
+                                            <input type="text" name="social_media_email" value="<?php echo get_option('social_media_email'); ?>" />
                                         </div>
                                     </div>
-                                    <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <label>Apple Podcasts URL</label>
-                                            <input type="text" name="podcast_apple" value="<?php echo get_option('podcast_apple'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Spotify Podcast URL</label>
-                                            <input type="text" name="podcast_spotify" value="<?php echo get_option('podcast_spotify'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>YouTube Podcast URL</label>
-                                            <input type="text" name="podcast_youtube" value="<?php echo get_option('podcast_youtube'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Stitcher Podcast URL</label>
-                                            <input type="text" name="podcast_stitcher" value="<?php echo get_option('podcast_stitcher'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Dispatch Podcast URL</label>
-                                            <input type="text" name="podcast_dispatch" value="<?php echo get_option('podcast_dispatch'); ?>" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="postbox-header"><h2 class="post-box-heading">Mailchimp</h2></div>
-                                    <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <label>Heading Text</label>
-                                            <input type="text" name="mailchimp_heading_text" value="<?php echo get_option('mailchimp_heading_text'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Body</label>
-                                            <input type="text" name="mailchimp_body_text" value="<?php echo get_option('mailchimp_body_text'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Success Message</label>
-                                            <input type="text" name="mailchimp_success" value="<?php echo get_option('mailchimp_success'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Mailchimp API Key</label>
-                                            <input type="text" name="mailchimp_api_key" value="<?php echo get_option('mailchimp_api_key'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Mailchimp Audience ID (Found in Audience > Settings > Unique ID)</label>
-                                            <input type="text" name="mailchimp_list_id" value="<?php echo get_option('mailchimp_list_id'); ?>" />
-                                        </div>
-                                    </div>
-
-                                    <div class="postbox-header"><h2 class="post-box-heading">Subscribe Modal</h2></div>
-                                    <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <label>Heading Text</label>
-                                            <input type="text" name="subscribe_modal_heading" value="<?php echo get_option('subscribe_modal_heading'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Body</label>
-                                            <textarea name="subscribe_modal_text" rows="10"><?php echo get_option('subscribe_modal_text'); ?></textarea>
-                                        </div>
-                                    </div>
-
-                                    
-                                    
                                 </div>
-                                <!--analytics-->
+                                
+                            </div>
+                            <div class="clear"></div>
+                        </section>
+                        <section id="defaults" class="wise-tab-panel">
+                            <div class="wise-settings-panel">
+                                <!--labels-->
                                 <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">Discussion</h2></div>
-                                    <div class="inside">
-                                        <div class="input-checkbox-wrap">
-                                            <?php $checked = '';
-                                            if(get_option('globally_disable_comments') == 'on') {
-                                                $checked = ' checked';
-                                            } ?>
-                                            <input type="checkbox" name="globally_disable_comments" id="globally_disable_comments"<?php echo $checked; ?> />
-                                            <label for="globally_disable_comments">Globally Disable Comments</label>
-                                        </div>
-                                    </div>
-                                    <div class="postbox-header"><h2 class="post-box-heading">Scripts</h2></div>
-                                    <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <label>Header Scripts</label>
-                                            <textarea name="google_analytics_code" rows="10"><?php echo get_option('google_analytics_code'); ?></textarea>
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>Footer Scripts</label>
-                                            <textarea name="footer_scripts" rows="10"><?php echo get_option('footer_scripts'); ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="postbox-header"><h2 class="post-box-heading">Default Container Widths</h2></div>
+                                    <div class="postbox-header"><h2 class="post-box-heading">Container Widths</h2></div>
                                     <div class="inside">
                                         <?php $containers = array(
-                                            'woo',
-                                            'post',
-                                            'course'
+                                            'default'
                                         );
                                         $widths = array(
                                             array('xxs','Narrowest'),
@@ -266,67 +198,32 @@ function wise_settings_content() { ?>
                                         <?php } ?>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div class="clear"></div>
                         </section>
                         <!--learndash-->
-                        <section id="learndash" class="wise-tab-panel">
+                        <section id="scripts" class="wise-tab-panel">
                             <div class="wise-settings-panel">
-                                <!--Custom CSS-->
+                                <!--analytics-->
                                 <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">Group leader invitation</h2></div>
-                                    <div class="inside">
-                                        <?php 
-                                        $settings = array(
-                                            'teeny' => false,
-                                            'editor_height' => 425,
-                                            'textarea_rows' => 20
-                                        );
-                                        wp_editor(wpautop(get_option('wise_group_leader_invite_content', 'wise')), 'wise_group_leader_invite_content', $settings); ?>
-                                        <p><strong>Placeholders:</strong><br>
-                                        [invite_link] shows the invitation URL</p>
-                                        <p><strong>Notes:</strong><br>All emails are appended with:<em>God bless, Redeeming wise</em></p>
-                                    </div>
-                                </div>
-
-                                <div class="postbox">
-                                    
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </section>
-                        <!--Woo-->
-                        <section id="woocommerce" class="wise-tab-panel">
-                            <div class="wise-settings-panel">
-                                <!--Custom CSS-->
-                                <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">Thank you page content</h2></div>
-                                    <div class="inside">
-                                        <?php 
-                                        $settings = array(
-                                            'teeny' => false,
-                                            'editor_height' => 425,
-                                            'textarea_rows' => 20
-                                        );
-                                        wp_editor(wpautop(get_option('wise_thankyou_content', 'wise')), 'wise_thankyou_content', $settings); ?>
-                                    </div>
-                                </div>
-
-                                <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">Tooltips</h2></div>
+                                    <div class="postbox-header"><h2 class="post-box-heading">Header Scripts (Google Analytics, Facebook Pixel, Etc)</h2></div>
                                     <div class="inside">
                                         <div class="input-text-wrap">
-                                            <label>My Products</label>
-                                            <input type="text" name="wise_label_my-products" value="<?php echo get_option('wise_label_my-products'); ?>" />
-                                        </div>
-                                        <div class="input-text-wrap">
-                                            <label>My Groups</label>
-                                            <input type="text" name="wise_label_my-groups" value="<?php echo get_option('wise_label_my-groups'); ?>" />
+                                            <textarea name="google_analytics_code" rows="10"><?php echo get_option('google_analytics_code'); ?></textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="clear"></div>
+                           
+                                <div class="postbox">
+                                        <div class="postbox-header"><h2 class="post-box-heading">Footer Scripts (Trackers, External Scripts)</h2></div>
+                                        <div class="inside">
+                                            <div class="input-text-wrap">
+                                                <textarea name="footer_scripts" rows="10"><?php echo get_option('footer_scripts'); ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </section>
                     </div><!--close tab panels-->
                 </div><!--close tabset-->

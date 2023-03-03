@@ -3,7 +3,7 @@
   Plugin Name: Cool Timeline 
   Plugin URI:https://cooltimeline.com
   Description:Cool Timeline is a responsive WordPress timeline plugin that allows you to create beautiful vertical storyline. You simply create posts, set images and date then Cool Timeline will automatically populate these posts in chronological order, based on the year and date
-  Version:2.4.4
+  Version:2.5
   Author:Cool Plugins
   Author URI:https://coolplugins.net/our-cool-plugins-list/
   License:GPLv2 or later
@@ -20,11 +20,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Configuration **/
 if (!defined('COOL_TIMELINE_CURRENT_VERSION')){
-	define('COOL_TIMELINE_CURRENT_VERSION', '2.4.4');
+	define('COOL_TIMELINE_CURRENT_VERSION', '2.5');
 }
 // define constants for later use
 define('COOL_TIMELINE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define('COOL_TIMELINE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+if(!defined('COOL_TIMELINE_DEMO_URL') || !defined('COOL_ELEMENTOR_TIMELINE_DEMO_URL')){
+    define('COOL_TIMELINE_PREFIX','ctl');
+    define('COOL_ELEMENTOR_TIMELINE_PREFIX','twae');
+    define('COOL_TIMELINE_DEMO_URL','https://cooltimeline.com/demo/?utm_source='.COOL_TIMELINE_PREFIX.'_plugin&utm_medium=plugin_link&utm_campaign='.COOL_TIMELINE_PREFIX.'_plugin_inside');
+    define('COOL_ELEMENTOR_TIMELINE_DEMO_URL','https://cooltimeline.com/demo/elementor-timeline/?utm_source='.COOL_ELEMENTOR_TIMELINE_PREFIX.'_plugin&utm_medium=plugin_link&utm_campaign='.COOL_ELEMENTOR_TIMELINE_PREFIX.'_plugin_inside');
+}
 
 if (!class_exists('CoolTimeline')) {
 final class CoolTimeline
@@ -142,8 +148,7 @@ final class CoolTimeline
 		CoolTimelineInstantBuilder::get_instance();
 		require_once COOL_TIMELINE_PLUGIN_DIR . 'admin/ctl-shortcode-generator.php';
 		
- 	} 
-
+ 	}
 	 public  function onInit(){
 		
 			if ( did_action( 'elementor/loaded' )) {	

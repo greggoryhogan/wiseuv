@@ -3,8 +3,9 @@ Contributors: never5, barrykooij
 Donate link: http://www.barrykooij.com/donate/
 Tags: toolbar, development, file, template, template editing, Template Hierarchy, theme, themes, php, php file, template part
 Requires at least: 3.1
-Tested up to: 5.7
-Stable tag: 1.5.4
+Requires PHP: 5.3
+Tested up to: 6.0.2
+Stable tag: 1.6.0
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,10 +13,16 @@ What The File is the best tool to find out what template parts are used to displ
 
 == Description ==
 
-What The File adds an option to your toolbar showing what file and template parts are used to display the page you're currently viewing. You can click the file name to directly edit it through the theme editor, though I don't recommend this for bigger changes. What The File supports BuddyPress and Roots Theme based themes.
+What The File adds an option to your toolbar showing what file and template parts are used to display the page you're currently viewing.
+
+You can click the file name to directly edit it through the theme editor, though I don't recommend this for bigger changes.
+
+What The File supports BuddyPress and Roots Theme based themes.
 
 More information can be found <a href='http://www.barrykooij.com/what-the-file/'>here</a>.
-For support please visit the <a href='http://wordpress.org/support/plugin/what-the-file'>Support forum</a>.
+
+= Looking for a great related posts plugin for WordPress? =
+Another plugin I've built, that I'm very proud of is Related Posts for WordPress. Related Posts for WordPress offers you the ability to link related posts to each other with just 1 click! And it's 100% free! [Check it out on the WordPress repository.](https://wordpress.org/plugins/related-posts-for-wp/)
 
 == Installation ==
 
@@ -31,6 +38,10 @@ In the toolbar you will find the "What The File" option. Hovering this option wi
 = I can't find the "What The File" option in the toolbar =
 
 You have to be an Administrator to see the "What The File" option.
+
+= What PHP version are supported / tested? =
+
+What The File works supports starts at PHP 5.3 and is tested on every major release up until PHP 8.1.
 
 = Does What The File supports BuddyPress =
 
@@ -49,6 +60,13 @@ Glad to hear I could help you! You can thank me in various ways, please see [my 
 1. What The File shows you what template file is used.
 
 == Changelog ==
+
+= 1.6.0: September 19, 2022 =
+* Feature: Now correctly working with the wp_body_open tag. Full template part support is back.
+* Tweak: Used proper add_site_option argument count. props @szepeviktor
+* Tweak: Optimized file editing allowed function. props @szepeviktor
+* Tweak: Change template_include priority from 1000 to PHP_INT_MAX for wider support. props @greenshady
+* Tweak: Version and meta update.
 
 = 1.5.4: October 8, 2017 =
 * Version and meta update.

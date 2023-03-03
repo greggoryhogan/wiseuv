@@ -5,11 +5,7 @@
  */
 //add_filter('template_include', 'wisec_plugin_templates', 99);
 function wisec_plugin_templates( $template ) {
-    if (is_singular(array('workbook'))) {
-        $template = WISE_PLUGIN_DIR . 'templates/single-workbook.php';
-    } else if (is_singular(array('sfwd-lessons','sfwd-topic'))) {
-        $template = WISE_PLUGIN_DIR . 'templates/single-learndash.php';
-    } else if (is_page('login')) {
+    if (is_page('login')) {
         $template = WISE_PLUGIN_DIR . 'templates/page-login.php';
     } else if (is_page('subscribe')) {
         $template = WISE_PLUGIN_DIR . 'templates/page-subscribe.php';
@@ -29,6 +25,30 @@ function wise_get_current_user_roles() {
     }
    
 }
+
+/*
+ *
+ * Show our own icon
+ * 
+ */
+function featherIcon($icon,$classes = NULL, $size = NULL, $color = NULL, $background = NULL) {
+    $extras = '';
+    if($color != null) {
+        $extras .= 'color: '.$color.';';
+    }
+    if($background != null) {
+        $extras .= 'background-color: '.$background.';';
+    }
+    ob_start(); 
+    include('feather/'.$icon.'.svg');
+    $icon_url = ob_get_clean();
+    $icon_html = '<span class="feather-icon '.$classes.'"';
+    if($size) {
+        $icon_html .= ' style="width:'.$size.'px;height:'.$size.'px;padding-bottom:0;font-size:'.$size.'px;'.$extras.'"';
+    }
+    $icon_html .= ' role="presentation">'.$icon_url.'</span>';
+    return $icon_html;
+} 
 
 /*
  *
@@ -57,7 +77,7 @@ function wise_woo_body_classes( $classes ) {
  * Add Header scripts to page
  * 
  */ 
-////add_action('wp_head','add_header_scripts_to_header');
+add_action('wp_head','add_header_scripts_to_header');
 function add_header_scripts_to_header() {
     $ga = get_option('google_analytics_code');
     if($ga != '') {
@@ -232,9 +252,9 @@ function wise_custom_password_form() {
     global $post;
     $post   = get_post( $post );
 	$label  = 'pwbox-' . ( empty( $post->ID ) ? wp_rand() : $post->ID );
-	$output = '<p class="post-password-message">' . esc_html__( 'Please enter the password to view this content.', 'wiseuv' ) . '</p>
+	$output = '<section class="section post-pw-protected padding__xl"><div class="container flex-content-container container__xs"><div class="container-content"><div class="flexible-content wysiwyg"><p class="post-password-message">' . esc_html__( 'Please enter the password to view this content.', 'wiseuv' ) . '</p>
 	<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">
-	<p><label class="post-password-form__label" for="' . esc_attr( $label ) . '">' . esc_html_x( 'Password', 'Post password form', 'twentytwentyone' ) . '<input class="post-password-form__input" name="post_password" id="' . esc_attr( $label ) . '" type="password" size="20" /></label><input type="submit" class="post-password-form__submit" name="' . esc_attr_x( 'Submit', 'Post password form', 'twentytwentyone' ) . '" value="' . esc_attr_x( 'Enter', 'Post password form', 'twentytwentyone' ) . '" /></p></form>
+	<p class="pw-inputs"><input class="post-password-form__input" name="post_password" id="' . esc_attr( $label ) . '" type="password" size="20" placeholder="Password" /><input type="submit" class="post-password-form__submit btn mt-2" name="' . esc_attr_x( 'Submit', 'Post password form', 'twentytwentyone' ) . '" value="' . esc_attr_x( 'Enter', 'Post password form', 'twentytwentyone' ) . '" /></p></form></div></div></div></section>
 	';
 	return $output;
 }

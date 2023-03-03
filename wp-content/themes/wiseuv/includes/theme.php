@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 }*/
 
-add_action('before_rb_content','before_rb_content');
-function before_rb_content() {
+add_action('before_wise_content','before_wise_content');
+function before_wise_content() {
     global $post,$current_user;
     $user_id = $current_user->ID;
     if( is_object( $post )) {
@@ -93,36 +93,37 @@ function babel_filter_content($content) {
  * Add notice if our custom plugin isn't active
  * Adapted from https://theaveragedev.com/generating-a-wordpress-plugin-activation-link-url/
  */
-function rb_core_plugin_check() {
-    if(!in_array('redeeming-babel-core/redeeming-babel-core.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
-        $plugin = 'redeeming-babel-core/redeeming-babel-core.php';
+function wise_core_plugin_check() {
+    if(!in_array('wiseuv/wiseuv.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
+        $plugin = 'wiseuv/wiseuv.php';
         $activation_url = sprintf(admin_url('plugins.php?action=activate&plugin=%s&plugin_status=all&paged=1&s'), $plugin);
         // change the plugin request to the plugin to pass the nonce check
         $_REQUEST['plugin'] = $plugin;
         $activation_url = wp_nonce_url($activation_url, 'activate-plugin_' . $plugin);
         echo '<div class="notice notice-warning">';
-            echo '<p>Please <a href="'.$activation_url.'">activate Redeeming Babel Core</a> to enable critical functionality to this website.</p>';
+            echo '<p>Please <a href="'.$activation_url.'">activate WISE Core</a> to enable critical functionality to this website.</p>';
         echo '</div>'; 
     }
 }
-add_action( 'admin_notices', 'rb_core_plugin_check' );
+add_action( 'admin_notices', 'wise_core_plugin_check' );
 
 /**
  * Register Menus
  */
-function rb_navs(){
+function wise_navs(){
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'rb' ),
-        'footer'  => __( 'Footer Menu', 'rb' ),
-        'footer-2'  => __( 'Footer Secondary Menu', 'rb' ),
+        'primary' => __( 'Primary Menu', 'wise' ),
+        'footer'  => __( 'Footer Menu', 'wise' ),
+        'footer-2'  => __( 'Footer Secondary Menu', 'wise' ),
+        'sticky'  => __( 'Sticky Footer Menu', 'wise' ),
     ) );
 }
-add_action( 'after_setup_theme', 'rb_navs', 0 );
+add_action( 'after_setup_theme', 'wise_navs', 0 );
 
 /**
  * Theme Supports
  */
-function rb_theme_support() {
+function wise_theme_support() {
     $defaults = array(
 		'height'      => 126,
 		'width'       => 579,
@@ -139,13 +140,13 @@ function rb_theme_support() {
     //add_image_size( 'rb-portfolio', 894, 552, true );
     add_image_size( 'rb-blog', 557, 384, true );
 }
-add_action( 'after_setup_theme', 'rb_theme_support' );
+add_action( 'after_setup_theme', 'wise_theme_support' );
 
 /**
  * Favicon and Header Scripts
  */
-function rb_header_scripts() {
-    //echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.RB_THEME_URI.'/assets/img/fav.png" />';
+function wise_header_scripts() {
+    //echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.wise_THEME_URI.'/assets/img/fav.png" />';
     /*Google Fonts*/
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
@@ -158,12 +159,12 @@ function rb_header_scripts() {
         }
     }
 }
-add_action('wp_head', 'rb_header_scripts');
+add_action('wp_head', 'wise_header_scripts');
 
 /**
  * Footer Scripts
  */
-function rb_footer_scripts() {
+function wise_footer_scripts() {
     if(function_exists('get_field')) {
         $footer_scripts = get_field('footer_scripts','option');
         if($footer_scripts != '') {
@@ -171,12 +172,12 @@ function rb_footer_scripts() {
         }
     }
 }
-add_action('wp_footer', 'rb_footer_scripts');
+add_action('wp_footer', 'wise_footer_scripts');
 
 /**
  * Add Secondary Nav Items to Primary for Mobile View
  */
-function add_rb_secondary_items_to_primary($items, $args) {
+function add_wise_secondary_items_to_primary($items, $args) {
 	if( $args->theme_location == 'primary' ){
 		if(function_exists('get_field')) {
             $behance = get_field('behance_url','options');
@@ -195,29 +196,29 @@ function add_rb_secondary_items_to_primary($items, $args) {
     }
     return $items;
 }
-add_filter('wp_nav_menu_items', 'add_rb_secondary_items_to_primary', 10, 2);
+add_filter('wp_nav_menu_items', 'add_wise_secondary_items_to_primary', 10, 2);
 
 /**
  * Change login header link url
  */
-add_filter('login_headerurl', 'update_rb_login_image_url');
-function update_rb_login_image_url($url) {
-     return RB_THEME_URL;
+add_filter('login_headerurl', 'update_wise_login_image_url');
+function update_wise_login_image_url($url) {
+     return wise_THEME_URL;
 }
 
 /**
  * Add custom admin color scheme and remove excerpt metabox if acf is active
  */
-function rb_custom_admin() {
+function wise_custom_admin() {
     //set custom color scheme for theme
-    wp_admin_css_color( 'rb', __( 'rb' ), RB_THEME_URI . '/assets/css/admin.css', [ '#000', '#000', '#fff', '#fff' ]);
+    wp_admin_css_color( 'wise', __( 'wise' ), WISE_THEME_URI . '/assets/css/admin.css', [ '#000', '#000', '#fff', '#fff' ]);
 }
-add_action( 'admin_init', 'rb_custom_admin' );
+add_action( 'admin_init', 'wise_custom_admin' );
 
 /**
  * Use ACF to define post excerpt
  */
-function rb_excerpt_filter( $excerpt, $post = null ) {
+function wise_excerpt_filter( $excerpt, $post = null ) {
     if ( $post ) {
         $post_id = $post->ID;
     } else {
@@ -231,19 +232,19 @@ function rb_excerpt_filter( $excerpt, $post = null ) {
     } 
     return $excerpt;
 }
-add_filter( 'get_the_excerpt', 'rb_excerpt_filter' );
+add_filter( 'get_the_excerpt', 'wise_excerpt_filter' );
 
 /**
  * Check for maintenance mode and add notice if needed
  */
-add_action('rb_body_open','rb_maintenance_notice',1);
-function rb_maintenance_notice() {
+add_action('wise_body_open','wise_maintenance_notice',1);
+function wise_maintenance_notice() {
     if(get_current_user_id() <= 0) {
         if(function_exists('get_field')) {
             $maintenance_notice_active = get_field('maintenance_notice_active','option');
             if($maintenance_notice_active == 'yes') {
                 echo '<div class="rb-maintenance-mode">';
-                    echo '<div class="container"><img src="'.RB_THEME_URI.'/assets/img/rb-logo.png" /></div>';
+                    echo '<div class="container"><img src="'.WISE_THEME_URI.'/assets/img/rb-logo.png" /></div>';
                     echo '<div class="container">'.get_field('maintenance_notice','option').'</div>';
                 echo '</div>';
             }
@@ -254,8 +255,8 @@ function rb_maintenance_notice() {
 /**
  * Add maintenance class to body if needed
  */
-add_filter( 'body_class', 'rb_maintenance_class');
-function rb_maintenance_class( $classes ) {
+add_filter( 'body_class', 'wise_maintenance_class');
+function wise_maintenance_class( $classes ) {
     if(get_current_user_id() <= 0) {
         if(function_exists('get_field')) {
             $maintenance_notice_active = get_field('maintenance_notice_active','option');

@@ -141,6 +141,8 @@ li.odd .ctl-story-year .rm_year {
     font-family: inherit;
     color: #444;
     line-height: 1.5em;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .ctl-popup-content h2 {

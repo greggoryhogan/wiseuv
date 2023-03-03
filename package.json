@@ -4,7 +4,7 @@
   "description": "NPM for Wise UV",
   "main": "index.js",
   "scripts": {
-    "watch": "node-sass --watch wp-content/plugins/wiseuv/includes/scss -o wp-content/themes/wiseuv/includes/css --output-style compressed & node-sass --watch wp-content/themes/wiseuv/assets/scss -o wp-content/themes/wiseuv/assets/css --output-style compressed",
+    "watch": "node-sass --watch wp-content/plugins/wiseuv/includes/scss -o wp-content/plugins/wiseuv/includes/css --output-style compressed & node-sass --watch wp-content/themes/wiseuv/assets/scss -o wp-content/themes/wiseuv/assets/css --output-style compressed",
     "compressjs": "uglifyjs wp-content/plugins/wiseuv/includes/js/wiseuv.js --compress --mangle --warn --output wp-content/plugins/wiseuv/includes/js/wiseuv.min.js"
   },
   "author": "",

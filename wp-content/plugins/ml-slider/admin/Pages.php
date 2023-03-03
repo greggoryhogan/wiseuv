@@ -10,7 +10,6 @@ if (!defined('ABSPATH')) {
  */
 class MetaSlider_Admin_Pages extends MetaSliderPlugin
 {
-
     /**
      * The MetaSlider plugin class
      *
@@ -84,8 +83,9 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
             'undelete_slide_nonce' => wp_create_nonce('metaslider_undelete_slide'),
             'update_slide_image_nonce' => wp_create_nonce('metaslider_update_slide_image'),
             'useWithCaution' => esc_html__("Caution: This setting is for advanced developers only. If you're unsure, leave it checked.", "ml-slider"),
-            'locale' => preg_replace('/[^a-z]/', '', get_locale()),
+            'locale' => preg_replace('/([^a-z]|informal)/', '', get_locale()),
         ));
+
         wp_enqueue_script('metaslider-admin-script');
         do_action('metaslider_register_admin_scripts');
 
@@ -164,12 +164,12 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
     public function add_page($title, $slug = '', $parent = '')
     {
         $slug = ('' == $slug) ? sanitize_title($title) : $slug;
-        $method = 'render_'.str_replace("-", "_", $slug).'_page';
+        $method = 'render_' . str_replace("-", "_", $slug) . '_page';
         if (!method_exists($this, $method)) {
             return false;
         }
         $this->current_page = $slug;
-        $capability = apply_filters('metaslider_capability', 'edit_others_posts');
+        $capability = apply_filters('metaslider_capability', MetaSliderPlugin::DEFAULT_CAPABILITY_EDIT_SLIDES);
 
         $dashboard_icon = 'data:image/svg+xml;base64,' . base64_encode(file_get_contents(dirname(__FILE__) . '/assets/metaslider.svg'));
 
@@ -198,7 +198,7 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
      */
     public function render_metaslider_settings_page()
     {
-        include METASLIDER_PATH."admin/views/pages/settings.php";
+        include METASLIDER_PATH . "admin/views/pages/settings.php";
     }
 
     /**
@@ -206,7 +206,7 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
      */
     public function render_upgrade_metaslider_page()
     {
-        include METASLIDER_PATH."admin/views/pages/upgrade.php";
+        include METASLIDER_PATH . "admin/views/pages/upgrade.php";
     }
 
     /**
@@ -273,7 +273,7 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
         if (function_exists('get_rest_url') && class_exists('WP_Rewrite')) {
             global $wp_rewrite;
             if (empty($wp_rewrite)) {
-                $wp_rewrite = new WP_Rewrite();
+                $wp_rewrite = new WP_Rewrite(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
             }
             if ('' == get_rest_url()) {
                 return false;

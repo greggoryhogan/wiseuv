@@ -29,7 +29,7 @@ if ( !class_exists('cool_plugins_timeline_addons')) {
             private $addon_file = __FILE__;
             private $menu_title = 'Addon Dashboard';
             private $menu_icon = false;
-            private $plugin_author='https://coolplugins.net';
+            private $plugin_author='https://plugins.coolplugins.net/plugins-list/';
 
              /**
              * initialize the class and create dashboard page only one time
@@ -113,7 +113,7 @@ if ( !class_exists('cool_plugins_timeline_addons')) {
                     $plugins = $this->request_wp_plugins_data($this->plugin_tag);
                     if(isset($plugins[$plugin_slug])){
                         $url=$plugins[$plugin_slug]['download_link'];
-                        return  $downloader->install( filter_var($url, FILTER_SANITIZE_URL), 'install' );
+                        return  $downloader->install( sanitize_url($url), 'install' );
                     }else{
                         wp_send_json_error( 'Sorry, You are installing a wrong plugin.' );
                         wp_die();
@@ -255,47 +255,51 @@ if ( !class_exists('cool_plugins_timeline_addons')) {
              * 
              */
             function request_pro_plugins_data( $tag = null ){
-                $trans_name = $this->main_menu_slug . '_pro_api_cache' . $this->plugin_tag;
- 
-               if( get_transient( $trans_name ) != false ){
-                   $this->pro_plugins = get_transient( $trans_name );
-               }
-         
-               $pro_api = $this->plugin_author.'/plugins-data/api/premium/all';                
-               $response = wp_remote_get( $pro_api, array('timeout'=>120) );
-           
-               if( is_wp_error($response)){
-                   return;
-               }
-               $plugin_info = (array) json_decode( $response['body'] );
-               $all_plugins = array();
-            
-               foreach( $plugin_info as $plugin){
-                   
-                   if( $plugin->tag == $tag ){
-                       
-                           $this->pro_plugins[ $plugin->slug ] = array(
-                                                        'name'=> $plugin->name,
-                                                        'logo'=> $plugin->image_url,
-                                                        'desc' =>$plugin->info,
-                                                        'slug' => $plugin->slug,
-                                                        'buyLink' => $plugin->buy_url,
-                                                       'version'=>$plugin->version,
-                                                   'download_link'=>null,
-                                                   'incompatible'=>$plugin->free_version,
-                                                   'buyLink'=>$plugin->buy_url,
-                                                   'free_version' => $plugin->free_version,
-                                               );
-                       }
+            $trans_name = $this->main_menu_slug . '_pro_api_cache' . $this->plugin_tag;
+            $option_name = $this->main_menu_slug . '-' . $this->plugin_tag . '-pro';
+            if (get_transient($trans_name) != false) {
 
-               }
-              $all_plugins =  $this->pro_plugins ;
-              
-               if( !empty( $all_plugins ) && is_array( $all_plugins ) && count( $all_plugins ) > 0 ){
-                   set_transient( $trans_name , $all_plugins, 5 * HOUR_IN_SECONDS );
-                   return $all_plugins;
-               }
-            
+                return $this->pro_plugins = get_option($option_name, false);
+            }
+            $url = $this->plugin_author.'pro/timeline';  
+
+            $pro_api = esc_url($url);
+            $response = wp_remote_get($pro_api, array('timeout' => 300));
+
+            if (is_wp_error($response)) {
+                return;
+            }
+            $plugin_info = (array) json_decode($response['body']);
+
+            foreach ($plugin_info as $plugin) {
+
+                if ($plugin->tag == $tag) {
+
+                    $this->pro_plugins[$plugin->slug] = array(
+                        'name' => $plugin->name,
+                        'logo' => $plugin->image_url,
+                        'desc' => $plugin->info,
+                        'slug' => $plugin->slug,
+                        'buyLink' => $plugin->buy_url,
+                        'version' => $plugin->version,
+                        'download_link' => null,
+                        'incompatible' => $plugin->free_version,
+                        'buyLink' => $plugin->buy_url,
+                    );
+                    if (property_exists($plugin, 'free_version') && $plugin->free_version != null) {
+                        $this->disable_plugins[$plugin->free_version] = array('pro' => $plugin->slug);
+                    }
+                }
+
+            }
+
+            if (!empty($this->pro_plugins) && is_array($this->pro_plugins) && count($this->pro_plugins)) {
+                set_transient($trans_name, $this->pro_plugins, DAY_IN_SECONDS);
+                update_option($option_name, $this->pro_plugins);
+                return $this->pro_plugins;
+            } else if (get_option($option_name, false) != false) {
+                return get_option($option_name);
+            }
        }
 
 
@@ -304,47 +308,48 @@ if ( !class_exists('cool_plugins_timeline_addons')) {
              */
             function request_wp_plugins_data( $tag = null){
             
-                $transient_id=$this->main_menu_slug . '_api_cache' . $this->plugin_tag ;
-                 $option_id= $this->main_menu_slug .'-'.$this->plugin_tag;
+            if (get_transient($this->main_menu_slug . '_api_cache' . $this->plugin_tag) != false) {
+                return get_option($this->main_menu_slug . '-' . $this->plugin_tag, false);
+            }
+            // $request = array( 'action' => 'plugin_information', 'timeout' => 300, 'request' => serialize( $args) );
 
-                if( get_transient($transient_id) != false ){
-                    return get_option( $option_id , false);        
-                }
-              
-                $url = $this->plugin_author.'/plugins-data/api/free/all';
-              
-                $response = wp_remote_get( $url, array('timeout'=>300) );
-            
-                if( is_wp_error($response)){
-                    return;
-                }
-                $plugin_info = json_decode( $response['body'] );
-                $all_plugins = array();
-                foreach( $plugin_info->plugins as $plugin){
+            $url = $this->plugin_author.'free/timeline';  
 
-                    if( !property_exists( $plugin->tags, $tag) ){
-                        continue;
-                    }
-                        $plugins_data['name'] = $plugin->name;
-                        foreach( $plugin->icons as $icon ){
-                            $plugins_data['logo'] = $icon;
-                        break;
-                        }
-                        $plugins_data['slug'] = $plugin->slug;
-                        $plugins_data['desc'] = $plugin->short_description;
-                        $plugins_data['version'] = $plugin->version;    
-                        $plugins_data['tags'] = $plugin->tags;
-                        $plugins_data['download_link'] = $plugin->download_link;
-                        $all_plugins[ $plugin->slug ] = $plugins_data;
-                }
+            $response = wp_remote_get($url, array('timeout' => 300));
 
-                if( !empty( $all_plugins ) && is_array( $all_plugins ) && count( $all_plugins ) ){
-                    set_transient( $transient_id , $all_plugins, 5 * HOUR_IN_SECONDS );
-                    update_option( $option_id, $all_plugins );
-                    return $all_plugins;
-                }else if( get_option($option_id,false ) !=false ){
-                    return get_option($option_id );
-                }
+            if (is_wp_error($response)) {
+                return;
+            }
+            $plugin_info = json_decode($response['body'],true);
+            $all_plugins = array();
+           // var_dump($plugin->slug);
+            foreach ($plugin_info as $plugin) {
+                // if (!property_exists($plugin['tag'], $tag)) {
+                //     continue;
+                // }
+                $plugins_data['name'] = $plugin['name'];
+                $plugins_data['logo'] = $plugin['image_url'];
+
+              /*   foreach ($plugin->icons as $icon) {
+                    $plugins_data['logo'] = $icon;
+                    break;
+                } */
+                $plugins_data['slug'] = $plugin['slug'];
+                $plugins_data['desc'] = $plugin['info'];
+                $plugins_data['version'] = $plugin['version'];
+                $plugins_data['tags'] = $plugin['tag'];
+                $plugins_data['download_link'] = $plugin['download_url'];
+                $all_plugins[$plugin['slug']] = $plugins_data;
+            }
+           
+
+            if (!empty($all_plugins) && is_array($all_plugins) && count($all_plugins)) {
+                set_transient($this->main_menu_slug . '_api_cache' . $this->plugin_tag, $all_plugins, DAY_IN_SECONDS);
+                update_option($this->main_menu_slug . '-' . $this->plugin_tag, $all_plugins);
+                return $all_plugins;
+            } elseif (get_option($this->main_menu_slug . '-' . $this->plugin_tag, false) != false) {
+                return get_option($this->main_menu_slug . '-' . $this->plugin_tag);
+            }
 
             } 
             function addon_plugins_logo($slug){

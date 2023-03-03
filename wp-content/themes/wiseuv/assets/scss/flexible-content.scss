@@ -137,8 +137,8 @@ section {
         background-image: linear-gradient(to right,$light-green,$dark-green 85%, $dark-green 100%);
     }
     &.green-blue-gradient {
-        background-color: $eyebrow;
-        background-image: linear-gradient(to right,$eyebrow,$blue 85%, $blue 100%);
+        background-color: $light-purple;
+        background-image: linear-gradient(to right,$light-purple,$blue 85%, $blue 100%);
     }
     &.fill-space-image {
         position: relative;
@@ -319,11 +319,6 @@ section {
         }
         .text-center {
             text-align: center;
-        }
-        @media all and (min-width: $tablet) {
-            .btn {
-                padding: $gutter * 1.5 $gutter-sm * 3.5;
-            }
         }
         .responsive-video {
             width: 100%;
@@ -521,9 +516,9 @@ section {
             .eyebrow {
                 margin-bottom: $gutter-sm * 2;
                 text-transform: uppercase;
-                color: $eyebrow;
+                color: $light-purple;
                 font-weight: $font-bold;
-                font-size: 1.59375rem;
+                font-size: $gutter;
                 @media all and (max-width: $tablet) {
                     font-size: 1.195rem;
                     margin-bottom: $gutter;
@@ -637,7 +632,7 @@ section {
                 .eyebrow {
                     margin-bottom: 0;
                     text-transform: uppercase;
-                    color: $eyebrow;
+                    color: $light-purple;
                     font-weight: $font-bold;
                     font-size: .9375rem;
                 }
@@ -1588,7 +1583,7 @@ section {
                 background: transparent;
             }
             .eyebrow {
-                color: $eyebrow;
+                color: $light-purple;
                 text-transform: uppercase;
                 font-size: .9375rem;
                 font-weight: $font-bold;
@@ -1725,7 +1720,7 @@ section {
                                 flex: 1;
                             }
                             .date {
-                                color: $eyebrow;
+                                color: $light-purple;
                                 font-weight: $font-bold;
                                 margin-top: $gutter;
                                 font-size: .984rem;

@@ -60,7 +60,7 @@ echo '<section class="blog-footer">';
 				);
 				$nonflex_posts = new WP_Query( $cta_args ); 
 					if ( $nonflex_posts->have_posts() ) {
-						$filename = RB_THEME_DIR . '/gutenberg-to-acf-converter.txt';
+						$filename = WISE_THEME_DIR . '/gutenberg-to-acf-converter.txt';
 						$fp = fopen($filename, 'a') or die();//opens file in append mode  
 						$notfound = array();
 						while( $nonflex_posts->have_posts() ) { 

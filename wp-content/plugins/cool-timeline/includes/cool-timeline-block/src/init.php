@@ -13,25 +13,25 @@ function timeline_block_editor_assets(){
 	$id = get_the_ID();	
 			
 	if (has_block('cp-timeline/content-timeline', $id)) {
-		wp_enqueue_style(
-			'timeline-block
-		-block-swiper-css', // Handle
-			 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.css'
-		);
+		// wp_enqueue_style(
+		// 	'timeline-block
+		// -block-swiper-css', // Handle
+		// 	 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.css'
+		// );
 	
-		wp_enqueue_script(
-			'timeline-block
-		-block-swiper-js', // Handle.
-			 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.js', array(),null,true
+		// wp_enqueue_script(
+		// 	'timeline-block
+		// -block-swiper-js', // Handle.
+		// 	 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.js', array(),null,true
 			
-		);
+		// );
 	
-		wp_enqueue_script(
-			'timeline-block
-		-block-slider-js', // Handle.
-			 plugin_dir_url( __FILE__ ). '../assets/js/slider.js', array("jquery"),null,true
+		// wp_enqueue_script(
+		// 	'timeline-block
+		// -block-slider-js', // Handle.
+		// 	 plugin_dir_url( __FILE__ ). '../assets/js/slider.js', array("jquery"),null,true
 			
-		);
+		// );
 		wp_enqueue_style(
 			'cp_timeline-cgb-style-css', // Handle.
 			plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), 
@@ -51,25 +51,25 @@ function editor_side_css(){
 			array( 'wp-edit-blocks' )// Dependency to include the CSS after it.
 		);
 
-		wp_enqueue_style(
-			'timeline-block
-		-block-swiper-css', // Handle
-			 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.css'
-		);
+		// wp_enqueue_style(
+		// 	'timeline-block
+		// -block-swiper-css', // Handle
+		// 	 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.css'
+		// );
 	
-		wp_enqueue_script(
-			'timeline-block
-		-block-swiper-js', // Handle.
-			 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.js', array(),null,true
+		// wp_enqueue_script(
+		// 	'timeline-block
+		// -block-swiper-js', // Handle.
+		// 	 plugin_dir_url( __FILE__ ). '../assets/swiper/swiper.js', array(),null,true
 			
-		);
+		// );
 	
-		wp_enqueue_script(
-			'timeline-block
-		-block-slider-js', // Handle.
-			 plugin_dir_url( __FILE__ ). '../assets/js/slider.js', array("jquery"),null,true
+		// wp_enqueue_script(
+		// 	'timeline-block
+		// -block-slider-js', // Handle.
+		// 	 plugin_dir_url( __FILE__ ). '../assets/js/slider.js', array("jquery"),null,true
 			
-		);
+		// );
 
 }
 
@@ -104,52 +104,57 @@ add_action( 'wp_head','timeline_block_load_post_assets');
 					if ( '' === $block['blockName'] ) {
 						continue;
 					}
-					
+					$default_Fonts = ["","Arial","Helvetica","Times New Roman","Georgia"];
 					if(isset($block['attrs']['headFontFamily'])){
-						$headFont=array();
-						array_push($headFont,$block['attrs']['headFontFamily']);
-						if(isset($block['attrs']['headFontWeight'])){
-							array_push($headFont,$block['attrs']['headFontWeight']);
+						if(!in_array($block['attrs']['headFontFamily'],$default_Fonts)){
+							$headFont=array();
+							array_push($headFont,$block['attrs']['headFontFamily']);
+							if(isset($block['attrs']['headFontWeight'])){
+								array_push($headFont,$block['attrs']['headFontWeight']);
+							}
+							if(isset($block['attrs']['headFontSubset'])){
+								array_push($headFont,$block['attrs']['headFontSubset']);
+							}
+							$head_link = 'https://fonts.googleapis.com/css?family=' . esc_attr( implode(":",$headFont)) . '';
+							wp_enqueue_style(
+								'timeline-block-font-head', // Handle
+								$head_link
+							);
 						}
-						if(isset($block['attrs']['headFontSubset'])){
-							array_push($headFont,$block['attrs']['headFontSubset']);
-						}
-						$head_link = 'https://fonts.googleapis.com/css?family=' . esc_attr( implode(":",$headFont)) . '';
-						wp_enqueue_style(
-							'timeline-block-font-head', // Handle
-							$head_link
-						);
 					}
 					if(isset($block['attrs']['subHeadFontFamily'])){
-						$subheadFont=array();
-						array_push($subheadFont,$block['attrs']['subHeadFontFamily']);
-						if(isset($block['attrs']['subHeadFontWeight'])){
-							array_push($subheadFont,$block['attrs']['subHeadFontWeight']);
+						if(!in_array($block['attrs']['subHeadFontFamily'],$default_Fonts)){
+							$subheadFont=array();
+							array_push($subheadFont,$block['attrs']['subHeadFontFamily']);
+							if(isset($block['attrs']['subHeadFontWeight'])){
+								array_push($subheadFont,$block['attrs']['subHeadFontWeight']);
+							}
+							if(isset($block['attrs']['subHeadFontSubset'])){
+								array_push($subheadFont,$block['attrs']['subHeadFontSubset']);
+							}
+							$subHead_link = 'https://fonts.googleapis.com/css?family=' . esc_attr( implode(":",$subheadFont)) . '';
+							wp_enqueue_style(
+								'timeline-block-font-subHead', // Handle
+								$subHead_link
+							);
 						}
-						if(isset($block['attrs']['subHeadFontSubset'])){
-							array_push($subheadFont,$block['attrs']['subHeadFontSubset']);
-						}
-						$subHead_link = 'https://fonts.googleapis.com/css?family=' . esc_attr( implode(":",$subheadFont)) . '';
-						wp_enqueue_style(
-							'timeline-block-font-subHead', // Handle
-							$subHead_link
-						);
-						
 					}
 					if(isset($block['attrs']['dateFontFamily'])){
-						$dateFont=array();
-						array_push($dateFont,$block['attrs']['dateFontFamily']);
-						if(isset($block['attrs']['dateFontWeight'])){
-							array_push($dateFont,$block['attrs']['dateFontWeight']);
+						if(!in_array($block['attrs']['dateFontFamily'],$default_Fonts)){
+							$dateFont=array();
+							array_push($dateFont,$block['attrs']['dateFontFamily']);
+							if(isset($block['attrs']['dateFontWeight'])){
+								array_push($dateFont,$block['attrs']['dateFontWeight']);
+							}
+							if(isset($block['attrs']['dateFontSubset'])){
+								array_push($dateFont,$block['attrs']['dateFontSubset']);
+							}
+							$date_font_link = 'https://fonts.googleapis.com/css?family=' . esc_attr(implode(":",$dateFont)) . '';
+							wp_enqueue_style(
+								'timeline-block-font-date', // Handle
+								$date_font_link
+							);
 						}
-						if(isset($block['attrs']['dateFontSubset'])){
-							array_push($dateFont,$block['attrs']['dateFontSubset']);
-						}
-						$date_font_link = 'https://fonts.googleapis.com/css?family=' . esc_attr(implode(":",$dateFont)) . '';
-						wp_enqueue_style(
-							'timeline-block-font-date', // Handle
-							$date_font_link
-						);
 					}
 				}
 			}

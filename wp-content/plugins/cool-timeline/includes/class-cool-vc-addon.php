@@ -138,7 +138,7 @@ class CoolTmVCAddon
                             "type" => "dropdown",
                             "class" => "",
                             "heading" => __( "Animations Effect",'cool-timeline'),
-                            "param_name" => "animations",
+                            "param_name" => "animation",
                             "value" =>$animation_effects,
                             "description" => __( "Add Animations Effect Inside Timeline. You Can Check Effects Demo From <a  target='_blank' href='http://michalsnik.github.io/aos/'>AOS</a>",'cool-timeline' ),
                             'save_always' => true,

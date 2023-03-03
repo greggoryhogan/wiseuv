@@ -1,7 +1,10 @@
 /** COLORS */
-$purple: #822D84;
+$light-purple: #00B0D8;
+$purple: #92278f;
+$dark-purple: #822D84;
 $black: #000;
 $white: #fff;
+$pink: #978dbe;
 
 /** DIMENSIONS **/
 $gutter: 1rem;
@@ -13,7 +16,7 @@ $wrapper: 75rem;/*1645*.75*/
 $wrapper-lg: 101rem;/*2170*.75*/
 $wrapper-xl: calc(100vw - #{$gutter * 2});
 $tablet: 74rem;
-$mobile: 56rem;
+$mobile: 36rem;
 $mobile-sm: 35rem;
 $border-radius-sm: 5px;
 $border-radius-md: 13px;
@@ -35,11 +38,9 @@ $gray: #F2F2F2;
 $dark-gray: #707070;
 $light-gray: #595959;
 $light-light-gray: #f1f1f1;
-$eyebrow: #72AA9D;
 $traditional-gray: #333;
 $nav-gray: #4d4d4d;
 $gray-bg: #f7f7f7;
-$pink: #f6b3c5;
 $green: #67a092;
 $light-green: #64babe;
 $dark-green: #367477;

@@ -27,7 +27,7 @@
                         <?php if ( has_custom_logo() ) {
                             the_custom_logo();
                         } else {
-                            echo '<img src="'.RB_THEME_URI.'/assets/img/wise-logo.png" alt="'.get_bloginfo('name').'" />';
+                            echo '<img src="'.WISE_THEME_URI.'/assets/img/wise-logo.png" alt="'.get_bloginfo('name').'" />';
                         } ?>
                     </a>
                 </h1>
@@ -74,7 +74,7 @@
             $content_classes .= ' woocommerce-shop';
         }
     } ?>
-    <main class="content <?php echo $content_classes; ?>">
+    <main class="content <?php echo $content_classes; ?>" id="content">
         <?php do_action('before_rb_content'); ?>
         <?php /* if(isset($_GET['login-success'])) {
             echo '<div class="woocommerce-info"><p>You have successfully logged in.</p></div>';

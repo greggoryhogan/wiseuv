@@ -6,30 +6,6 @@
 				$is_account_pg = true;
 			}
 		} ?>
-		<?php if(!$is_account_pg &&!is_page(array('login','subscribe')) && !is_user_logged_in()) { ?>
-		<section class="section__subscribe bg__green padding__lg text__light has-bg-image" id="subscribe_footer">
-			<div class="bg-image-container container container__sm subscribe"></div>
-			<div class="container container__xs text__left">
-				<?php 
-				//$mailchimp_heading_text = apply_filters('babel_content',get_option('mailchimp_heading_text'));
-				$mailchimp_body_text = apply_filters('babel_content', get_option('mailchimp_body_text'));
-				/*if($mailchimp_heading_text != '') {
-					echo '<h2>'.$mailchimp_heading_text.'</h2>';
-				}*/
-				echo '<div class="subscribe-actions">';
-					echo '<div class="cta-action">';
-						echo '<a href="'.get_bloginfo('url').'/subscribe" title="Subscribe" class="btn subscribe">Subscribe Now</a>';
-					echo '</div>';	
-					if($mailchimp_body_text != '') {
-						echo '<div class="cta">';
-							echo '<p>'.$mailchimp_body_text.'</p>';
-						echo '</div>';
-					}
-				echo '</div>';
-				?>
-			</div>
-		</section>
-		<?php } ?>
 		<?php if($is_account_pg || is_page(array('login','subscribe'))) { ?>
 			<section class="padding__xs"></section>
 		<?php } ?>
@@ -38,8 +14,8 @@
 	<footer id="colophon" class="footer">
 		<div class="container __footer">
 			<div class="rb-logo">
-				<a href="<?php echo RB_THEME_URL; ?>" title="<?php echo get_bloginfo('name'); ?>">
-					<img src="<?php echo RB_THEME_URI; ?>/assets/img/logo-white.png" alt="rb logo" />
+				<a href="<?php echo WISE_THEME_URL; ?>" title="<?php echo get_bloginfo('name'); ?>">
+					<img src="<?php echo WISE_THEME_URI; ?>/assets/img/logo-white.png" alt="rb logo" />
 				</a>
 			</div>
 			<div class="footer-right">
@@ -105,20 +81,43 @@
 
 		</div>
 	</footer>
-
-	<!-- Signup Modal -->
-
-	<div id="subscribemodal" class="register modal-register" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="subscribe-content">
-			<div class="heading">
-				<h2><?php echo get_option('subscribe_modal_heading'); ?></h2>
-				<?php echo get_option('subscribe_modal_text'); ?>
+	<nav id="sticky-nav">
+		<div class="toggle"><?php echo featherIcon('chevron-up','','40'); ?></div>
+		<div class="expanded-content">
+			<div class="container">
+				<div class="sticky-heading">See How We Can Help</div>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'menu_class'      => 'menu-wrapper',
+						'container_class' => 'sticky-menu',
+						'items_wrap'      => '<ul id="sticky-menu" class="%2$s">%3$s</ul>',
+						'fallback_cb'     => false,
+					)
+				);
+				?>
+					
 			</div>
-			<a href="<?php echo get_bloginfo('url');?>/subscribe" title="Subscribe" class="btn subscribe">Subscribe</a>
-			<div class="close-subscribe-modal">No thank you</div>
 		</div>
-	</div>
-	<div id="subscribemodalbg" class="modal-register__bg"></div>
+		<div class="sticky-content">
+			<?php 
+			$chat_url = get_option('live_chat_url');
+			$close_location = get_option('exit_site_url');
+			$crisis_number = '+1'.str_replace('-','',get_option('contact_crisis_line_number'));
+			$text = '+1'.str_replace('-','',get_option('contact_text')); 
+			?>
+			<div class="contact">
+				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+				<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
+			</div>
+			<div class="actions">
+				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat">Live Chat</a>
+				<a href="<?php echo $closeLocation; ?>" class="exitsite">Exit Site Now</a>
+			</div>
+
+		</div>
+	</nav>
 </div>
 <?php wp_footer(); ?>
 </body>

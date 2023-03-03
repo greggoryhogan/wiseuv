@@ -73,7 +73,7 @@ function load_rb_posts() {
     if ( $post_query->have_posts() ) : 
         while( $post_query->have_posts() ) : $post_query->the_post();
             $post_id = get_the_ID();
-            include( RB_THEME_DIR . '/template-parts/flexible-content/snippets/posts.php' );
+            include( WISE_THEME_DIR . '/template-parts/flexible-content/snippets/posts.php' );
         endwhile;
     endif;
     $return = ob_get_clean();

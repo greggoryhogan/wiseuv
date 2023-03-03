@@ -141,7 +141,7 @@ if( class_exists( 'CSF' ) ) {
                    <strong class="ctl_add_head">'.__('Upgrade to Pro version','cool-timeline2').'</strong>
                   </br>
                   </br>
-                   <a target="_blank" class="button button-primary" href="https://cooltimeline.com/demo/">
+                   <a target="_blank" class="button button-primary" href="'.COOL_TIMELINE_DEMO_URL.'">
                   View Demos
                    </a> 
                    <a style="background:#CD143B;font-weight:bold" target="_blank" class="button button-primary" href="https://1.envato.market/ct">
