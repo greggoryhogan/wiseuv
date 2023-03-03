@@ -203,7 +203,7 @@ add_filter('wp_nav_menu_items', 'add_wise_secondary_items_to_primary', 10, 2);
  */
 add_filter('login_headerurl', 'update_wise_login_image_url');
 function update_wise_login_image_url($url) {
-     return wise_THEME_URL;
+     return WISE_THEME_URL;
 }
 
 /**
