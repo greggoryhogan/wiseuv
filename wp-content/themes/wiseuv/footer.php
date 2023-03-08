@@ -86,7 +86,7 @@
 		<!--<div class="toggle close"><?php echo featherIcon('x','','20'); ?></div>-->
 		<div class="toggle"><?php echo featherIcon('chevron-up','','40'); ?></div>
 		<div class="expanded-content">
-			<div class="container">
+			<div class="content-container">
 				<div class="sticky-heading">See How We Can Help</div>
 				<?php
 				wp_nav_menu(

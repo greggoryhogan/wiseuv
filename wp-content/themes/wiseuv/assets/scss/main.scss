@@ -1657,14 +1657,15 @@ h6 {
             overflow: hidden;
             position: relative;
             z-index: 99;
-            .container {
+            .content-container {
                 padding: $gutter * 2;
                 align-items: flex-start;
+                display: flex;
                 @media all and (min-width: $mobile) {
-                    flex-direction: row;
                     gap: $gutter * 3;
                 }
                 @media all and (max-width: $mobile) {
+                    flex-direction: column;
                     gap: $gutter;
                 }
                 color: $white;
@@ -1673,13 +1674,14 @@ h6 {
                     text-transform: uppercase;
                 }
                 .sticky-menu {
-                    flex: 1;
+                    /*flex: 1;*/
                     ul {
                         margin: 0;
                         padding: 0;
                         list-style: none;
                         @media all and (min-width: $mobile) {
                             column-count: 2;
+                            gap: $gutter * 3;
                         }
                         a {
                             color: $white;
