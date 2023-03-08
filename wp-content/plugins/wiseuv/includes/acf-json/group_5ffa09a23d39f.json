@@ -1,0 +1,83 @@
+{
+    "key": "group_5ffa09a23d39f",
+    "title": "Display Options",
+    "fields": [
+        {
+            "key": "field_640764b996e48",
+            "label": "Header Setting",
+            "name": "header_setting",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "traditional-header": "Traditional Header",
+                "transparent-header": "Transparent Header"
+            },
+            "default_value": "traditional-header",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_64076b2a7a872",
+            "label": "Transparent Header Tip",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_640764b996e48",
+                        "operator": "==",
+                        "value": "transparent-header"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Adjust the padding in the first content band to allow space for the transparent header. Typical values might be Desktop: 10rem, Tablet: 5rem, Mobile: 3rem",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1678207902
+}

@@ -28,6 +28,6 @@ wp-content/ai1wm-backups/*
 wp-content/uploads/wp-migrate-db/*
 wp-content/updraft/*
 wp-content/uploads/maxmegamenu/*
-
+wp-content/uploads/*
 #NPM
 node_modules/*

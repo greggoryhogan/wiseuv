@@ -9,127 +9,34 @@ section {
     /** BACKGROUNDS **/
     &.has-bg-image {
         background-repeat: no-repeat;
-        background-size: contain;
-        position: relative;
-        transform: translateY(0%);
-        z-index: 2;
-        .flex-content-container {
-            z-index: 3;
+        background-size: cover;
+        background-position: inherit;
+        &.background-position-top-left {
+            background-position: top left;
         }
-        .bg-image-container {
-            /*box-sizing: content-box;*/
-            position: absolute;
-            &:not(.logo):not(.subscribe) {
-                width: 100vw;
-                max-width: $wrapper * $bgscale;
-                &.container__xxs {
-                    max-width: calc($wrapper-xxs * $bgscale);
-                }
-                &.container__xs {
-                    max-width: calc($wrapper-xs * $bgscale);
-                }
-                &.container__sm {
-                    max-width: calc($wrapper-sm * $bgscale);
-                }
-                &.container__lg {
-                    max-width: calc($wrapper-lg * $bgscale);
-                }
-                &.container__xl {
-                    max-width: calc($wrapper-xl * $bgscale);
-                }
-            }
-            height: 100%;
-            display: block;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: inherit;
-            &.background-position-top-left {
-                background-position: top left;
-            }
-            &.background-position-center-left {
-                background-position: center left;
-            }
-            &.background-position-bottom-left {
-                background-position: bottom left;
-            }
-            &.background-position-top-center {
-                background-position: top center;
-            }
-            &.background-position-center-center {
-                background-position: center center;
-            }
-            &.background-position-bottom-center {
-                background-position: bottom center;
-            }
-            &.background-position-top-right {
-                background-position: top right;
-            }
-            &.background-position-center-right {
-                background-position: center right;
-            }
-            &.background-position-bottom-right {
-                background-position: bottom right;
-            }
-            &.logo {
-                height: 100vh;
-                width: 100%;
-                aspect-ratio: 1/1;
-                background-image: url('../img/bg/logo.png');
-                background-size: 50%;
-                /*&.background-position-top-left,
-                &.background-position-top-center,
-                &.background-position-top-right {
-                    .logo-bg {
-                        top: 0;
-                    }
-                }
-                &.background-position-bottom-left,
-                &.background-position-bottom-center,
-                &.background-position-bottom-right {
-                    .logo-bg {
-                        bottom: 0;
-                    }
-                }*/
-                &.background-position-top-left,
-                &.background-position-center-left,
-                &.background-position-bottom-left {                   
-                    background-position-x: $gutter * 3;
-                }
-                &.background-position-top-right,
-                &.background-position-center-right,
-                &.background-position-center-right {
-                    background-position-x: calc(100% - #{$gutter * 3});
-                }
-                @media all and (max-width: $mobile) {
-                    background-size: 90%;
-                    background-position-x: 50%!important;
-                }
-            }
-            &.red-swirl-w-logo {
-                background-image: url('../img/bg/red-swirl-w-logo.png');
-                z-index: 2
-            }
-            &.green-swirl-3 {
-                background-image: url('../img/bg/green-swirl-3.png');
-                z-index: 2;
-                @media all and (max-width: $mobile) {
-                    opacity: .3;
-                }
-            }
-            &.gray-swirl-3 {
-                background-image: url('../img/bg/gray-swirl-3.png');
-                z-index: 2;
-                @media all and (max-width: $mobile) {
-                    opacity: .3;
-                }
-            }
-            &.red-swirl-3 {
-                background-image: url('../img/bg/red-swirl-3.png');
-                z-index: 2
-            }
+        &.background-position-center-left {
+            background-position: center left;
+        }
+        &.background-position-bottom-left {
+            background-position: bottom left;
+        }
+        &.background-position-top-center {
+            background-position: top center;
+        }
+        &.background-position-center-center {
+            background-position: center center;
+        }
+        &.background-position-bottom-center {
+            background-position: bottom center;
+        }
+        &.background-position-top-right {
+            background-position: top right;
+        }
+        &.background-position-center-right {
+            background-position: center right;
+        }
+        &.background-position-bottom-right {
+            background-position: bottom right;
         }
     }
     &.green-gradient {
@@ -302,11 +209,11 @@ section {
                 line-height: .5625rem;
             }
         }
-        .font-size {
+        /*.font-size {
             &__bigger {
                 font-size: 1.07rem;
             }
-        }
+        }*/
         .font-weight-light {
             font-weight: 400;
         }

@@ -1,0 +1,41 @@
+{
+    "key": "group_63c6f79b3343b",
+    "title": "Image Link",
+    "fields": [
+        {
+            "key": "field_63c6f79cef62a",
+            "label": "Gallery Link",
+            "name": "gallery_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Used when linking this image in a Flexible Content Gallery band",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1678206656
+}

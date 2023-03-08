@@ -289,16 +289,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
+                "value": ""
             }
         ]
     ],
@@ -311,5 +304,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675799996
+    "modified": 1678206123
 }

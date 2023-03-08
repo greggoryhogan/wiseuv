@@ -111,21 +111,27 @@ function wise_content_filter($content) {
                         );
                         if($background_style != 'none') {
                             echo ' has-bg-image';
+                            $background_position = get_sub_field('background_position');
+                            echo ' background-position-'.$background_position;
                             if(in_array($background_style,$full_width_bgs)) {
                                 echo ' '.$background_style;
                             }
                         } 
-                        echo '">';
-                            if($background_style != 'none' && !in_array($background_style,$full_width_bgs)) {
-                                $background_position = get_sub_field('background_position');
-                                echo '<div class="bg-image-container container '.$container_size.' '.$background_style.' background-position-'.$background_position.'"></div>';
-                            }
+                        echo '"';
+                        if($background_style == 'image') {
+                            $background_image = get_sub_field('background_image');
+                            echo ' style="background-image: url('.$background_image['url'].');"';
+                        }
+                        echo '>';
                             if($row_layout == 'two_column_content') {
-                                echo ' <div class="custom-shape-divider-top-1677785256" id="clippy">
-                                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                                </svg>
-                            </div>';
+                                /*echo '<svg width="0" height="0">
+                                    <defs>
+                                    <clipPath id="my-shape">
+                                        <path d="M0,369.42C206.76,418.01,921.22,536.58,1221.96,550.1V105.45C686.8,220.64,168.27,84.03,0,0Z">
+                                        </path>
+                                    </clipPath>
+                                    </defs>
+                                </svg>';*/
                                 //add 'fill space' image for two column content
                                 if($image_style == 'fill-space') {
                                     $image_size = get_sub_field('image_size');
@@ -286,7 +292,10 @@ function wise_acf_header_css() {
                     fill: #FFFFFF;
                 }';
 				if(substr($background_color,0,4) != '#fff') {
-                    $globals .= '#wise-content-band-'.$band.' {clip-path:url(#clippy); background-color:'.$background_color.';}';
+                    $globals .= '#wise-content-band-'.$band.' {background-color: '.$background_color.';}';
+				}
+                if(substr($background_color,0,4) != '#fff') {
+                    $globals .= '#wise-content-band-'.$band.' {background-color:#000;}';
 				}
 				$desktop_padding .= '#wise-content-band-'.$band.'{margin:'.get_sub_field('desktop_margin').';}';
 				$tablet_padding .= '#wise-content-band-'.$band.'{margin:'.get_sub_field('tablet_margin').';}';

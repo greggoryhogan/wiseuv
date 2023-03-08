@@ -66,13 +66,9 @@
             },
             "choices": {
                 "none": "None",
-                "logo": "Logo",
-                "red-swirl-w-logo": "Red Swirl w\/ Logo",
-                "red-swirl-3": "Red Swirl (3 Rings)",
-                "gray-swirl-3": "Gray Swirl (3 Rings)",
-                "green-swirl-3": "Green Swirl (3 Rings)",
-                "green-gradient": "Green Gradient",
-                "green-blue-gradient": "Green Blue Gradient"
+                "image": "Image",
+                "swoop": "Swoop",
+                "double-swoop": "Double Swoop"
             },
             "default_value": "none",
             "return_format": "value",
@@ -114,6 +110,121 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_640768954dc30",
+            "label": "Background Image",
+            "name": "background_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63bc3bf44d4da",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_640767ca4dc2d",
+            "label": "Swoop Color 1",
+            "name": "swoop_color_1",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63bc3bf44d4da",
+                        "operator": "==",
+                        "value": "double-swoop"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#d9d9d8",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_640768184dc2e",
+            "label": "Swoop Color 2",
+            "name": "swoop_color_2",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63bc3bf44d4da",
+                        "operator": "==",
+                        "value": "double-swoop"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#aba3cb",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_640768284dc2f",
+            "label": "Swoop Opacity",
+            "name": "swoop_opacity",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63bc3bf44d4da",
+                        "operator": "==",
+                        "value": "double-swoop"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ".75",
+            "min": 0,
+            "max": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "%"
         },
         {
             "key": "field_6270249d60ffb",
@@ -369,6 +480,26 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_63e6cd43ea8a6",
+            "label": "Band ID",
+            "name": "band_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "#",
+            "append": ""
         }
     ],
     "location": [
@@ -377,13 +508,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
             }
         ]
     ],
@@ -396,5 +520,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675799986
+    "modified": 1678207157
 }

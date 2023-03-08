@@ -82,6 +82,8 @@
 		</div>
 	</footer>
 	<nav id="sticky-nav">
+		<div class="toggle text">See how we can help</div>
+		<!--<div class="toggle close"><?php echo featherIcon('x','','20'); ?></div>-->
 		<div class="toggle"><?php echo featherIcon('chevron-up','','40'); ?></div>
 		<div class="expanded-content">
 			<div class="container">

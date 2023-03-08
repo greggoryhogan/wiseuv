@@ -27,7 +27,7 @@
                         <?php if ( has_custom_logo() ) {
                             the_custom_logo();
                         } else {
-                            echo '<img src="'.WISE_THEME_URI.'/assets/img/wise-logo.png" alt="'.get_bloginfo('name').'" />';
+                            echo '<img src="'.WISE_THEME_URI.'/assets/img/wise-logo-no-padding.png" alt="'.get_bloginfo('name').'" />';
                         } ?>
                     </a>
                 </h1>

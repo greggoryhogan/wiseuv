@@ -69,6 +69,10 @@ function wise_woo_body_classes( $classes ) {
     } else {
         $classes[] = 'is-logged-out';
     }
+    if(function_exists('get_field')) {
+        $header_setting = get_field('header_setting');
+        $classes[] = $header_setting;
+    }
     return $classes;  
 } 
 
