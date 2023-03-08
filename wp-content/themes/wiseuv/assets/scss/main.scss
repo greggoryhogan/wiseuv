@@ -1635,7 +1635,8 @@ h6 {
                 color: $purple;
                 text-transform: uppercase;
                 line-height: 30px;
-                transition: .1s top;
+                transition: .3s top;
+                transition-delay: 300ms;
             }
             &.close {
                 top: 0;
@@ -1653,7 +1654,7 @@ h6 {
         .expanded-content {
             background: $light-purple;
             max-height: 0px;
-            transition: .2s max-height;
+            transition: .3s max-height ease-in;
             overflow: hidden;
             position: relative;
             z-index: 99;
@@ -1777,6 +1778,7 @@ h6 {
                 }
                 &.text {
                     top: 0;
+                    transition-delay: 50ms;
                 }
                 &.close {
                     opacity: 1;
