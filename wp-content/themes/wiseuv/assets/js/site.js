@@ -231,15 +231,19 @@
     });
 
     var chatWindow = '';
+    var chatWindowOpen = false;
     $('.openchat').on('click',function(e) {
       e.preventDefault();
+      chatWindowOpen = true;
       chatWindow = open(theme_js.chat_url,'_blank');
     });
 
     //Exit Site Functionality
     $('.exitsite').on('click',function(e) {
       e.preventDefault();
-      chatWindow.close();
+      if(chatWindowOpen) {
+        chatWindow.close();
+      }
       window.location.replace(theme_js.exit_url);
     });
     //Pressing Esc also exists site

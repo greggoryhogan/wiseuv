@@ -115,7 +115,7 @@
 			</div>
 			<div class="actions">
 				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat">Live Chat</a>
-				<a href="<?php echo $closeLocation; ?>" class="exitsite">Exit Site Now</a>
+				<a href="<?php echo $close_location; ?>" class="exitsite">Exit Site Now</a>
 			</div>
 
 		</div>
