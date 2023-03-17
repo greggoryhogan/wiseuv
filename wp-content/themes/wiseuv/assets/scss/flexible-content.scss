@@ -141,7 +141,7 @@ section {
                 position: absolute;
                 z-index: 50; 
                 &.-top {
-                  top: 0;
+                  top: -1px;
                   left: 0;
                   right: 0;
                   width: 105%;
@@ -154,7 +154,7 @@ section {
                 &.-bottom {
                   left: 0;
                   right: 0;
-                  bottom: 0;
+                  bottom: -1px;
                   @media all and (max-width:$tablet) {
                     width: 105%;
                     max-width: 105%;
