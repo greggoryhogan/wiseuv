@@ -1411,8 +1411,8 @@ h6,
     }
     @media all and (max-width: $tablet) {
         position: absolute;
-        right: 75px;
-        font-size: $gutter!important;
+        right: 65px;
+        font-size: $gutter * .75!important;
         background: $light-purple!important;
         padding: $gutter * .3 $gutter * 1.5!important;
         &:hover,
