@@ -67,8 +67,8 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
             echo ' data-aos="'.$column_2_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
         }
         echo '>';
-            if($image2 && $image_style) {
-                echo '<div class="image '.$force_images_full_width.' '.$image_style;
+            if($image2) {
+                echo '<div class="image '.$force_images_full_width;
                 if(!$link2 && $heading2 == '' && $column_content2 == '') {
                     echo ' no-margin';
                 }
