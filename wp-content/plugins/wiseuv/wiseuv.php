@@ -120,7 +120,7 @@ add_action('admin_init', 'wise_admin_scripts');
  * Filter colors and font sizes for acf wysiwyg
  */
 function wise_acf_styles() {
-	wp_enqueue_script( 'wise-acf-admin-js', WISE_URL . '/includes/js/acf-admin.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'wise-acf-admin-js', WISE_URL . '/includes/js/acf-admin.js', array(), '1.0.1', true );
 }
 add_action('acf/input/admin_enqueue_scripts', 'wise_acf_styles');
 
