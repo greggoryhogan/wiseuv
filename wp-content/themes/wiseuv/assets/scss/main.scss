@@ -903,8 +903,13 @@ h6,
         position: relative;
         z-index: 3;
         .container {
-            padding-top: 5 * $gutter;
-            padding-bottom: 14 * $gutter;
+            padding-top: $gutter * 5;
+            @media all and (min-width: $mobile) {
+                padding-bottom: $gutter * 14;
+            }
+            @media all and (max-width: $mobile) {
+                padding-bottom: $gutter * 8;
+            }
             .line {
                 display: flex;
                 justify-content: space-between;
