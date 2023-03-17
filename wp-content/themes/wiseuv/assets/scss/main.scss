@@ -267,7 +267,7 @@ h6,
             margin: $gutter 0;
         }
         @media all and (max-width: $tablet) {
-            height: $gutter * 4;
+            height: $gutter * 6;
             width: 100%;
             overflow: hidden;
             overflow: visible;
@@ -286,7 +286,7 @@ h6,
             opacity: 1;
             
             @media all and (min-width:$tablet) {
-                margin-right: $gutter * 2;
+                margin-right: $gutter * 5;
             }
             @media all and (max-width:$tablet) {
                 width:auto;
@@ -315,7 +315,7 @@ h6,
                         object-fit: contain;
                         display: block;
                         @media all and (max-width: $tablet) {
-                            max-height: ($gutter * 3.5);
+                            max-height: $gutter * 4;
                         }
                     }
                 }
@@ -1405,7 +1405,23 @@ h6,
         margin-bottom: 0px!important;
     }
 }
-
+.header-exit {
+    @media all and (min-width: $tablet) {
+        display: none!important;
+    }
+    @media all and (max-width: $tablet) {
+        position: absolute;
+        right: 75px;
+        font-size: $gutter!important;
+        background: $light-purple!important;
+        padding: $gutter * .3 $gutter * 1.5!important;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $purple!important;
+        }
+    }
+}
 .transparent-header {
     .site {
         .header {
@@ -1423,7 +1439,7 @@ h6,
     &.is-active {
         .site {
             .header {
-                background: $white!important;
+                background: $darkest-purple!important;
             }
         }
     }
