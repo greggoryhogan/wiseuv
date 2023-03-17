@@ -20,8 +20,12 @@ $column_2_animation = get_sub_field('column_2_animation');
 $column_animation_anchor_placement = get_sub_field('column_animation_anchor_placement');
 $column_animation_easing = get_sub_field('column_animation_easing');
 $column_animation_easinganimation_speed = get_sub_field('column_animation_easinganimation_speed');
+$width = 'auto';
+if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
+    $width = '50-50';
+} 
 ?>
-<div class="flexible-content banner-content two-column-content align-middle column-width-auto"><?php
+<div class="flexible-content banner-content two-column-content align-middle column-width-<?php echo $width; ?>"><?php
     //if($link || $heading != '' || $column_content != '' || $image) {
         echo '<div class="contain-content"';
         if($column_1_animation != 'none') {
