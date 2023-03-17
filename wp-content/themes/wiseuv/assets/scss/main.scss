@@ -913,8 +913,16 @@ h6,
                 font-weight: $font-bold;
                 margin: $gutter 0;
                 width: 100%;
+                @media all and (max-width: $mobile) {
+                    flex-direction: column;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
                 span {
                     padding-right: 5px;
+                    @media all and (max-width: $mobile) {
+                        display: block
+                    }
                 }
             }
         }
