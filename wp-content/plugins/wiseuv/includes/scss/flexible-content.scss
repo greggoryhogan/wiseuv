@@ -324,32 +324,22 @@ section {
                         }
                     }
                 }
-                &.column-width-40-60 {
-                    > div {
-                        &:first-of-type {
-                            flex: 1;
-                        }
-                        &:last-of-type {
-                            width: 60%;
-                        }
-                    }
+                &.column-width-auto {
+                    gap: $gutter * 4;
+                    justify-content: flex-start;
+                    /*> div {
+                        max-width: 50%;
+                    }*/
                 }
                 @media (max-width: $tablet) {
                     > div {
                         flex: 1;
-                        width: 50%;
-                        &.right {
-                            width: 50%;
-                        }
+                
                     }
                 }
                 &.row-reverse {
                     flex-direction: row-reverse;
-                    > div {
-                        &.right {
-                            width: 50%;
-                        }
-                    }
+                    justify-content: flex-end;
                 }
             }
             .image {

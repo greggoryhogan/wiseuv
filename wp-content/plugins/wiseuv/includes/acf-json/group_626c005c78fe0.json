@@ -29,7 +29,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -51,236 +51,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_63bc3bf44d4da",
-            "label": "Background Style",
-            "name": "background_style",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "none": "None",
-                "image": "Image",
-                "swoop": "Swoop",
-                "double-swoop": "Double Swoop"
-            },
-            "default_value": "none",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_63bc3cc94d4db",
-            "label": "Background Position",
-            "name": "background_position",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "top-left": "Left Top",
-                "center-left": "Left Center",
-                "bottom-left": "Left Bottom",
-                "top-center": "Center Top",
-                "center-center": "Center Center",
-                "bottom-center": "Center Bottom",
-                "top-right": "Right Top",
-                "center-right": "Right Center",
-                "bottom-right": "Right Bottom"
-            },
-            "default_value": "center-center",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_640768954dc30",
-            "label": "Background Image",
-            "name": "background_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63bc3bf44d4da",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_640767ca4dc2d",
-            "label": "Swoop Color 1",
-            "name": "swoop_color_1",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63bc3bf44d4da",
-                        "operator": "==",
-                        "value": "double-swoop"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#d9d9d8",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
-            "key": "field_640768184dc2e",
-            "label": "Swoop Color 2",
-            "name": "swoop_color_2",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63bc3bf44d4da",
-                        "operator": "==",
-                        "value": "double-swoop"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#aba3cb",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
-            "key": "field_640768284dc2f",
-            "label": "Swoop Opacity",
-            "name": "swoop_opacity",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63bc3bf44d4da",
-                        "operator": "==",
-                        "value": "double-swoop"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ".75",
-            "min": 0,
-            "max": 1,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": "%"
-        },
-        {
-            "key": "field_6270249d60ffb",
-            "label": "Background Color",
-            "name": "background_color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#ffffff",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
-            "key": "field_63bc6063b7fdc",
-            "label": "Heading Color",
-            "name": "heading_color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#333333",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
-            "key": "field_63bc60a0b7fdd",
-            "label": "Text Color",
-            "name": "text_color",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#333333",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
             "key": "field_626c006dae073",
             "label": "Desktop Padding",
             "name": "desktop_padding",
@@ -294,7 +64,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "2rem 0rem",
+            "default_value": "1rem 0rem",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -402,8 +172,8 @@
         },
         {
             "key": "field_63bef257aa0b6",
-            "label": "Block Color Scheme",
-            "name": "block_color_scheme",
+            "label": "Color Scheme",
+            "name": "color_scheme",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -416,7 +186,9 @@
             },
             "choices": {
                 "dark": "Dark",
-                "light": "Light"
+                "light": "Light",
+                "dark-dartmouth": "Dark (Dartmouth)",
+                "light-dartmouth": "Light (Dartmouth)"
             },
             "default_value": "dark",
             "return_format": "value",
@@ -441,12 +213,11 @@
                 "id": ""
             },
             "choices": {
-                "orange": "Orange",
-                "orange has-btn-sm": "Orange Small",
-                "white": "White",
-                "white has-btn-sm": "White Small"
+                "normal": "Normal",
+                "arrow": "Arrow",
+                "arrow__large": "Arrow (Large)"
             },
-            "default_value": "orange",
+            "default_value": "normal",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -470,8 +241,7 @@
             },
             "choices": {
                 "left": "Left",
-                "center": "Center",
-                "right": "Right"
+                "center": "Center"
             },
             "default_value": "left",
             "return_format": "value",
@@ -520,5 +290,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678207157
+    "modified": 1679066909
 }

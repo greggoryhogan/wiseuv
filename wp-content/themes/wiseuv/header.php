@@ -19,7 +19,7 @@
 }*/ ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lshlss' ); ?></a>
     <header class="header">
-        <div class="container __header">
+        <div class="container container__lg __header">
             
             <div class="site-branding <?php echo get_field('animate_logo','options'); ?>">
                 <h1>

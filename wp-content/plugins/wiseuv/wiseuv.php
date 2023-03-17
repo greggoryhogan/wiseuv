@@ -109,9 +109,16 @@ function wise_admin_scripts() {
 	$version = wp_get_theme()->get('Version');
 	wp_register_style( 'wise-admin-css', WISE_URL . '/includes/css/admin.css' );
     wp_enqueue_style( 'wise-admin-css' );	
+    /*$classic_editor_styles = array(
+		WISE_URL . '/includes/css/editor.css',
+	);
+	add_editor_style( $classic_editor_styles );*/
 }
 add_action('admin_init', 'wise_admin_scripts');
 
+/**
+ * Filter colors and font sizes for acf wysiwyg
+ */
 function wise_acf_styles() {
 	wp_enqueue_script( 'wise-acf-admin-js', WISE_URL . '/includes/js/acf-admin.js', array(), '1.0.0', true );
 }

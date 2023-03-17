@@ -45,8 +45,6 @@ function wise_register_settings() {
     register_setting( 'wise_settings', 'contact_crisis_line_number' );
 
     //Links
-    add_option( 'see_how_we_can_help_url', '');
-    register_setting( 'wise_settings', 'see_how_we_can_help_url' );
     add_option( 'live_chat_url', 'https://www.resourceconnect.com/wiseuv/chat');
     register_setting( 'wise_settings', 'live_chat_url' );
     add_option( 'exit_site_url', 'https://wisesnacks.com');
@@ -127,10 +125,6 @@ function wise_settings_content() { ?>
                                 <div class="postbox">
                                     <div class="postbox-header"><h2 class="post-box-heading">Links</h2></div>
                                     <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <label>See How We Can Help URL</label>
-                                            <input type="text" name="see_how_we_can_help_url" value="<?php echo get_option('see_how_we_can_help_url'); ?>" />
-                                        </div>    
                                         <div class="input-text-wrap">
                                             <label>Live Chat URL</label>
                                             <input type="text" name="live_chat_url" value="<?php echo get_option('live_chat_url'); ?>" />

@@ -12,73 +12,56 @@
 		<!--/subscribe banner -->
 	</main><!-- #main -->
 	<footer id="colophon" class="footer">
-		<div class="container __footer">
-			<div class="rb-logo">
-				<a href="<?php echo WISE_THEME_URL; ?>" title="<?php echo get_bloginfo('name'); ?>">
-					<img src="<?php echo WISE_THEME_URI; ?>/assets/img/logo-white.png" alt="rb logo" />
-				</a>
+		<div class="container container__xs __footer">
+			<div class="footer line">
+				<?php $address = get_option('contact_program_center');
+				if($address != '') { ?>
+					<div><span>Program Center:</span><?php echo '<a href="https://www.google.com/maps/dir//'.urlencode($address).'" target="_blank">'.$address.'</a>'; ?></div>
+				<?php } ?>
+				<?php 
+				$fax = get_option('contact_fax');
+				if($fax != '') { ?>
+					<div><span>Fax:</span><?php echo '<a href="fax:+1'.$fax.'">'.$fax.'</a>'; ?></div>
+				<?php } ?>
+				<?php 
+				$tel = get_option('contact_tel');
+				if($tel != '') { ?>
+					<div><span>Tel:</span><?php echo '<a href="tel:'.$tel.'">'.$tel.'</a>'; ?></div>
+				<?php } ?>
 			</div>
-			<div class="footer-right">
-				<?php if ( has_nav_menu( 'footer' ) ) : ?>
-					<nav aria-label="<?php esc_attr_e( 'Footer menu', 'babel' ); ?>" class="footer-navigation">
-						<ul class="footer-navigation-wrapper">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer',
-									'items_wrap'     => '%3$s',
-									'container'      => false,
-									'depth'          => 1,
-									'link_before'    => '',
-									'link_after'     => '<span>|</span>',
-									'fallback_cb'    => false,
-								)
-							);
-							?>
-						</ul>
-						<ul class="footer-navigation-wrapper">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-2',
-									'items_wrap'     => '%3$s',
-									'container'      => false,
-									'depth'          => 1,
-									'link_before'    => '',
-									'link_after'     => '<span>|</span>',
-									'fallback_cb'    => false,
-								)
-							);
-							?>
-						</ul>
-						<div class="site-info">
-							<div class="social">
-								<?php 
-								$twitter = get_option('social_media_twitter');
-								if($twitter != '') {
-									echo '<a href="'.$twitter.'" title="Follow us on Twitter" target="_blank" class="twitter">Twitter</a>';
-								}
-								$facebook = get_option('social_media_facebook');
-								if($facebook != '') {
-									echo '<a href="'.$facebook.'" title="Follow us on Facebook" target="_blank" class="facebook">Follow us on Facebook</a>';
-								}
-								$instagram = get_option('social_media_instagram');
-								if($instagram != '') {
-									echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
-								}
-								?>
-							</div>
-							<div class="site-name">
-								<?php 
-								echo '&copy; '.date('Y') .' '.get_bloginfo('name'); ?>
-							</div>
-						</div>
-					</nav>
-					
-				<?php endif; ?>
-				
+			<div class="footer line">
+				<?php 
+				$tel = get_option('contact_crisis_line_number');
+				if($tel != '') { 
+					$teltext = get_option('contact_crisis_line_text'); ?>
+					<div><span>WISE Crisis Line:</span><?php echo '<a href="tel:'.$tel.'">'.$teltext.'</a>'; ?></div>
+				<?php } ?>
+				<?php 
+				$text = get_option('contact_text');
+				if($text != '') { ?>
+					<div><span>Text:</span><?php echo '<a href="sms:'.$text.'">'.$text.'</a>'; ?></div>
+				<?php } ?>
+				<div class="social">
+					<?php 
+					$twitter = get_option('social_media_twitter');
+					if($twitter != '') {
+						echo '<a href="'.$twitter.'" title="Follow us on Twitter" target="_blank" class="twitter">Twitter</a>';
+					}
+					$facebook = get_option('social_media_facebook');
+					if($facebook != '') {
+						echo '<a href="'.$facebook.'" title="Follow us on Facebook" target="_blank" class="facebook">Follow us on Facebook</a>';
+					}
+					$instagram = get_option('social_media_instagram');
+					if($instagram != '') {
+						echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
+					}
+					$email = get_option('social_media_instagram');
+					if($email != '') {
+						echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
+					}
+					?>
+				</div>
 			</div>
-
 		</div>
 	</footer>
 	<nav id="sticky-nav">
@@ -99,7 +82,10 @@
 					)
 				);
 				?>
-					
+				<div class="contact">
+					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+					<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
+				</div>
 			</div>
 		</div>
 		<div class="sticky-content">
