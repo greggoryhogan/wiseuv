@@ -60,6 +60,17 @@ section {
             &.style-cropped-wave {
                 background: $tan;
             }
+            /*.background-image {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255,255,255,.1);
+                }
+            }*/
         }
         &.banner_content {
             .middle {
@@ -284,6 +295,9 @@ section {
                 }
                 .content-wrapper {
                     margin-bottom: $gutter;
+                    @media all and (min-width: $mobile) {
+                        max-width: 65%;
+                    }
                 }
                 .btn {
                     margin-top: $gutter;
