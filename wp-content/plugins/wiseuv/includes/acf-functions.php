@@ -127,7 +127,6 @@ function wise_content_filter($content) {
                             }
                             if($row_layout == 'banner_content') {
                                 echo '<div class="top"></div>';
-                                echo '<div class="spacer"></div>';
                                 echo '<div class="middle">';
                             }
                             echo '<div class="container flex-content-container '.$container_size.' '.$container_alignment.'"';
@@ -147,6 +146,7 @@ function wise_content_filter($content) {
                             
                             echo '</div>';
                             if($row_layout == 'banner_content') {
+                                echo '<div class="spacer"></div>';
                                 echo '</div>'; //middle
                                 echo '<div class="bottom"></div>';
                             }
@@ -273,6 +273,16 @@ function wise_acf_header_css() {
 add_filter( 'tiny_mce_before_init', 'wise_acf_text_sizes' );
 function wise_acf_text_sizes( $tiny_config ){
     $tiny_config['fontsize_formats'] = ".85rem .9rem .95rem 1rem 1.05rem 1.1rem 1.125rem";
+
+    $custom_colours = '
+        "101010", "Body Font",
+        "8E2C91", "Dark Blue",
+        "00B6DE", "Dark Blue",
+    ';
+
+    // build colour grid default+custom colors
+    $tiny_config['textcolor_map'] = '['.$custom_colours.']';
+
     return $tiny_config;
 }
 
@@ -293,8 +303,9 @@ function wise_wysiyg_buttons( $buttons ) {
     unset($buttons[$alignleft_key]);
     $alignright_key = array_search('alignright', $buttons);
     unset($buttons[$alignright_key]);
-    $new_buttons = array('fontsizeselect');
-    $buttons = array_merge($new_buttons,$buttons);
+    $new_buttons = array('fontsizeselect','forecolor');
+    $extra_buttons = array('sup');
+    $buttons = array_merge($new_buttons,$buttons,$extra_buttons);
     return $buttons;
 }
 add_filter( 'teeny_mce_buttons', 'wise_wysiyg_buttons',99,1 ); //Basic

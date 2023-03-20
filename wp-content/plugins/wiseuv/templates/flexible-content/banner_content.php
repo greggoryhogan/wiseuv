@@ -21,13 +21,15 @@ $column_animation_anchor_placement = get_sub_field('column_animation_anchor_plac
 $column_animation_easing = get_sub_field('column_animation_easing');
 $column_animation_easinganimation_speed = get_sub_field('column_animation_easinganimation_speed');
 $width = 'auto';
+$align = 'align-middle';
 if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
     $width = '50-50';
+    $align = 'align-top';
 } 
 ?>
-<div class="flexible-content banner-content two-column-content align-middle column-width-<?php echo $width; ?> image-align-<?php echo $image_alignment; ?>"><?php
+<div class="flexible-content banner-content two-column-content <?php echo $align; ?> column-width-<?php echo $width; ?> image-align-<?php echo $image_alignment; ?>"><?php
     //if($link || $heading != '' || $column_content != '' || $image) {
-        echo '<div class="contain-content"';
+        echo '<div class="contain-content left"';
         if($column_1_animation != 'none') {
             echo ' data-aos="'.$column_1_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
         }
@@ -67,27 +69,29 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
             echo ' data-aos="'.$column_2_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
         }
         echo '>';
-            if($image2) {
-                echo '<div class="image '.$force_images_full_width;
-                if(!$link2 && $heading2 == '' && $column_content2 == '') {
-                    echo ' no-margin';
+            echo '<div class="right-wrapper">';
+                if($image2) {
+                    echo '<div class="image '.$force_images_full_width;
+                    if(!$link2 && $heading2 == '' && $column_content2 == '') {
+                        echo ' no-margin';
+                    }
+                    echo '">';
+                        echo wp_get_attachment_image( $image2, $image_size );
+                    echo '</div>';
                 }
-                echo '">';
-                    echo wp_get_attachment_image( $image2, $image_size );
-                echo '</div>';
-            }
-            if($heading2 != '') {
-                echo '<'.$heading_type.' class="font-'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading2).'</'.$heading_type.'>';
-            }
-            if($column_content2 != '') {
-                echo wise_content_filters($column_content2);
-            }
-            if( $link2 ): 
-                $link_url = $link2['url'];
-                $link_title = $link2['title'];
-                $link_target = $link2['target'] ? $link2['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
-            endif;
+                if($heading2 != '') {
+                    echo '<h3 class="font-big font-weight-bold">'.wise_content_filters($heading2).'</'.$heading_type.'>';
+                }
+                if($column_content2 != '') {
+                    echo wise_content_filters($column_content2);
+                }
+                if( $link2 ): 
+                    $link_url = $link2['url'];
+                    $link_title = $link2['title'];
+                    $link_target = $link2['target'] ? $link2['target'] : '_self';
+                    echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                endif;
+            echo '</div>';
         echo '</div>';  
 } ?>
 </div>
