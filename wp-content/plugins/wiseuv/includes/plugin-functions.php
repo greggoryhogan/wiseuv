@@ -72,6 +72,9 @@ function wise_woo_body_classes( $classes ) {
     if(function_exists('get_field')) {
         $header_setting = get_field('header_setting');
         $classes[] = $header_setting;
+
+        $global_display = get_field('global_display');
+        $classes[] = $global_display;
     }
     return $classes;  
 } 

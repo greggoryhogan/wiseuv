@@ -1393,6 +1393,79 @@ h6,
         }
     }
 }
+.theme-dartmouth {
+    .header-exit {
+        @media all and (max-width: $tablet) {
+            background: $darmouth-dark-green!important;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $white;
+                background-color: $darmouth-light-green!important;
+            }
+        }
+    }
+    .site {
+        #sticky-nav {
+            .toggle {
+                &.text {
+                    color: $darmouth-dark-green;
+                }
+            }
+            a {
+                &.openchat {
+                    background: $dartmouth-lightest-green;
+                }
+                &.exitsite {
+                    background-color: $darmouth-light-green;
+                }
+            }
+            .sticky-content {
+                background: $darmouth-dark-green;
+            }
+            .expanded-content {
+                .content-container {
+                    color: $darmouth-dark-green;
+                    .sticky-menu {
+                        ul {
+                            a {
+                                color: $darmouth-dark-green;
+                                &:hover,
+                                &:focus,
+                                &:active {
+                                    color: $darmouth-light-green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        .container {
+            .line {
+                span {
+                    color: $darmouth-dark-green;
+                }
+            }
+        }
+    }
+    .site {
+        @media all and (max-width: $tablet){
+            .header {
+                &.is-active {
+                    background: $darmouth-light-green;
+                }
+                .primary-navigation {
+                    &.is-active {
+                        background: $darmouth-light-green
+                    }
+                }
+            }
+        }
+    }
+}
 .transparent-header {
     .site {
         .header {

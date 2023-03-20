@@ -15,6 +15,30 @@ section {
                 background: $pink;
             }
         }
+        &.blockquote {
+            .blockquote {
+                background: $pink;
+                color: $white;
+            }
+        }
+        .list-label {
+            color: $dark-purple;
+        }
+        .table {
+            table {
+                tr {
+                    &:nth-child(odd) {
+                        background: #a69ab7;
+                    }
+                    &:nth-child(even) {
+                        background: #dbcae8;
+                    }
+                }
+                th {
+                    background: #662B8C;
+                }
+            }
+        }
         &.banner_content {
             .middle {
                 background-color: $banner-light-bg;
@@ -55,6 +79,30 @@ section {
         .eyebrow {
             border-color: $dark-purple;
             color: $dark-purple;
+        }
+        &.blockquote {
+            .blockquote {
+                background: $light-purple;
+                color: $white;
+            }
+        }
+        .list-label {
+            color: $list-label;
+        }
+        .table {
+            table {
+                tr {
+                    &:nth-child(odd) {
+                        background: #a69ab7;
+                    }
+                    &:nth-child(even) {
+                        background: #dbcae8;
+                    }
+                }
+                th {
+                    background: #662B8C;
+                }
+            }
         }
         &.hero {
             &.style-cropped-wave {
@@ -208,9 +256,34 @@ section {
                 }
             }
         }
+        .table {
+            table {
+                tr {
+                    &:nth-child(odd) {
+                        background: $darmouth-light-green;
+                    }
+                    &:nth-child(even) {
+                        background: $dartmouth-lightest-green;
+                        color: $white!important;
+                    }
+                }
+                th {
+                    background: $darmouth-dark-green;
+                }
+            }
+        }
     }
     &.block-style-dark-dartmouth {
         h1,h2,h3,h4,h5,h6 {
+            color: $darmouth-dark-green;
+        }
+        &.blockquote {
+            .blockquote {
+                background: $darmouth-dark-green;
+                color: $white;
+            }
+        }
+        .list-label {
             color: $darmouth-dark-green;
         }
         &.hero {
@@ -245,6 +318,15 @@ section {
         h1,h2,h3,h4,h5,h6 {
             color: $darmouth-light-green;
         }
+        &.blockquote {
+            .blockquote {
+                background: $darmouth-light-green;
+                color: $white;
+            }
+        }
+        .list-label {
+            color: $darmouth-light-green;
+        }
         &.hero {
             &.style-cropped-wave {
                 background: $darmouth-light-green;
@@ -257,9 +339,7 @@ section {
                     &:active,
                     &:focus {
                         background: $white;
-                        
-                            color: $darmouth-light-green!important;
-
+                        color: $darmouth-light-green!important;
                     }
                 }
             }
@@ -278,7 +358,7 @@ section {
         &-normal {
             .btn {
                 display: inline-block;
-                padding: .75rem 2.75rem;
+                padding: $gutter * .5 $gutter * 2.75;
                 text-transform: uppercase;
                 border-radius: $border-radius-lg;
                 font-weight: $font-bold;
@@ -654,22 +734,30 @@ section {
                 }
             }
             &.cta-buttons {
-                display: grid;
-                &.columns {
-                    &-one {
-                        grid-template-columns: 1fr;
+                @media all and (min-width: $mobile) {
+                    display: grid;
+                    &.columns {
+                        &-one {
+                            grid-template-columns: 1fr;
+                        }
+                        &-two {
+                            grid-template-columns: 1fr 1fr;
+                            gap: $gutter * 2.5;
+                        }
+                        &-three {
+                            grid-template-columns: 1fr 1fr 1fr;
+                            gap: $gutter * 2;
+                        }
+                        /*&-four {
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                            gap: $gutter * 1.5;
+                        }*/
                     }
-                    &-two {
-                        grid-template-columns: 1fr 1fr;
-                        gap: $gutter * 2.5;
-                    }
-                    &-three {
-                        grid-template-columns: 1fr 1fr 1fr;
-                        gap: $gutter * 2;
-                    }
-                    &-four {
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                        gap: $gutter * 1.5;
+                }
+                @media all and (max-width: $mobile) {
+                    .btn {
+                        display: block;
+                        margin-bottom: $gutter * 1.5;
                     }
                 }
             }
@@ -737,9 +825,6 @@ section {
                             padding-bottom: 0;
                         }
                     }
-                    .list-label {
-                        color: $list-label;
-                    }
                 }
             }
             &.alternating-text-image {
@@ -782,7 +867,6 @@ section {
             }
             &.table {
                 table {
-                    border: 1px solid #ccc;
                     border-collapse: collapse;
                     margin: 0;
                     padding: 0;
@@ -794,11 +878,9 @@ section {
                     }
                     tr {
                         &:nth-child(odd) {
-                            background: #a69ab7;
                             color: $white;
                         }
                         &:nth-child(even) {
-                            background: #dbcae8;
                             color: #662B8C;
                         }
                     }
@@ -809,7 +891,6 @@ section {
                         border: 1px solid $white;
                     }
                     th {
-                        background: #662B8C;
                         color: $white;
                         font-weight: $font-bold;
                     }
@@ -835,15 +916,10 @@ section {
                         }
                         
                         td {
-                            border-bottom: 1px solid #ddd;
                             display: block;
                             font-size: .8em;
                             text-align: right;
                             &:before {
-                                /*
-                                * aria-label has no advantage, it won't be read inside a table
-                                content: attr(aria-label);
-                                */
                                 content: attr(data-label);
                                 float: left;
                                 font-weight: bold;
@@ -853,6 +929,18 @@ section {
                                 border-bottom: 0;
                             }
                         }
+                    }
+                }
+            }
+            &.blockquote {
+                padding: $gutter * 1.5 $gutter * 5;
+                border-radius: $border-radius-lg;
+                p {
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                    &:last-of-type {
+                        margin-bottom: 0;
                     }
                 }
             }
