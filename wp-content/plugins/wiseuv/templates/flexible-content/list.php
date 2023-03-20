@@ -14,7 +14,7 @@ if( have_rows('list_items') ):
                     if($text != '') {
                         echo '<span class="list-item">'.$text.'</span>';
                     }
-                echo '<li>';
+                echo '</li>';
             endwhile;
         echo '</'.$list_ordering.'>';
     echo '</div>';
