@@ -13,6 +13,7 @@ section {
         &.hero {
             &.style-cropped-wave {
                 background: $pink;
+                color: $white;
             }
         }
         &.blockquote {
@@ -106,7 +107,8 @@ section {
         }
         &.hero {
             &.style-cropped-wave {
-                background: $tan;
+                background: $pink;
+                color: $white;
             }
             /*.background-image {
                 &:before {
