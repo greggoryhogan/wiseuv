@@ -741,6 +741,14 @@ section {
                     }
                 }
             }
+            &.two-column-content {
+                @media all and (min-width: $tablet) {
+                    gap: $gutter * 4;
+                }
+                @media all and (max-width: $tablet) {
+                    gap: $gutter * 2;
+                }
+            }
             &.cta-buttons {
                 @media all and (min-width: $mobile) {
                     display: grid;
