@@ -2,13 +2,12 @@
 
 section {
     &.block-style-light {
-        color: $white;
         h1,h2,h3,h4,h5,h6 {
-            color: $white;
+            color: $pink;
         }
         .eyebrow {
-            border-color: $white;
-            color: $white;
+            border-color: $light-purple;
+            color: $light-purple;
         }
         &.hero {
             &.style-cropped-wave {
