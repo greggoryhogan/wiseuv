@@ -56,6 +56,12 @@ section {
                 @media all and (max-width: $mobile) {
                     padding-top: 10%;
                 }
+                color: $white;
+                .eyebrow,
+                h1,h2,h3,,h4,h5,h6,
+                .subheading {
+                    color: $white;
+                }
             }
             .top {
                 background-image: url('../img/bg/banner-light-top.png');
