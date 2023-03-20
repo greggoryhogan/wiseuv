@@ -73,6 +73,9 @@ section {
             }*/
         }
         &.banner_content {
+            .spacer {
+                background-color: $banner-dark-bg;
+            }
             .middle {
                 @media all and (min-width: $mobile) {
                     background-color: $banner-dark-bg;
@@ -82,20 +85,127 @@ section {
                 }
             }
             .top {
-                background-image: url('../img/bg/banner-dark-top.png');
+                background-image: url('../img/bg/banner-dark-top.jpg');
                 padding-bottom: 19.5%;
                 @media all and (max-width: $mobile) {
                     padding-bottom: 50%;
                 }
             }
             .bottom {
-                background-image: url('../img/bg/banner-dark-bottom.png');
+                background-image: url('../img/bg/banner-dark-bottom.jpg');
                 padding-bottom: 28%;
                 margin-top: -12%;
                 @media all and (max-width: $mobile) {
                     padding-bottom: 55%;
                     margin-top: -43%;
                 }
+            }
+        }
+    }
+    /** Buttons **/
+    &.button-style {
+        &-normal {
+            .btn {
+                display: inline-block;
+                padding: .75rem 2.75rem;
+                text-transform: uppercase;
+                border-radius: $border-radius-lg;
+                font-weight: $font-bold;
+            }
+        }
+        &-arrow,
+        &-arrow__large {
+            .btn {
+                &:after {
+                    content: '';
+                    background-image: url('../img/button-arrow.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    width:20px;
+                    height: 20px;
+                }
+            }
+        }
+        &-arrow {
+            .btn {
+                display: inline-block;
+                padding: 1.5rem 4rem 1.5rem 2.5rem;
+                border-radius: $border-radius-xl;
+                position: relative;
+                font-size: $gutter * 1.25;
+                line-height: $gutter * 1.5625;
+                &:after {
+                    position: absolute;
+                    right: 1.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &-arrow__large {
+            .btn {
+                display: inline-block;
+                padding: 2.75rem 2rem 5.75rem 2rem;
+                border-radius: $border-radius-lg;
+                font-weight: $font-bold;
+                position: relative;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: $gutter * 1.5;
+                line-height: $gutter * 1.8125;
+                &:after {
+                    content: '';
+                    background-image: url('../img/button-arrow.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    position: absolute;
+                    bottom: 2.75rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+    /*alternating bg colors*/
+    &.button-alternating-light {
+        .btn {
+            &:nth-of-type(odd) {
+                background: $light-purple;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $purple;
+                } 
+            }
+            &:nth-of-type(even) {
+                background: $purple;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $light-purple;
+                } 
+            }
+        }
+    }
+    &.button-alternating-dark {
+        .btn {
+            &:nth-of-type(odd) {
+                background: $purple;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $light-purple;
+                } 
+            }
+            &:nth-of-type(even) {
+                background: $light-purple;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $purple;
+                } 
             }
         }
     }
@@ -163,15 +273,11 @@ section {
                   }
                 }
                 &.-bottom {
-                  left: 0;
                   right: 0;
-                  bottom: -1px;
-                  @media all and (max-width:$tablet) {
-                    width: 105%;
-                    max-width: 105%;
-                    left: -2.5%;
-                    bottom: -2px;
-                  }
+                  width: 105%;
+                  max-width: 105%;
+                  left: -2.5%;
+                  bottom: -2px;
                 }
                 &.-middle {
                     @media all and (min-width: $mobile) {
@@ -213,6 +319,7 @@ section {
             position: relative;
             width: 100%;
             height: 0;
+            z-index: 9;
             @media all and (max-width: $mobile) {
                 width: 115%;
                 left: -15%;
@@ -221,6 +328,23 @@ section {
         .middle {
             position: relative;
             z-index: 10;
+        }
+        .spacer {
+            height: 60%;
+            position: absolute;
+            width: 100%;
+            z-index: 8;
+        }
+    }
+    &.call_wise {
+        @media all and (min-width: $tablet) {
+            padding: $gutter * 8;
+        }
+        @media all and (max-width: $tablet) {
+            padding: $gutter * 6;
+        }
+        @media all and (max-width: $mobile) {
+            padding: $gutter * 4;
         }
     }
     .container {
@@ -280,6 +404,19 @@ section {
                 margin-top: 0;
                 font-size: $gutter * 1.5;
             }
+            /** Buttons */
+            .btn {
+                cursor: pointer;
+                color: $white!important;
+                border: none;
+                text-decoration: none;
+                transition: 0.5s background-color;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $white;
+                }
+            }
             /** Content bands */
             &.hero {
                 display: flex;
@@ -310,10 +447,54 @@ section {
                     margin: 0;
                 }
             }
-            &.banner_content {
-
+            &.cta-buttons {
+                display: grid;
+                &.columns {
+                    &-one {
+                        grid-template-columns: 1fr;
+                    }
+                    &-two {
+                        grid-template-columns: 1fr 1fr;
+                        gap: $gutter * 2.5;
+                    }
+                    &-three {
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: $gutter * 2;
+                    }
+                    &-four {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        gap: $gutter * 1.5;
+                    }
+                }
             }
-            
+            &.banner-content {
+                @media all and (min-width: $tablet) {
+                    gap: $gutter * 4;
+                }
+                @media all and (max-width: $tablet) {
+                    gap: $gutter * 3;
+                }
+                @media all and (max-width: $mobile) {
+                    gap: $gutter * 2;
+                }
+                .image {
+                    img {
+                        display: block;
+                    }
+                }
+                &.image-align-center {
+                    .image {
+                        img {
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+            &.call_wise {
+                .btn {
+                    margin-top: $gutter * 2;
+                }
+            }
         }
     }
     /* Alignment Adjustments */

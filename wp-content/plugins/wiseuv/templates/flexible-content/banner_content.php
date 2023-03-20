@@ -25,7 +25,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
     $width = '50-50';
 } 
 ?>
-<div class="flexible-content banner-content two-column-content align-middle column-width-<?php echo $width; ?>"><?php
+<div class="flexible-content banner-content two-column-content align-middle column-width-<?php echo $width; ?> image-align-<?php echo $image_alignment; ?>"><?php
     //if($link || $heading != '' || $column_content != '' || $image) {
         echo '<div class="contain-content"';
         if($column_1_animation != 'none') {

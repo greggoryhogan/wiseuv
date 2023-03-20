@@ -81,56 +81,9 @@ h6,
     line-height: 1.7325rem;
     font-weight: 300;
     height: 100%;
-    .button,
-    .btn,
-    .woocommerce-Button,
-    button.button,
-    .create-subgroup,
-    .frm_button_submit,
-    .ldgr-form button,
-    .wysiwyg .submit,
-    #commentform .submit {
-        cursor: pointer;
-        display: inline-block;
-        padding: .75rem 2.75rem;
-        text-transform: uppercase;
-        color: $white!important;
-        background: $purple;
-        transition: 0.5s background-color;
-        border-radius: $border-radius-lg;
-        font-weight: $font-bold;
-        border: none;
-        text-decoration: none;
-        &:hover,
-        &:focus,
-        &:active {
-            background: $light-purple;
-            color: $white;
-        }
-        &.btn-secondary {
-            background-image: none!important;
-            background-color: $light-purple;
-            transition: .2s background-color;
-            font-size: .79rem;
-            box-shadow: none;
-            border-radius: $border-radius-lg;
-            padding: $gutter * .5 $gutter * 2!important;
-            display: inline-block;
-            margin-bottom: $gutter-sm / 2;
-            text-align: center;
-            &:hover,
-            &:focus,
-            &:active {
-                background-color: $dark-blue!important;
-            }
-        }
+    .btn {
         span {
             cursor: pointer;
-        }
-    }
-    .has-btn-sm {
-        .btn {
-            padding: $gutter-sm $gutter;
         }
     }
     .clear {
@@ -1429,9 +1382,13 @@ h6,
         font-size: $gutter * .75!important;
         background: $light-purple!important;
         padding: $gutter * .3 $gutter * 1.5!important;
+        border-radius: $border-radius-lg;
+        color: $white!important;
+        transition: .2s background-color;
         &:hover,
         &:active,
         &:focus {
+            color: $white;
             background-color: $purple!important;
         }
     }

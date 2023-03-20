@@ -91,8 +91,9 @@ function wise_content_filter($content) {
                     $row_layout = get_row_layout();
                     $block_color_scheme = get_sub_field('color_scheme');
                     $button_style = get_sub_field('button_style');
+                    $first_button_color = get_sub_field('first_button_color');
                     $text_alignment = get_sub_field('text_alignment');
-                    echo '<section id="wise-content-band-'.$band.'" class="'.$row_layout.' block-style-'.$block_color_scheme.' button-style-'.$button_style.' text-alignment-'.$text_alignment;
+                    echo '<section id="wise-content-band-'.$band.'" class="'.$row_layout.' block-style-'.$block_color_scheme.' button-style-'.$button_style.' button-alternating-'.$first_button_color.' text-alignment-'.$text_alignment;
                         if($row_layout == 'hero') {
                             $style = get_sub_field('style');
                             $background_image = get_sub_field('background_image');
@@ -105,6 +106,7 @@ function wise_content_filter($content) {
                         }
                         echo '">';
                         $container_size = 'container__'. get_sub_field('container_width');
+                        $container_alignment = 'container__align-'. get_sub_field('container_alignment');
                             if($row_layout == 'hero') {
                                 
                                 if($background_image != '') {
@@ -125,9 +127,10 @@ function wise_content_filter($content) {
                             }
                             if($row_layout == 'banner_content') {
                                 echo '<div class="top"></div>';
+                                echo '<div class="spacer"></div>';
                                 echo '<div class="middle">';
                             }
-                            echo '<div class="container flex-content-container '.$container_size.'"';
+                            echo '<div class="container flex-content-container '.$container_size.' '.$container_alignment.'"';
                                 $aos_animation = get_sub_field('animation');
                                 if($aos_animation != 'none') {
                                     $easing = get_sub_field('easing');
@@ -229,7 +232,7 @@ function wise_acf_header_css() {
                     if($mobile_padding != '1rem 0rem') {
                         $mobile_css .= '#wise-content-band-'.$band.'{padding:'.$mobile_padding.';}';
                     } 
-                } else if($row_layout == 'banner_content') {
+                } else if($row_layout == 'banner_content' || $row_layout == 'call_wise') {
                     $desktop_padding = get_sub_field('desktop_padding');
                     $tablet_padding = get_sub_field('tablet_padding');
                     $mobile_padding = get_sub_field('mobile_padding');

@@ -1,7 +1,7 @@
 <?php 
-$alignment = get_sub_field('alignment');
+$columns = get_sub_field('columns');
 if( have_rows('buttons') ):
-    echo '<div class="flexible-content cta-buttons align-'.$alignment.'">';
+    echo '<div class="flexible-content cta-buttons columns-'.$columns.'">';
     while ( have_rows('buttons') ) : the_row();
         $link = get_sub_field('button');
         if( $link ): 
