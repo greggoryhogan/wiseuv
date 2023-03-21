@@ -987,7 +987,12 @@ section {
                 }
             }
             &.blockquote {
-                padding: $gutter * 1.5 $gutter * 5;
+                @media all and (min-width: $mobile) {
+                    padding: $gutter * 1.5 $gutter * 5;
+                }
+                @media all and (max-width: $mobile) {
+                    padding: $gutter * 1.5 $gutter * 2;
+                }
                 border-radius: $border-radius-lg;
                 p {
                     &:first-of-type {
