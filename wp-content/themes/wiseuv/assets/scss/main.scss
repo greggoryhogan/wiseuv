@@ -1505,4 +1505,13 @@ h6,
             }
         }
     }
+    &.theme-dartmouth {
+        &.is-active {
+            .site {
+                .header {
+                    background: $darmouth-light-green!important;
+                }
+            }
+        }   
+    }
 }
