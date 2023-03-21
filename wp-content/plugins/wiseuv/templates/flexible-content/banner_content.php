@@ -22,12 +22,14 @@ $column_animation_easing = get_sub_field('column_animation_easing');
 $column_animation_easinganimation_speed = get_sub_field('column_animation_easinganimation_speed');
 $width = 'auto';
 $align = 'align-middle';
+$right = 'no-right';
 if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
     $width = '50-50';
     $align = 'align-top';
+    $right = 'has-right';
 } 
 ?>
-<div class="flexible-content banner-content two-column-content <?php echo $align; ?> column-width-<?php echo $width; ?> image-align-<?php echo $image_alignment; ?>"><?php
+<div class="flexible-content banner-content two-column-content <?php echo $right; ?> <?php echo $align; ?> column-width-<?php echo $width; ?> image-align-<?php echo $image_alignment; ?>"><?php
     //if($link || $heading != '' || $column_content != '' || $image) {
         echo '<div class="contain-content left"';
         if($column_1_animation != 'none') {
@@ -63,7 +65,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
             endif;
         echo '</div>';  
     //}
-    if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
+    //if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
         echo '<div class="right contain-content"';
         if($column_2_animation != 'none') {
             echo ' data-aos="'.$column_2_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
@@ -93,5 +95,5 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
                 endif;
             echo '</div>';
         echo '</div>';  
-} ?>
+    //} ?>
 </div>

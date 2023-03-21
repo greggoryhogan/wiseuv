@@ -1,88 +1,7 @@
 @import 'variables';
 
 section {
-    &.block-style-light {
-        h1,h2,h3,h4,h5,h6 {
-            color: $pink;
-        }
-        .eyebrow {
-            border-color: $dark-purple;
-            color: $dark-purple;
-        }
-        .subheading {
-            color: $dark-purple;
-        }
-        &.hero {
-            &.style-cropped-wave {
-                background: $pink;
-                color: $white;
-                h1,h2,h3,h4,h5,h6 {
-                    color: $white;
-                }
-            }
-        }
-        &.blockquote {
-            .blockquote {
-                background: $pink;
-                color: $white;
-            }
-        }
-        .branded {
-            .list-label {
-                color: $dark-purple;
-            }
-        }
-        .table {
-            table {
-                tr {
-                    &:nth-child(odd) {
-                        background: #a69ab7;
-                    }
-                    &:nth-child(even) {
-                        background: #dbcae8;
-                    }
-                }
-                th {
-                    background: #662B8C;
-                }
-            }
-        }
-        &.banner_content {
-            .middle {
-                color: $white;
-                background-color: $banner-light-bg;
-                @media all and (min-width: $mobile) {
-                    padding-top: 4%;
-                }
-                @media all and (max-width: $mobile) {
-                    padding-top: 10%;
-                }
-                .eyebrow, h1, h2, h3,, h4, h5,h6, .subheading {
-                    color: $white;
-                }
-                .eyebrow {
-                    border-color: $white;
-                }
-            }
-            .top {
-                background-image: url('../img/bg/banner-light-top.png');
-                padding-bottom: 15%;
-                @media all and (max-width: $mobile) {
-                    padding-bottom: 35%;
-                }
-            }
-            .bottom {
-                background-image: url('../img/bg/banner-light-bottom.png');
-                padding-bottom: 27%;
-                margin-top: -9%;
-                @media all and (max-width: $mobile) {
-                    padding-bottom: 57%;
-                    margin-top: -20%;
-                }
-            }
-        }
-    }
-    &.block-style-dark {
+    &.block-style-primary {
         .btn {
             background: $light-purple;
             &:hover,
@@ -123,23 +42,93 @@ section {
         }
         &.hero {
             &.style-cropped-wave {
+                background: $pink;
+                color: $white;
+                h1,h2,h3,h4,h5,h6 {
+                    color: $white;
+                }
+            }
+        }
+        &.banner_content {
+            .middle {
+                color: $white;
+                background-color: $banner-light-bg;
+                @media all and (min-width: $mobile) {
+                    padding-top: 4%;
+                }
+                @media all and (max-width: $mobile) {
+                    padding-top: 10%;
+                }
+                .eyebrow, h1, h2, h3,, h4, h5,h6, .subheading {
+                    color: $white;
+                }
+                .eyebrow {
+                    border-color: $white;
+                }
+            }
+            .top {
+                background-image: url('../img/bg/banner-light-top.png');
+                padding-bottom: 15%;
+                @media all and (max-width: $mobile) {
+                    padding-bottom: 35%;
+                }
+            }
+            .bottom {
+                background-image: url('../img/bg/banner-light-bottom.png');
+                padding-bottom: 27%;
+                margin-top: -9%;
+                @media all and (max-width: $mobile) {
+                    padding-bottom: 57%;
+                    margin-top: -20%;
+                }
+            }
+        }
+    }
+    &.block-style-alternate {
+        h1,h2,h3,h4,h5,h6 {
+            color: $pink;
+        }
+        &.hero {
+            &.style-cropped-wave {
                 background: $dark-purple;
                 color: $white;
                 h1,h2,h3,h4,h5,h6 {
                     color: $white;
                 }
             }
-            /*.background-image {
-                &:before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(255,255,255,.1);
+        }
+        .eyebrow {
+            border-color: $dark-purple;
+            color: $dark-purple;
+        }
+        .subheading {
+            color: $dark-purple;
+        }
+        &.blockquote {
+            .blockquote {
+                background: $pink;
+                color: $white;
+            }
+        }
+        .branded {
+            .list-label {
+                color: $dark-purple;
+            }
+        }
+        .table {
+            table {
+                tr {
+                    &:nth-child(odd) {
+                        background: #a69ab7;
+                    }
+                    &:nth-child(even) {
+                        background: #dbcae8;
+                    }
                 }
-            }*/
+                th {
+                    background: #662B8C;
+                }
+            }
         }
         &.banner_content {
             .spacer {
@@ -169,7 +158,13 @@ section {
                     }
                     .container {
                         margin-top: -100px;
+                        @media all and (min-width: $mobile) {
+                            .border-bottom {
+                                display: none;
+                            }
+                        }
                         .right {
+                            //,.border-bottom
                             width: calc(100% + 3rem);
                             margin-left: -1.5rem;
                             margin-right: -1.5rem;
@@ -230,13 +225,13 @@ section {
                 @media all and (min-width: $mobile) {
                     background-image: url('../img/bg/banner-dark-bottom.jpg');
                     padding-bottom: 28%;
-                    margin-top: -12%;
+                    margin-top: -9%;
                 }
             }
         }
     }
-    &.block-style-dark-dartmouth,
-    &.block-style-light-dartmouth {
+    &.block-style-primary-dartmouth,
+    &.block-style-alternate-dartmouth {
         .banner-content {
             @media all and (min-width: $tablet) {
                 &.align-top {
@@ -306,7 +301,7 @@ section {
             }
         }
     }
-    &.block-style-dark-dartmouth {
+    &.block-style-primary-dartmouth {
         h1,h2,h3,h4,h5,h6 {
             color: $darmouth-dark-green;
         }
@@ -356,7 +351,7 @@ section {
         }
         
     }
-    &.block-style-light-dartmouth {
+    &.block-style-alternate-dartmouth {
         h1,h2,h3,h4,h5,h6 {
             color: $darmouth-light-green;
         }
@@ -812,27 +807,35 @@ section {
                 }
             }
             &.banner-content {
-                @media all and (min-width: $tablet) {
-                    gap: $gutter * 8;
-                    &.align-top {
-                        .left {
-                            margin-top: -100px;
+                &.no-right {
+                    gap: 0;
+                    > div {
+                        flex: 1 auto;
+                    }
+                }
+                &.has-right {
+                    @media all and (min-width: $tablet) {
+                        gap: $gutter * 8;
+                        &.align-top {
+                            .left {
+                                margin-top: -100px;
+                            }
+                        }
+                        .right {
+                            margin-bottom: -100px;
                         }
                     }
-                    .right {
-                        margin-bottom: -100px;
+                    @media all and (max-width: $tablet) {
+                        gap: $gutter * 3;
+                        display: flex;
+                        .contain-content {
+                            flex: 1;
+                        }
                     }
-                }
-                @media all and (max-width: $tablet) {
-                    gap: $gutter * 3;
-                    display: flex;
-                    .contain-content {
-                        flex: 1;
+                    @media all and (max-width: $mobile) {
+                        gap: $gutter * 2;
+                        flex-direction: column;
                     }
-                }
-                @media all and (max-width: $mobile) {
-                    gap: $gutter * 2;
-                    flex-direction: column;
                 }
                 .image {
                     img {
