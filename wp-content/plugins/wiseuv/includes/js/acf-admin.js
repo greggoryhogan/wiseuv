@@ -6,7 +6,7 @@
  */
 acf.add_filter('color_picker_args', function( args, $field ){
 	//add our colros to acf pallette
-    args.palettes = ['#333333', '#14181B', '#f16f22', '#72AA9D', '#FDCD06', '#f7f7f7', '#EAEAEA', '#fff'];
+    args.palettes = ['#ffffff', '#00B0D8', '#14181B', '#822D84', '#812d83', '#92278f', '#01693D', '#398a68'];
 	return args;
 });
 
