@@ -80,7 +80,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
                     echo '</div>';
                 }
                 if($heading2 != '') {
-                    echo '<h3 class="font-big font-weight-bold">'.wise_content_filters($heading2).'</'.$heading_type.'>';
+                    echo '<h3 class="font-bigger font-weight-bold">'.wise_content_filters($heading2).'</'.$heading_type.'>';
                 }
                 if($column_content2 != '') {
                     echo wise_content_filters($column_content2);
