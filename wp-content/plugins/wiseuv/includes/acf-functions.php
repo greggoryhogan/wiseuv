@@ -117,7 +117,7 @@ function wise_content_filter($content) {
                                     echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-bottom.svg" class="clippingPath -bottom" />';
                                     if($background_image != '') {
                                         echo '<div class="hero-image">';
-                                            echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile.png" class="clippingPath -middle" />';
+                                            echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
                                             echo wp_get_attachment_image( $background_image, 'full' );
                                         echo '</div>';
                                     } else {
