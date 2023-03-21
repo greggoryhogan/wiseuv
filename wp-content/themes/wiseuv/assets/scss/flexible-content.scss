@@ -311,6 +311,13 @@ section {
                 color: $darmouth-dark-green;
             }
         }
+        .eyebrow {
+            border-color: $darmouth-light-green;
+            color: $darmouth-light-green;
+        }
+        .subheading {
+            color: $darmouth-light-green;
+        }
         &.hero {
             &.style-cropped-wave {
                 background: $darmouth-dark-green;
@@ -353,6 +360,13 @@ section {
             .list-label {
                 color: $darmouth-light-green;
             }
+        }
+        .eyebrow {
+            border-color: $darmouth-dark-green;
+            color: $darmouth-dark-green;
+        }
+        .subheading {
+            color: $darmouth-dark-green;
         }
         &.hero {
             &.style-cropped-wave {
