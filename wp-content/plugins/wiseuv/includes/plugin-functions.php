@@ -69,12 +69,14 @@ function wise_woo_body_classes( $classes ) {
     } else {
         $classes[] = 'is-logged-out';
     }
-    if(function_exists('get_field')) {
-        $header_setting = get_field('header_setting');
-        $classes[] = $header_setting;
-
-        $global_display = get_field('global_display');
-        $classes[] = $global_display;
+    if(is_page() || is_singular()) {
+        if(function_exists('get_field')) {
+            $header_setting = get_field('header_setting');
+            $classes[] = $header_setting;
+        
+            $global_display = get_field('global_display');
+            $classes[] = $global_display;
+        }
     }
     return $classes;  
 } 
@@ -103,6 +105,29 @@ function add_scripts_to_footer() {
     if($scripts != '') {
         echo $scripts;
     }
+}
+
+
+add_filter( 'wp_get_nav_menu_items', 'babel_update_my_account_menu_item', null, 3 ); 
+function babel_update_my_account_menu_item( $items, $menu, $args ) {
+    if(is_admin()) {
+        return $items;
+    }
+    global $wp;
+    // Iterate over the items to search and destroy
+    foreach ( $items as $key => $item ) {
+      //  print_r($item);
+        if(isset($item->classes)) {
+            $classes = $item->classes;
+        }
+        if(is_array($classes)) {
+            if(in_array('search',$classes)) {
+                $old_title = $item->title;
+                $item->title = featherIcon('search').'<span class="text">'.$old_title.'</span>';
+            }
+        }
+    }
+     return $items;
 }
 
 /** Add dropdown actions to menu */

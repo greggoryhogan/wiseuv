@@ -33,7 +33,8 @@
                 </h1>
             </div><!-- .site-branding -->
             <?php $close_location = get_option('exit_site_url'); ?>
-            <a href="<?php echo $close_location; ?>" class="exitsite btn header-exit">Exit Site Now</a>
+            <!--<a href="<?php echo $close_location; ?>" class="exitsite btn header-exit">Exit Site Now</a>-->
+            <a href="<?php echo get_bloginfo('url'); ?>/?s=" class="header-search"><?php echo featherIcon('search'); ?></a>
             <div class="mobile-nav">
                 <button class="nav-toggle">
                     <span></span>

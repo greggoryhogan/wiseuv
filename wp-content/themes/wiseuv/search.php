@@ -4,16 +4,7 @@
 } else {
 	$searchterm = '';
 } ?>
-<section id="rb-content-band-1" class="heading"  style="padding: 2rem 0;">
-	<div class="container flex-content-container container__normal block-style-dark button-style-orange text-alignment-center">
-		<div class="container-content">
-			<div class="flexible-content heading align-center">
-				<h1 class="font-biggest font-weight-bold">Search Results for &ldquo;<?php echo $searchterm; ?>&rdquo;</h1>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #f7f7f7;padding: 2rem 0;z-index: 10;">
+<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #978dbe;padding: 2rem 0;z-index: 10;">
 	<div class="container flex-content-container container__xs block-style-dark button-style-orange text-alignment-center">
 		<div class="container-content">
 			<div class="flexible-content wysiwyg">
@@ -24,6 +15,19 @@
 		</div>
 	</div>
 </section>
+<?php if(isset($_GET['s'])) { 
+	if($_GET['s'] != '') { ?>
+		<section id="rb-content-band-1" class="heading"  style="padding: 2rem 0;">
+			<div class="container flex-content-container container__normal block-style-dark button-style-orange text-alignment-center">
+				<div class="container-content">
+					<div class="flexible-content heading align-center">
+						<h1 class="font-biggest font-weight-bold">Search Results for &ldquo;<?php echo $searchterm; ?>&rdquo;</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php } ?>
+<?php } ?>
 <section id="rb-content-band-4" class="wysiwyg section__search_results" style="padding: 2rem 0;z-index: 10;">
 	<div class="container flex-content-container container__sm block-style-dark button-style-orange text-alignment-left">
 		<div class="container-content">
@@ -35,8 +39,9 @@
 							'posts_per_page' => -1,
 							'paged' => $paged,
 							's' => $searchterm,
-							'post_type' => array('product','sfwd-courses','post','page'),
-							'post_status' => 'publish'
+							'post_type' => array('post','page'),
+							'post_status' => 'publish',
+							'has_password'   => FALSE
 						);
 						$blog_posts = new WP_Query( $args );
 

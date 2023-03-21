@@ -229,6 +229,9 @@ h6,
                 .site-branding {
                     opacity: 0;
                 }
+                .header-search {
+                    color: $white;
+                }
             }
             a {
                 font-size: .675rem;
@@ -362,6 +365,13 @@ h6,
                                     display: none;
                                 } 
                             }
+                            &.search {
+                                span {
+                                    &.text {
+                                        display: none;
+                                    }
+                                }
+                            }
                             &.highlight {
                                 > a {
                                     background: $light-purple;
@@ -421,6 +431,9 @@ h6,
                             }
                         }
                         @media all and (max-width: $tablet) {
+                            &.search {
+                                display: none;
+                            }
                             ul.sub-menu {
                                 list-style: none;
                                 max-height: 0px;
@@ -729,7 +742,7 @@ h6,
                                 border-bottom-left-radius: 0px!important;
                             }
                             padding: $gutter ($gutter * 3)!important;
-                            background-color: $orange!important;
+                            background-color: $purple!important;
                             font-size: 1.25rem;
                             color: $white!important;
                             @media all and (max-width: $mobile) {
@@ -740,7 +753,7 @@ h6,
                             &:hover,
                             &:active,
                             &:focus {
-                                background-color: $dark-orange!important;
+                                background-color: $darkest-purple!important;
                             }
                         }
                         
@@ -753,7 +766,7 @@ h6,
                         padding-left: 0!important;
                         a {
                             h1,h2,h3,h4,h5,h6 {
-                                color: $orange!important; 
+                                color: $dark-purple!important; 
                             }
                         }
                     }
@@ -1391,6 +1404,17 @@ h6,
             color: $white;
             background-color: $purple!important;
         }
+    }
+}
+.header-search {
+    @media all and (min-width: $tablet) {
+        display: none!important;
+    }
+    @media all and (max-width: $tablet) {
+        position: absolute;
+        right: 65px;
+        z-index: 100;
+        margin-top: 5px;
     }
 }
 .theme-dartmouth {
