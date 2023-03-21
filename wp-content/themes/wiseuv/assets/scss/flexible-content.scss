@@ -225,7 +225,7 @@ section {
                 @media all and (min-width: $mobile) {
                     background-image: url('../img/bg/banner-dark-bottom.jpg');
                     padding-bottom: 28%;
-                    margin-top: -9%;
+                    margin-top: -12%;
                 }
             }
         }
@@ -819,9 +819,11 @@ section {
                         &.align-top {
                             .left {
                                 margin-top: -100px;
+                                min-height: 350px;
                             }
                         }
                         .right {
+                            margin-top: 50px;
                             margin-bottom: -100px;
                         }
                     }
