@@ -241,11 +241,11 @@ section {
             @media all and (min-width: $tablet) {
                 &.align-top {
                     .left {
-                        margin-top: 0px;
+                        margin-top: 0px!important;
                     }
                 }
                 .right {
-                    margin-bottom: 0px;
+                    margin-bottom: 0px!important;
                 }
             }
         }
