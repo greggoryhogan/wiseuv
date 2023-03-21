@@ -612,13 +612,25 @@ section {
             }
         }
         .background-image {
-            .mobile-overlay {
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: none;
+            }
+            .desktop {
+                display: block;
+            }
+            .tablet {
+                @media all and (max-width: $tablet) {
+                    display: block;
+                }
+            }
+            .mobile {
                 @media all and (max-width: $mobile) {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
+                    display: block;
                 }
             }
         }

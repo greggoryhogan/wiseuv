@@ -166,10 +166,10 @@
                         },
                         {
                             "key": "field_6419bd11e7f71",
-                            "label": "Overlay Background Image on Mobile?",
-                            "name": "mobile_overlay",
+                            "label": "Background Overlay",
+                            "name": "overlay",
                             "aria-label": "",
-                            "type": "radio",
+                            "type": "select",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -179,15 +179,18 @@
                                 "id": ""
                             },
                             "choices": {
-                                "yes": "Yes",
-                                "no": "No"
+                                "none": "None",
+                                "desktop": "Desktop",
+                                "tablet": "Tablet",
+                                "mobile": "Mobile"
                             },
-                            "default_value": "no",
+                            "default_value": "none",
                             "return_format": "value",
+                            "multiple": 0,
                             "allow_null": 0,
-                            "other_choice": 0,
-                            "layout": "horizontal",
-                            "save_other_choice": 0
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_6419bd9be7f72",
@@ -3211,5 +3214,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679408742
+    "modified": 1679408991
 }
