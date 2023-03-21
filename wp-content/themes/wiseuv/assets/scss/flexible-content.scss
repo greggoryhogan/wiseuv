@@ -649,9 +649,11 @@ section {
     .container {
         .flexible-content {
             width: 100%;
+
+            //50, 40, 30, 20, 16
             .font-biggest, .text__xxl {
-                font-size: 3.1875rem;
-                line-height: 3.885rem;
+                font-size: 3.125rem;
+                line-height: 3.75rem;
                 margin: 1rem 0 1rem 0;
                 font-weight: 500;
                 @media all and (max-width: $tablet) { 
@@ -665,23 +667,8 @@ section {
                 }
             }
             .font-bigger, .text__x {
-                font-size: 2.8125rem;
-                line-height: 3.47rem;
-                margin: 2rem 0;
-                font-weight: $font-medium;
-                @media all and (max-width: $tablet) { 
-                    font-size: 1.6875rem;
-                    line-height: 1.6875rem;
-                    margin: 1rem 0;
-                }
-                @media all and (max-width: $mobile) { 
-                    font-size: 1.5rem;
-                    line-height: 1.6875rem;
-                }
-            }
-            .font-big, .text__lg {
                 font-size: 2.5rem;
-                line-height: 3.75rem;
+                line-height: 3.06rem;
                 margin: 2rem 0;
                 font-weight: $font-medium;
                 @media all and (max-width: $tablet) { 
@@ -696,7 +683,7 @@ section {
             }
             .font-normal {
                 font-size: 1.875rem;
-                line-height: 2.25rem;
+                line-height: 2.3125rem;
                 margin: 2rem 0;
                 font-weight: $font-medium;
                 @media all and (max-width: $tablet) { 
@@ -710,7 +697,12 @@ section {
                 }
             }
             .font-smaller {
-                font-size: $gutter * .9;
+                font-size: $gutter * 1.25;
+                line-height: $gutter * 1.5;
+            }
+            .font-smallest {
+                font-size: $gutter;
+                line-height: $gutter * 1.25;
             }
             .font-weight-light {
                 font-weight: 400;
