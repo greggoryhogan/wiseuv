@@ -646,58 +646,49 @@ section {
             width: 100%;
 
             //50, 40, 30, 20, 16
-            .font-biggest, .text__xxl {
+            .font-biggest {
                 font-size: 3.125rem;
                 line-height: 3.75rem;
                 margin: 1rem 0 1rem 0;
-                font-weight: 500;
-                @media all and (max-width: $tablet) { 
-                    font-size: 2.25rem;
-                    line-height: 2.4rem;
-                }
-                @media all and (max-width: $mobile) { 
-                    font-size: 1.875rem;
-                    line-height: 2.0625rem;
-                    max-width: 100%;
+                @media all and (max-width: $tablet) {
+                    font-size: 2.34rem;
+                    line-height: 2.81rem;
                 }
             }
-            .font-bigger, .text__x {
+            .font-bigger {
                 font-size: 2.5rem;
                 line-height: 3.06rem;
                 margin: 2rem 0;
-                font-weight: $font-medium;
-                @media all and (max-width: $tablet) { 
-                    font-size: 1.6875rem;
-                    line-height: 1.6875rem;
-                    margin: 1rem 0;
-                }
-                @media all and (max-width: $mobile) { 
-                    font-size: 1.5rem;
-                    line-height: 1.6875rem;
+                @media all and (max-width: $tablet) {
+                    font-size: 1.875rem;
+                    line-height: 2.295rem;
                 }
             }
             .font-normal {
                 font-size: 1.875rem;
                 line-height: 2.3125rem;
                 margin: 2rem 0;
-                font-weight: $font-medium;
-                @media all and (max-width: $tablet) { 
-                    font-size: 1.6875rem;
-                    line-height: 1.6875rem;
-                    margin: 1rem 0;
-                }
-                @media all and (max-width: $mobile) { 
-                    font-size: 1.5rem;
-                    line-height: 1.6875rem;
+                @media all and (max-width: $tablet) {
+                    font-size: 1.4rem;
+                    line-height: 1.73rem;
                 }
             }
             .font-smaller {
                 font-size: $gutter * 1.25;
                 line-height: $gutter * 1.5;
+                @media all and (max-width: $tablet) {
+                    font-size: .9375rem;
+                    line-height: 1.125rem;
+                }
             }
             .font-smallest {
                 font-size: $gutter;
                 line-height: $gutter * 1.25;
+                /* Let's not make this smaller than font-smaller on mobile, 16px is small enough */
+                @media all and (max-width: $tablet) {
+                    font-size: .9375rem;
+                    line-height: 1.125rem;
+                }
             }
             .font-weight-light {
                 font-weight: 400;
