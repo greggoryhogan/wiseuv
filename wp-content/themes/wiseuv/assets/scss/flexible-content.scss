@@ -709,6 +709,9 @@ section {
                     line-height: 1.6875rem;
                 }
             }
+            .font-smaller {
+                font-size: $gutter * .9;
+            }
             .font-weight-light {
                 font-weight: 400;
             }

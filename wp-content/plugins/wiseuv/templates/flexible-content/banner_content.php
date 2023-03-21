@@ -47,7 +47,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
                 echo '<p class="eyebrow">'.wise_content_filters($eyebrow).'</p>';
             }
             if($heading != '') {
-                echo '<'.$heading_type.' class="font-'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
+                echo '<'.$heading_type.' class="'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
             }
             if($subheading != '') {
                 echo '<p class="subheading bodoni">'.wise_content_filters($subheading).'</p>';

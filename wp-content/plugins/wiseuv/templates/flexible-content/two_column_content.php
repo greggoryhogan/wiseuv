@@ -46,7 +46,7 @@ $column_width = get_sub_field('column_width');
                 echo '<p class="eyebrow">'.wise_content_filters($eyebrow).'</p>';
             }
             if($heading != '') {
-                echo '<'.$heading_type.' class="font-'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
+                echo '<'.$heading_type.' class="'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
             }
             if($subheading != '') {
                 echo '<p class="subheading bodoni">'.wise_content_filters($subheading).'</p>';
@@ -81,7 +81,7 @@ $column_width = get_sub_field('column_width');
                 echo '<p class="eyebrow">'.wise_content_filters($eyebrow2).'</p>';
             }
             if($heading2 != '') {
-                echo '<'.$heading_type.' class="font-'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading2).'</'.$heading_type.'>';
+                echo '<'.$heading_type.' class="'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading2).'</'.$heading_type.'>';
             }
             if($subheading2 != '') {
                 echo '<p class="subheading bodoni">'.wise_content_filters($subheading2).'</p>';
