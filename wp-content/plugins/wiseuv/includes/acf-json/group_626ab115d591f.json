@@ -165,6 +165,49 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_6419bd11e7f71",
+                            "label": "Overlay Background Image on Mobile?",
+                            "name": "mobile_overlay",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "yes": "Yes",
+                                "no": "No"
+                            },
+                            "default_value": "no",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_6419bd9be7f72",
+                            "label": "Overlay Color",
+                            "name": "overlay_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "rgba(255,255,255,.3)",
+                            "enable_opacity": 1,
+                            "return_format": "string"
+                        },
+                        {
                             "key": "field_640a0dbc1a003",
                             "label": "Heading Tag",
                             "name": "tag",
@@ -212,6 +255,7 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
+                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -390,6 +434,7 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
+                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -1016,13 +1061,14 @@
                                 "id": ""
                             },
                             "choices": {
-                                "font-biggest": "Biggest",
-                                "font-bigger": "Bigger",
-                                "font-normal": "Normal",
-                                "font-smaller": "Smaller",
-                                "font-smallest": "Smallest"
+                                "smallest": "Smallest",
+                                "smaller": "Smaller",
+                                "small": "Small",
+                                "normal": "Normal",
+                                "bigger": "Bigger",
+                                "biggest": "Biggest"
                             },
-                            "default_value": "font-normal",
+                            "default_value": "normal",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -1518,13 +1564,14 @@
                                 "id": ""
                             },
                             "choices": {
-                                "font-biggest": "Biggest",
-                                "font-bigger": "Bigger",
-                                "font-normal": "Normal",
-                                "font-smaller": "Smaller",
-                                "font-smallest": "Smallest"
+                                "smallest": "Smallest",
+                                "smaller": "Smaller",
+                                "small": "Small",
+                                "normal": "Normal",
+                                "bigger": "Bigger",
+                                "biggest": "Biggest"
                             },
-                            "default_value": "font-normal",
+                            "default_value": "normal",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -2261,6 +2308,7 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
+                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -3163,5 +3211,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679358779
+    "modified": 1679408742
 }

@@ -108,9 +108,14 @@ function wise_content_filter($content) {
                         $container_size = 'container__'. get_sub_field('container_width');
                         $container_alignment = 'container__align-'. get_sub_field('container_alignment');
                             if($row_layout == 'hero') {
-                                
                                 if($background_image != '') {
-                                    echo '<div class="background-image"></div>';
+                                    echo '<div class="background-image">';
+                                        $mobile_overlay = get_sub_field('mobile_overlay');
+                                        if($mobile_overlay == 'yes') {
+                                            $overlay_color = get_sub_field('overlay_color');
+                                            echo '<div class="mobile-overlay" style="background: '.$overlay_color.';"></div>';
+                                        }
+                                    echo '</div>';
                                 }
                                 if($style == 'cropped-wave') {
                                     echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top.svg" class="clippingPath -top" />';
