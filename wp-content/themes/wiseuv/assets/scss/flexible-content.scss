@@ -49,6 +49,7 @@ section {
         }
         &.banner_content {
             .middle {
+                color: $white;
                 background-color: $banner-light-bg;
                 @media all and (min-width: $mobile) {
                     padding-top: 4%;
@@ -56,10 +57,7 @@ section {
                 @media all and (max-width: $mobile) {
                     padding-top: 10%;
                 }
-                color: $white;
-                .eyebrow,
-                h1,h2,h3,,h4,h5,h6,
-                .subheading {
+                .eyebrow, h1, h2, h3,, h4, h5,h6, .subheading {
                     color: $white;
                 }
                 .eyebrow {
@@ -239,6 +237,18 @@ section {
     }
     &.block-style-dark-dartmouth,
     &.block-style-light-dartmouth {
+        .banner-content {
+            @media all and (min-width: $tablet) {
+                &.align-top {
+                    .left {
+                        margin-top: 0px;
+                    }
+                }
+                .right {
+                    margin-bottom: 0px;
+                }
+            }
+        }
         &.button-alternating-light {
             .btn {
                 &:nth-of-type(odd) {
@@ -797,10 +807,6 @@ section {
                             grid-template-columns: 1fr 1fr 1fr;
                             gap: $gutter * 2;
                         }
-                        /*&-four {
-                            grid-template-columns: 1fr 1fr 1fr 1fr;
-                            gap: $gutter * 1.5;
-                        }*/
                     }
                 }
                 @media all and (max-width: $mobile) {
@@ -888,9 +894,6 @@ section {
                         align-items: center;
                     }
                     margin-bottom: $gutter * 3;
-                    .image {
-
-                    }
                     .row-content {
                         @media all and (min-width: $mobile) {
                             width: 60%;
