@@ -654,6 +654,10 @@ section {
                     font-size: 2.34rem;
                     line-height: 2.81rem;
                 }
+                @media all and (max-width: $mobile) {
+                    font-size: 2.106rem;
+                    line-height: 2.52rem;
+                }
             }
             .font-bigger {
                 font-size: 2.5rem;
@@ -662,6 +666,10 @@ section {
                 @media all and (max-width: $tablet) {
                     font-size: 1.875rem;
                     line-height: 2.295rem;
+                }
+                @media all and (max-width: $mobile) {
+                    font-size: 1.6875rem;
+                    line-height: 2.06rem;
                 }
             }
             .font-normal {
@@ -672,6 +680,10 @@ section {
                     font-size: 1.4rem;
                     line-height: 1.73rem;
                 }
+                @media all and (max-width: $mobile) {
+                    font-size: 1.26rem;
+                    line-height: 1.557rem;
+                }
             }
             .font-smaller {
                 font-size: $gutter * 1.25;
@@ -680,6 +692,7 @@ section {
                     font-size: .9375rem;
                     line-height: 1.125rem;
                 }
+                
             }
             .font-smallest {
                 font-size: $gutter;
