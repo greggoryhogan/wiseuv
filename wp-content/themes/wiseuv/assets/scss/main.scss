@@ -1406,6 +1406,24 @@ h6,
         }
     }
     .site {
+        .header {
+            .primary-navigation {
+                .header-menu {
+                    ul.menu-wrapper {
+                        li.highlight {
+                            > a {
+                                background: $darmouth-dark-green;
+                                &:hover,
+                                &:focus,
+                                &:active {
+                                    background: $darmouth-light-green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         #sticky-nav {
             .toggle {
                 &.text {
