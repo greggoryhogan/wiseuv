@@ -1468,6 +1468,14 @@ h6,
             .expanded-content {
                 .content-container {
                     color: $darmouth-dark-green;
+                    a {
+                        color: $darmouth-dark-green;
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $darmouth-light-green;
+                        }
+                    }
                     .sticky-menu {
                         ul {
                             a {
