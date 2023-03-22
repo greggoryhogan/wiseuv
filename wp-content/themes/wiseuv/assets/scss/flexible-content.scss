@@ -165,6 +165,9 @@ section {
                                         margin-top: $gutter * -5.5;
                                     }
                                 }
+                                /*.right {
+                                    margin-top: $gutter * 4.5;
+                                }*/
                             }
                             @media all and (min-width: $mobile) and (max-width: $tablet) {
                                 gap: $gutter * 4;
