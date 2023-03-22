@@ -1187,25 +1187,28 @@ h6,
         a {
             display: inline-block!important;
             padding: 0!important;
-            width: $gutter;
-            height: $gutter;
-            line-height: $gutter;
+            width: $gutter * 2.25;
+            height: $gutter * 2.25;
+            line-height: $gutter * 2.25;
             text-align: center;
             overflow: hidden;
             text-indent: -999px;
             margin-right: $gutter;
-            background-size: $gutter;
+            background-size: $gutter * 2.25;
             background-repeat: no-repeat;
             background-position: center;
             transition: .2s opacity;
             opacity: 1;
+            @media all and (min-width: $mobile) {
+                margin-top: -.25rem;
+            }
             &:hover,
             &:focus,
             &:active {
                 opacity: .7;
             }
             @media all and (max-width: $mobile) {
-                margin: 0 $gutter-sm;
+                margin: $gutter-sm;
             }
             
             &.twitter {
@@ -1216,6 +1219,9 @@ h6,
             }
             &.instagram {
                 background-image: url('../img/instagram.png');
+            }
+            &.email {
+                background-image: url('../img/email.png');
             }
         }
     }

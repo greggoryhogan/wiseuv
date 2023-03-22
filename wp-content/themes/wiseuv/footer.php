@@ -43,13 +43,13 @@
 				<?php } ?>
 				<div class="social">
 					<?php 
-					$twitter = get_option('social_media_twitter');
-					if($twitter != '') {
-						echo '<a href="'.$twitter.'" title="Follow us on Twitter" target="_blank" class="twitter">Twitter</a>';
-					}
 					$facebook = get_option('social_media_facebook');
 					if($facebook != '') {
 						echo '<a href="'.$facebook.'" title="Follow us on Facebook" target="_blank" class="facebook">Follow us on Facebook</a>';
+					}
+					$twitter = get_option('social_media_twitter');
+					if($twitter != '') {
+						echo '<a href="'.$twitter.'" title="Follow us on Twitter" target="_blank" class="twitter">Twitter</a>';
 					}
 					$instagram = get_option('social_media_instagram');
 					if($instagram != '') {
@@ -57,7 +57,7 @@
 					}
 					$email = get_option('social_media_instagram');
 					if($email != '') {
-						echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
+						echo '<a href="mailto:'.$email.'" title="Email us!" target="_blank" class="email">Email us!</a>';
 					}
 					?>
 				</div>
