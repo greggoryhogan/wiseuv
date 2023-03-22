@@ -475,6 +475,17 @@ h6,
                                     max-height: 500px;
                                 }
                             }
+                            &.highlight {
+                                > a {
+                                    background: $light-purple;
+                                    border-radius: $border-radius-lg;
+                                    color: $white!important;
+                                    display: inline-block;
+                                    margin-left: 1rem;
+                                    padding: .5rem 4rem;
+                                    margin-top: 1rem;
+                                }
+                            }
                         }
                         a {
                             color: $black;
@@ -1461,7 +1472,9 @@ h6,
                                 color: $darmouth-dark-green;
                             }
                             .sub-menu {
-                                background-color: $darmouth-dark-green;
+                                @media all and (min-width: $tablet) {
+                                    background-color: $darmouth-dark-green;
+                                }
                                 a {
                                     color: $white;
                                 }
