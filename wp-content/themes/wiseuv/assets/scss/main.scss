@@ -451,15 +451,15 @@ h6,
                                 }
                             }
                             .menu-toggle {
-                                mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 100% 50%;
-                                -webkit-mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 100% 50%;
+                                mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 0 50%;
+                                -webkit-mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 0 50%;
                                 display: block;
                                 position: absolute;
                                 right: 0;
                                 top: 50%;
                                 width: $gutter * 3;
                                 height: $gutter * 2;
-                                margin-right: $gutter;
+                                padding-right: $gutter;
                                 background-color: $white;
                                 cursor: pointer;
                                 pointer-events: all;
