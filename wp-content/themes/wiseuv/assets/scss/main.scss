@@ -1485,7 +1485,12 @@ h6,
                         }
                         li.highlight {
                             > a {
-                                background: $darmouth-dark-green;
+                                @media all and (min-width: $tablet) {
+                                    background: $darmouth-dark-green;
+                                }
+                                @media all and (max-width: $tablet) {
+                                    background: $darmouth-light-green;
+                                }
                                 &:hover,
                                 &:focus,
                                 &:active {
@@ -1554,11 +1559,11 @@ h6,
         @media all and (max-width: $tablet){
             .header {
                 &.is-active {
-                    background: $darmouth-light-green;
+                    background: $darmouth-dark-green;
                 }
                 .primary-navigation {
                     &.is-active {
-                        background: $darmouth-light-green
+                        background: $darmouth-dark-green
                     }
                 }
             }
@@ -1590,7 +1595,7 @@ h6,
         &.is-active {
             .site {
                 .header {
-                    background: $darmouth-light-green!important;
+                    background: $darmouth-dark-green!important;
                 }
             }
         }   
