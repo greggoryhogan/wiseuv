@@ -62,7 +62,7 @@
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location'  => 'primary',
+						'theme_location'  => 'sticky',
 						'menu_class'      => 'menu-wrapper',
 						'container_class' => 'sticky-menu',
 						'items_wrap'      => '<ul id="sticky-menu" class="%2$s">%3$s</ul>',
