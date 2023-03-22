@@ -50,14 +50,21 @@ section {
             }
         }
         &.banner_content {
+            background-color: $banner-light-bg;
+            .top {
+                background-image: url('../img/bg/banner-light-top.jpg');
+                padding-bottom: 15%;
+                @media all and (max-width: $mobile) {
+                    padding-bottom: 35%;
+                }
+            }
             .middle {
                 color: $white;
-                background-color: $banner-light-bg;
                 @media all and (min-width: $mobile) {
-                    padding-top: 4%;
+                    padding-top: $gutter * 1.5;
                 }
                 @media all and (max-width: $mobile) {
-                    padding-top: 10%;
+                    padding: $gutter * 1.5;
                 }
                 .eyebrow, h1, h2, h3,, h4, h5,h6, .subheading {
                     color: $white;
@@ -65,21 +72,23 @@ section {
                 .eyebrow {
                     border-color: $white;
                 }
-            }
-            .top {
-                background-image: url('../img/bg/banner-light-top.png');
-                padding-bottom: 15%;
-                @media all and (max-width: $mobile) {
-                    padding-bottom: 35%;
+                .container {
+                    .flexible-content {
+                        &.has-right {
+                            .right {
+                                margin-top: 20px;
+                                
+                            }
+                        }
+                    }
                 }
             }
             .bottom {
-                background-image: url('../img/bg/banner-light-bottom.png');
-                padding-bottom: 27%;
-                margin-top: -9%;
+                background-image: url('../img/bg/banner-light-bottom.jpg');
+                padding-bottom: 18%;
+                margin-top: -5%;
                 @media all and (max-width: $mobile) {
-                    padding-bottom: 57%;
-                    margin-top: -20%;
+                    padding-bottom: 25%;
                 }
             }
         }
@@ -131,101 +140,80 @@ section {
             }
         }
         &.banner_content {
-            .spacer {
-                background-color: $banner-dark-bg;
+            background-color: $banner-dark-bg;
+            .top {
+                background-image: url('../img/bg/banner-dark-top.jpg');
+                padding-bottom: 19.5%;
+                @media all and (max-width: $mobile) {
+                    padding-bottom: 40%;
+                }
             }
             .middle {
-                @media all and (min-width: $mobile) {
-                    background-color: $banner-dark-bg;
-                }
                 @media all and (max-width: $mobile) {
-                    &:before {
-                        content: '';
-                        background-image: url('../img/bg/banner-dark-top.jpg');
-                        width: 100%;
-                        height: 250px;
-                        display: block;
-                        background-position: bottom;
-                    }
-                    .spacer {
-                        background-color: $banner-dark-bg;
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        z-index: -1;
-                    }
-                    .container {
-                        margin-top: -100px;
-                        @media all and (min-width: $mobile) {
-                            .border-bottom {
-                                display: none;
-                            }
-                        }
-                        .right {
-                            //,.border-bottom
-                            width: calc(100% + 3rem);
-                            margin-left: -1.5rem;
-                            margin-right: -1.5rem;
-                            max-width: calc(100% + 3rem)!important;
-                            background-color: $banner-bottom-bg;
-                            .right-wrapper {
-                                padding: 0 1.5rem;
-                                margin-top: -25%;
-                            }
-                            &:before {
-                                content: '';
-                                display: block;
-                                background-image: url('../img/bg/banner-dark-bottom-mobile.jpg');
-                                background-size: cover;
-                                height: 0;
-                                padding-bottom: 50%;
-                                width: 100%;
-                                margin-top: -20px;
-                            }
-                            &:after {
-                                content: '';
-                                display: block;
-                                background-image: url('../img/bg/banner-dark-bottom-mobile-2.jpg');
-                                background-size: cover;
-                                height: 60px;
-                                width: 100%;
-                            }
-                        }
-                    }
-                    /*
-                         }
-                        .top {
-                            background-image: url('../img/bg/banner-dark-top.jpg');
-                            padding-bottom: 19.5%;
-                            @media all and (max-width: $mobile) {
-                                padding-bottom: 50%;
-                            }
-                        }
-                        .bottom {
-                            background-image: url('../img/bg/banner-dark-bottom.jpg');
-                            padding-bottom: 28%;
-                            margin-top: -12%;
-                            @media all and (max-width: $mobile) {
-                                padding-bottom: 55%;
-                                margin-top: -43%;
-                            }
-                        }
-                    } */
+                    /*margin-top: -80px;*/
                 }
-            }
-            .top {
-                @media all and (min-width: $mobile) {
-                    background-image: url('../img/bg/banner-dark-top.jpg');
-                    padding-bottom: 19.5%;
+                .container {
+                    .flexible-content {
+                        h1, h2, h3, h4, h5, h6 {
+                            color: $dark-purple;
+                        }
+                        &.has-right {
+                            @media all and (min-width: $tablet) {
+                                gap: $gutter * 8;
+                                &.align-top {
+                                    .left {
+                                        margin-top: $gutter * -5.5;
+                                    }
+                                }
+                                .right {
+                                    margin-top: $gutter * 4.5;
+                                }
+                            }
+                            @media all and (min-width: $mobile) and (max-width: $tablet) {
+                                gap: $gutter * 4;
+                                padding-bottom: 4%;
+                                &.align-top {
+                                    .left {
+                                        margin-top: $gutter * -4.5;
+                                    }
+                                }
+                                .right {
+                                    margin-top: $gutter * 3.5;
+                                }
+                            }
+                            @media all and (max-width: $mobile) {
+                                .left {
+                                    margin-bottom: -50px;
+                                }
+                                .right {
+                                    position: relative;
+                                    padding-top: 130px;
+                                    margin-bottom: -23%;
+                                    &:before{
+                                        content: '';
+                                        background-image: url('../img/bg/banner-dark-bottom-mobile.jpg');
+                                        background-repeat: no-repeat;
+                                        background-color: $banner-bottom-bg;
+                                        position: absolute;
+                                        left:  $gutter * -1.5;
+                                        right:  $gutter * -1.5;
+                                        top: 0;
+                                        bottom: 0;    
+                                        z-index: -1;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             .bottom {
-                @media all and (min-width: $mobile) {
-                    background-image: url('../img/bg/banner-dark-bottom.jpg');
-                    padding-bottom: 28%;
-                    margin-top: -12%;
+                background-image: url('../img/bg/banner-dark-bottom.jpg');
+                padding-bottom: 18%;
+                margin-top: -5%;
+                @media all and (max-width: $mobile) {
+                    padding-bottom: 38%;
+                    margin-top: -8%;
                 }
             }
         }
@@ -843,16 +831,6 @@ section {
                 &.has-right {
                     @media all and (min-width: $tablet) {
                         gap: $gutter * 8;
-                        &.align-top {
-                            .left {
-                                margin-top: -100px;
-                                min-height: 350px;
-                            }
-                        }
-                        .right {
-                            margin-top: 50px;
-                            margin-bottom: -100px;
-                        }
                     }
                     @media all and (max-width: $tablet) {
                         gap: $gutter * 3;

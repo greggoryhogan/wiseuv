@@ -151,7 +151,6 @@ function wise_content_filter($content) {
                             
                             echo '</div>';
                             if($row_layout == 'banner_content') {
-                                echo '<div class="spacer"></div>';
                                 echo '</div>'; //middle
                                 echo '<div class="bottom"></div>';
                             }
