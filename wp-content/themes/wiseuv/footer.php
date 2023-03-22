@@ -1,15 +1,3 @@
-		<!--subscribe banner -->
-		<?php
-		$is_account_pg = false;
-		if(function_exists('is_account_page')) {
-			if(is_account_page() || is_cart() || is_checkout()) {
-				$is_account_pg = true;
-			}
-		} ?>
-		<?php if($is_account_pg || is_page(array('login','subscribe'))) { ?>
-			<section class="padding__xs"></section>
-		<?php } ?>
-		<!--/subscribe banner -->
 	</main><!-- #main -->
 	<footer id="colophon" class="footer">
 		<div class="container container__xs __footer">

@@ -7,16 +7,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php do_action('rb_body_open'); ?>
 <div id="page" class="site">
-<?php /*if(!in_array('administrator',rb_get_current_user_roles())) {
-    echo '<div class="maintenance-bg"></div>';
-    echo '<div class="maintenance">';
-        echo '<img src="https://redeemingbabel.org/wp-content/themes/rb/assets/img/rb-logo-white-bg.png" />';
-        echo '<h2 class="font-bigger font-weight-bold">Under Scheduled Maintenance</h2>';
-        echo '<p>Our website is being redesigned and is currently unavailable. We apologize for the inconvenience and any disruption this might cause for those who are going through one of our online courses. Check back tomorrow to see our exciting new design and all of our new offerings!</p>';
-    echo '</div>';
-}*/ ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lshlss' ); ?></a>
     <header class="header">
         <div class="container container__lg __header">
