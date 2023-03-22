@@ -1446,6 +1446,30 @@ h6,
             .primary-navigation {
                 .header-menu {
                     ul.menu-wrapper {
+                        li {
+                           
+                            &.current-menu-item,
+                            &.current-menu-parent,
+                            &.current-menu-ancestor {
+                                a {
+                                    color: $darmouth-dark-green;
+                                }
+                            }
+                            a:hover,
+                            a:focus,
+                            a:active {
+                                color: $darmouth-dark-green;
+                            }
+                            .sub-menu {
+                                background-color: $darmouth-dark-green;
+                                a {
+                                    color: $white;
+                                }
+                                &:before {
+                                    border-bottom-color: $darmouth-dark-green;
+                                }
+                            }
+                        }
                         li.highlight {
                             > a {
                                 background: $darmouth-dark-green;
