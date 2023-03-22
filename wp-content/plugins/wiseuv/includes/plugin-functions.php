@@ -131,7 +131,7 @@ function babel_update_my_account_menu_item( $items, $menu, $args ) {
 }
 
 /** Add dropdown actions to menu */
-//add_filter( 'wp_nav_menu_objects', 'menu_set_dropdown', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'menu_set_dropdown', 10, 2 );
 function menu_set_dropdown( $menu_items, $args ) {
     $last_top = 0;
     foreach ( $menu_items as $key => $obj ) {

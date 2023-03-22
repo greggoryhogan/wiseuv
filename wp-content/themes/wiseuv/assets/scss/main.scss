@@ -389,11 +389,11 @@ h6,
                             }
                             ul.sub-menu {
                                 position: absolute;
-                                top: ($gutter * 2.5);
+                                top: $gutter * 2;
                                 left: 50%;
                                 transform: translateX(-50%);
-                                padding: ($gutter-sm / 2) 0;
-                                background: $gray;
+                                padding: $gutter / 2 0;
+                                background: $light-purple;
                                 border-radius: $border-radius-sm;
                                 display: none;
                                 &:before {
@@ -402,7 +402,7 @@ h6,
                                     height: 0; 
                                     border-left: $gutter-sm solid transparent;
                                     border-right: $gutter-sm solid transparent;
-                                    border-bottom: $gutter-sm solid $gray;
+                                    border-bottom: $gutter-sm solid $light-purple;
                                     position: absolute;
                                     top: -($gutter-sm * .75);
                                     left: 50%;
@@ -412,8 +412,14 @@ h6,
                                     white-space: nowrap;
                                     min-width: 150px;
                                     a {
-                                        padding: ($gutter-sm / 4) $gutter;
+                                        padding: $gutter / 2 $gutter;
                                         text-align: left;
+                                        color: $white;
+                                        &:hover,
+                                        &:active,
+                                        &:focus {
+                                            color: $body-font;
+                                        }
                                     }
                                 }
                             }
@@ -441,12 +447,12 @@ h6,
                                 transition: .2s max-height;
                                 padding: 0;
                                 a {
-                                    padding-left: $gutter-sm * 3;
+                                    padding: .5rem 0 .5rem 3rem;
                                 }
                             }
                             .menu-toggle {
-                                mask: url('/wp-content/plugins/redeeming-babel-core/includes/feather/chevron-down.svg') no-repeat 100% 50%;
-                                -webkit-mask: url('/wp-content/plugins/redeeming-babel-core/includes/feather/chevron-down.svg') no-repeat 100% 50%;
+                                mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 100% 50%;
+                                -webkit-mask: url('/wp-content/plugins/wiseuv/includes/feather/chevron-down.svg') no-repeat 100% 50%;
                                 display: block;
                                 position: absolute;
                                 right: 0;
@@ -454,7 +460,7 @@ h6,
                                 width: $gutter * 3;
                                 height: $gutter * 2;
                                 margin-right: $gutter;
-                                background-color: $dark-gray;
+                                background-color: $white;
                                 cursor: pointer;
                                 pointer-events: all;
                                 transform: scaleY(1) translateY(-50%);
