@@ -27,7 +27,7 @@
     //Menu hoverintent config
     var config = {
       sensitivity: 6,
-      timeout: 150,
+      timeout: 250,
       over : function(e){ 
         if(windowWidth > tabletWidth) { //74 rem, defined in variables.scss
           $( this ).addClass( 'is-active' );  
