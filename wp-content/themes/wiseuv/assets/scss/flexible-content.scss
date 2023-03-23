@@ -69,6 +69,12 @@ section {
                 .eyebrow, h1, h2, h3,, h4, h5,h6, .subheading {
                     color: $white;
                 }
+                p, li {
+                    @media all and (max-width: $mobile) {
+                        padding-left: 10%;
+                        padding-right: 10%;
+                    }
+                }
                 .eyebrow {
                     border-color: $white;
                 }
@@ -156,6 +162,12 @@ section {
                     .flexible-content {
                         h1, h2, h3, h4, h5, h6 {
                             color: $dark-purple;
+                        }
+                        > div {
+                            @media all and (max-width: $mobile) {
+                                padding-left: 20%;
+                                padding-right: 20%;
+                            }
                         }
                         &.has-right {
                             @media all and (min-width: $tablet) {
@@ -844,6 +856,7 @@ section {
                         flex-direction: column;
                     }
                 }
+                
                 .image {
                     img {
                         display: block;
