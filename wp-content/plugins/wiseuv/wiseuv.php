@@ -75,7 +75,7 @@ function enqueue_wise_scripts() {
 	wp_register_script('lozad-js', WISE_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
 	wp_enqueue_script('lozad-js');
 
-	//theme
+	//plugin
 	wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
 	wp_enqueue_script('wise-plugin');
 
@@ -90,12 +90,13 @@ function enqueue_wise_scripts() {
 		'plugin_js',
 		array(
 		   'ajax_url' => admin_url( 'admin-ajax.php' ),
-		   'ajax_url' => admin_url( 'admin-ajax.php' ),
 		   'theme_dir' => get_bloginfo('template_url'),
 		   'current_user_id' => get_current_user_ID(),
 		   'page_title' => get_the_title(),
 		)
 	); //had 'affiliation_optons' => get_available_church_affiliations(),
+
+    wp_register_script('flexible-accordion', WISE_URL .'/includes/js/accordion.js', array('jquery'),$plugin_version, true);
 
 } 
 add_action( 'wp_enqueue_scripts', 'enqueue_wise_scripts' );

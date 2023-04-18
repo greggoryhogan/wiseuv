@@ -98,6 +98,11 @@ section {
                 }
             }
         }
+        &.accordion {
+            .accordion__title {
+                background-color: $pink;
+            }
+        }
     }
     &.block-style-alternate {
         h1,h2,h3,h4,h5,h6 {
@@ -110,6 +115,11 @@ section {
                 h1,h2,h3,h4,h5,h6 {
                     color: $white;
                 }
+            }
+        }
+        &.accordion {
+            .accordion__title {
+                background-color: $dark-purple;
             }
         }
         .eyebrow {
@@ -311,6 +321,11 @@ section {
                 color: $white;
             }
         }
+        &.accordion {
+            .accordion__title {
+                background-color: $darmouth-dark-green;
+            }
+        }
         .branded {
             .list-label {
                 color: $darmouth-dark-green;
@@ -359,6 +374,11 @@ section {
             .blockquote {
                 background: $darmouth-light-green;
                 color: $white;
+            }
+        }
+        &.accordion {
+            .accordion__title {
+                background-color: $darmouth-light-green;
             }
         }
         .branded {
@@ -710,7 +730,7 @@ section {
             }
             .font-smaller {
                 font-size: $gutter * 1.25;
-                line-height: $gutter * 1.5;
+                line-height: $gutter * 1.7;
                 @media all and (max-width: $tablet) {
                     font-size: .9375rem;
                     line-height: 1.125rem;
@@ -807,6 +827,48 @@ section {
                 }
                 @media all and (max-width: $tablet) {
                     gap: $gutter * 2;
+                }
+            }
+            &.accordion {
+                .accordion__item {
+                    margin-bottom: 3px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    .accordion__title {
+                        cursor: pointer;
+                        padding: $gutter $gutter * 3.5 $gutter $gutter * 1.5;
+                        margin: 0;
+                        -webkit-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        position: relative;
+                        color: $white;
+                        .feather-icon {
+                            position: absolute;
+                            right: $gutter * .75;
+                            top: $gutter;
+                            transform: scaleY(1);
+                            transition: .2s transform;
+                        }
+                    }
+                    .accordion__content {
+                        padding: 0 $gutter * .75;
+                        transition: .2s max-height;
+                        max-height: 3000px;
+                        min-height: 0px;
+                    }
+                    &.is-closed {
+                        .accordion__content {
+                            max-height: 0px;
+                            overflow: hidden;
+                        }
+                        .accordion__title {
+                            .feather-icon {
+                                transform: scaleY(-1);
+                            }
+                        }
+                    }
                 }
             }
             &.cta-buttons {

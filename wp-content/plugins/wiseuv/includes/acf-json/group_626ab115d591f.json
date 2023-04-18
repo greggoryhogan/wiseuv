@@ -258,7 +258,6 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
-                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -437,7 +436,6 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
-                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -1570,7 +1568,6 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
-                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -2311,7 +2308,6 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
-                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -2757,6 +2753,197 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_643ea9150adaa": {
+                    "key": "layout_643ea9150adaa",
+                    "name": "accordion",
+                    "label": "Accordion",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_643eaf6114b93",
+                            "label": "Content",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_643eb49ba7f3c",
+                            "label": "Heading Size",
+                            "name": "heading_size",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "font-biggest": "Biggest",
+                                "font-bigger": "Bigger",
+                                "font-normal": "Normal",
+                                "font-smaller": "Smaller",
+                                "font-smallest": "Smallest"
+                            },
+                            "default_value": "font-smaller",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_643ea92a0adac",
+                            "label": "Accordion Items",
+                            "name": "accordion_items",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "min": 1,
+                            "max": 0,
+                            "collapsed": "field_643ea94c0adad",
+                            "button_label": "Add Accordion Item",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_643ea94c0adad",
+                                    "label": "Heading",
+                                    "name": "heading",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_643ea92a0adac"
+                                },
+                                {
+                                    "key": "field_643ea95e0adae",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "delay": 1,
+                                    "parent_repeater": "field_643ea92a0adac"
+                                },
+                                {
+                                    "key": "field_643ea9730adaf",
+                                    "label": "Default State",
+                                    "name": "default_state",
+                                    "aria-label": "",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "closed": "Closed",
+                                        "open": "Open"
+                                    },
+                                    "default_value": "closed",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "layout": "horizontal",
+                                    "save_other_choice": 0,
+                                    "parent_repeater": "field_643ea92a0adac"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_643eaf5314b91",
+                            "label": "Style",
+                            "name": "style",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_626c005c78fe0"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_643eaf4314b90",
+                            "label": "Animation",
+                            "name": "animation",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_626ade57e9efe"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_627d17bab151b": {
                     "key": "layout_627d17bab151b",
                     "name": "oembed",
@@ -3090,7 +3277,6 @@
                                 "font-biggest": "Biggest",
                                 "font-bigger": "Bigger",
                                 "font-normal": "Normal",
-                                "font-small": "Small",
                                 "font-smaller": "Smaller",
                                 "font-smallest": "Smallest"
                             },
@@ -3214,5 +3400,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679493688
+    "modified": 1681831674
 }

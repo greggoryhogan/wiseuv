@@ -217,6 +217,9 @@ function wise_acf_header_css() {
 			while ( have_rows( $acf_field_name, $acf_post_id ) ) : the_row();	
 				++$band;
 				$row_layout = get_row_layout();
+                if($row_layout == 'accordion') {
+                    wp_enqueue_script('flexible-accordion');
+                }
 				if($row_layout == 'hero') {
                     $style = get_sub_field('style');
                     $background_image = get_sub_field('background_image');
