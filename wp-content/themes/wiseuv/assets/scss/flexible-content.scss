@@ -830,6 +830,11 @@ section {
                         align-items: flex-start;
                         .column-content {
                             flex: 1;
+                            p:first-of-type,
+                            ul:first-of-type,
+                            ol:first-of-type {
+                                margin-top: 0;
+                            }
                         }
                     }
                 }
