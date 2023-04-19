@@ -54,7 +54,7 @@ $column_height = get_sub_field('column_height');
             }
             echo '<div class="column-content">';
                 if($column_content != '') {
-                    echo wise_content_filters($column_content);
+                    echo $column_content;
                 }
             echo '</div>';
             if( $link ): 
@@ -91,7 +91,7 @@ $column_height = get_sub_field('column_height');
             }
             echo '<div class="column-content">';
                 if($column_content2 != '') {
-                    echo wise_content_filters($column_content2);
+                    echo $column_content2;
                 }
             echo '</div>';
             if( $link2 ): 
