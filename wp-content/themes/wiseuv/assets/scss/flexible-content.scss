@@ -829,6 +829,14 @@ section {
                     gap: $gutter * 2;
                 }
             }
+            &.three-column-content {
+                @media all and (min-width: $tablet) {
+                    gap: $gutter * 4;
+                }
+                @media all and (max-width: $tablet) {
+                    gap: $gutter * 2;
+                }
+            }
             &.accordion {
                 .accordion__item {
                     margin-bottom: 3px;

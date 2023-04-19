@@ -368,6 +368,37 @@ section {
                 
             }
         }
+        &.three-column-content {
+            @media (min-width: $mobile) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .image {
+                width: auto;
+                display: block;
+                &.full-width {
+                    img {
+                        width: 100%;
+                    }
+                }
+                @media all and (min-width: $mobile) {
+                    &.fill-space {
+                        display: none;
+                    }
+                }
+            }
+            @media all and (max-width: $mobile) { 
+                .right {
+                    .hide-second-border {
+                        display: none;
+                    }
+                }
+                .contain-content {
+                    max-width: 100%!important;
+                }
+                
+            }
+        }
         &.grid-content {
             @media (min-width: $mobile) {
                 display: grid;
