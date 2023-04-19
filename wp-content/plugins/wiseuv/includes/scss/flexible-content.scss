@@ -342,6 +342,10 @@ section {
                     justify-content: flex-end;
                 }
             }
+            @media (max-width: $mobile) {
+                display: flex;
+                flex-direction: column;
+            }
             .image {
                 width: auto;
                 display: block;
@@ -372,6 +376,10 @@ section {
             @media (min-width: $mobile) {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
+            }
+            @media (max-width: $mobile) {
+                display: flex;
+                flex-direction: column;
             }
             .image {
                 width: auto;

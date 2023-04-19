@@ -77,6 +77,14 @@ section {
                 }
                 .eyebrow {
                     border-color: $white;
+                    @media all and (max-width: $mobile) {
+                        padding: 0;
+                    }
+                }
+                .subheading {
+                    @media all and (max-width: $mobile) {
+                        padding: 0;
+                    }
                 }
                 .container {
                     .flexible-content {
