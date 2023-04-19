@@ -821,15 +821,18 @@ section {
                     }
                 }
             }
-            &.two-column-content {
-                @media all and (min-width: $tablet) {
-                    gap: $gutter * 4;
-                }
-                @media all and (max-width: $tablet) {
-                    gap: $gutter * 2;
-                }
-            }
+            &.two-column-content,
             &.three-column-content {
+                &.column-height-equal {
+                    .contain-content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        .column-content {
+                            flex: 1;
+                        }
+                    }
+                }
                 @media all and (min-width: $tablet) {
                     gap: $gutter * 4;
                 }

@@ -26,8 +26,9 @@ $font_size = get_sub_field('font_size');
 $font_weight = get_sub_field('font_weight');
 $image_style = get_sub_field('image_style');
 $column_width = get_sub_field('column_width');
+$column_height = get_sub_field('column_height');
 ?>
-<div class="flexible-content three-column-content"><?php
+<div class="flexible-content three-column-content column-height-<?php echo $column_height; ?>"><?php
     
     echo '<div class="contain-content">';
         if($image) {
@@ -48,9 +49,11 @@ $column_width = get_sub_field('column_width');
         if($subheading != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading).'</p>';
         }
-        if($column_content != '') {
-            echo wise_content_filters($column_content);
-        }
+        echo '<div class="column-content">';
+            if($column_content != '') {
+                echo wise_content_filters($column_content);
+            }
+        echo '</div>';
         if( $link ): 
             $link_url = $link['url'];
             $link_title = $link['title'];
@@ -78,9 +81,11 @@ $column_width = get_sub_field('column_width');
         if($subheading2 != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading2).'</p>';
         }
-        if($column_content2 != '') {
-            echo wise_content_filters($column_content2);
-        }
+        echo '<div class="column-content">';
+            if($column_content2 != '') {
+                echo wise_content_filters($column_content2);
+            }
+        echo '</div>';
         if( $link2 ): 
             $link_url = $link2['url'];
             $link_title = $link2['title'];
@@ -108,9 +113,11 @@ $column_width = get_sub_field('column_width');
         if($subheading3 != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading3).'</p>';
         }
-        if($column_content3 != '') {
-            echo wise_content_filters($column_content3);
-        }
+        echo '<div class="column-content">';
+            if($column_content3 != '') {
+                echo wise_content_filters($column_content3);
+            }
+        echo '</div>';
         if( $link3 ): 
             $link_url = $link3['url'];
             $link_title = $link3['title'];
