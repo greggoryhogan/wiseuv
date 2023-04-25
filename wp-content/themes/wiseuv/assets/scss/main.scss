@@ -414,7 +414,8 @@ h6,
                                         &:hover,
                                         &:active,
                                         &:focus {
-                                            color: $body-font;
+                                            /*color: $body-font;*/
+                                            color: $dark-purple;
                                         }
                                     }
                                     ul.sub-menu {
