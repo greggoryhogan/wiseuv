@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </section>
-<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #f7f7f7;padding: 8rem 0;z-index: 10;">
+<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #f7f7f7;padding: 8rem 0;">
 	<div class="container flex-content-container container__xs block-style-dark button-style-orange text-alignment-center">
 		<div class="container-content">
 			<div class="flexible-content wysiwyg">

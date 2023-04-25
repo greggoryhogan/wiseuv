@@ -4,7 +4,7 @@
 } else {
 	$searchterm = '';
 } ?>
-<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #978dbe;padding: 2rem 0;z-index: 10;">
+<section id="rb-content-band-4" class="wysiwyg section__search_form" style="background-color: #978dbe;padding: 2rem 0;">
 	<div class="container flex-content-container container__xs block-style-dark button-style-orange text-alignment-center">
 		<div class="container-content">
 			<div class="flexible-content wysiwyg">
@@ -28,7 +28,7 @@
 		</section>
 	<?php } ?>
 <?php } ?>
-<section id="rb-content-band-4" class="wysiwyg section__search_results" style="padding: 2rem 0;z-index: 10;">
+<section id="rb-content-band-4" class="wysiwyg section__search_results" style="padding: 2rem 0;">
 	<div class="container flex-content-container container__sm block-style-dark button-style-orange text-alignment-left">
 		<div class="container-content">
 			<div class="flexible-content wysiwyg">
