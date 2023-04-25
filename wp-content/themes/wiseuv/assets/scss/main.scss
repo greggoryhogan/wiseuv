@@ -360,11 +360,6 @@ h6,
                             text-align: left;
                             position: relative;
                             list-style: none;
-                            &.show-cart-count {
-                                .text {
-                                    display: none;
-                                } 
-                            }
                             &.search {
                                 span {
                                     &.text {
