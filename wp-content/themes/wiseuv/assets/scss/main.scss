@@ -445,9 +445,7 @@ h6,
                                             }
                                         }
                                     }
-                                    &.current-menu-item,
-                                    &.current-menu-parent,
-                                    &.current-menu-ancestor {
+                                    &.current-menu-item {
                                         a {
                                             color: $dark-purple!important;
                                         }
@@ -1537,9 +1535,7 @@ h6,
                                     border-bottom-color: $darmouth-dark-green;
                                 }
                                 li {
-                                    &.current-menu-item,
-                                    &.current-menu-parent,
-                                    &.current-menu-ancestor {
+                                    &.current-menu-item {
                                         a {
                                             color: $dartmouth-lightest-green!important;
                                         }
