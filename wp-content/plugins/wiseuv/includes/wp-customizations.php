@@ -8,14 +8,15 @@ function wise_login_logo() { ?>
     <style type="text/css">
         body {background: #fff!important;}
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo WISE_URL; ?>includes/img/redeeming-wise-logo.jpg);
-            height:60px;
+            background-image: url(<?php echo WISE_URL; ?>includes/img/wise-logo.png);
+            height:100px;
             width:250px;
             background-size: contain;
             background-repeat: no-repeat;
         }
-       .button {background: #c85f42!important; border: none!important; color: #fff!important;}
-       .button:hover {background: #006573!important; }
+       .button {background: #00b0d8!important; border: none!important; color: #fff!important; transition: .2s background;}
+       .button:hover {background: #92278f!important; }
+       .login #login_error, .login .message, .login .success { border-left-color: #00b0d8!important; }
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'wise_login_logo' );
