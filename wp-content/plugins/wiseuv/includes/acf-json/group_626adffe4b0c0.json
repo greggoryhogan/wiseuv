@@ -34,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Use the [space] shortcode to add extra spacing inline.\r\nOptions: \r\nheight: 1rem\r\ndisplay:everywhere\/desktop-only\/tablet-only\/mobile-only\r\n\r\n[space height=\"1rem\" display=\"mobile-only\"]",
+            "message": "Use the [space] shortcode to add extra spacing inline.\r\nOptions: \r\nheight: height in px or rem, ex: 2rem\r\ndisplay: everywhere, desktop-only, tablet-only, mobile-only\r\n\r\n[space height=\"1rem\" display=\"mobile-only\"]",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -53,24 +53,6 @@
                 "id": ""
             },
             "message": "You can define padding explicitly using 1rem 1rem 1rem 1rem or shorthand, 1rem 1rem. Explicit padding starts at the top and moves clockwise, top right bottom left. Shorthand adds the same for top and bottom, then sides. Typical types of padding are rem, px, vw, and %\r\n\r\nHero blocks use padding 6rem 0 1rem 0, 3rem 0 1rem 0 and 3rem 0 1rem 0 for desktop, tablet, and mobile, respectively.",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_63c9f0887847f",
-            "label": "Column Widths",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Single post footer content width is set on the settings page.",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -135,5 +117,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678206638
+    "modified": 1682432644
 }

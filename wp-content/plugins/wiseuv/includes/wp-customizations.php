@@ -576,17 +576,12 @@ function wisec_hide_posts() {
 /**
  * Remove Gutenberg from Backend
  */
-//add_filter( 'use_block_editor_for_post', 'wise_post_uses_gutenberg');
+add_filter( 'use_block_editor_for_post', 'wise_post_uses_gutenberg');
 function wise_post_uses_gutenberg() {
-  if(get_post_type() != 'page') {
+  if(!in_array(get_post_type(),array('post','page'))) {
     return;
   }
-  global $post;
-  $template = basename(get_page_template());
-  if($template == 'template-blog.php') {
-    return false;
-  }
-  return true;
+  return false;
 }
 
 /**

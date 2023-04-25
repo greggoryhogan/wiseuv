@@ -69,7 +69,7 @@
         }
     } ?>
     <main class="content <?php echo $content_classes; ?>" id="content">
-        <?php do_action('before_rb_content'); ?>
+        <?php do_action('before_wise_content'); ?>
         <?php /* if(isset($_GET['login-success'])) {
             echo '<div class="woocommerce-info"><p>You have successfully logged in.</p></div>';
         } */ ?>

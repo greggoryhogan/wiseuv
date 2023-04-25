@@ -301,3 +301,15 @@ function wise_content_filters($content,$span = true) {
     }
 }
 add_filter('wise_content','wise_content_filters');
+
+/**
+ * Simple shortcode to add spacing to inputs / text areas
+ */
+add_shortcode('space','space_shortcode');
+function space_shortcode($atts) {
+    $atts = shortcode_atts( array(
+        'height' => '1rem',
+        'display' => '',
+    ), $atts );
+    return '<span class="wise-spacer '.$atts['display'].'" style="height:'.$atts['height'].'"></span>';
+}

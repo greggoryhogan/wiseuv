@@ -65,18 +65,55 @@ function testimonial_assets() {
     wp_enqueue_script('slick-js');
 }
 
-add_filter('the_content','wise_content_filter',99,1);
-function wise_content_filter($content) {
+/**
+ * Add hook to add shortcodes to the content during save. This is a hack to make the has_shortcode($post->content) work with other plugins
+ */
+add_action('save_post','append_to_wise_post_content');
+function append_to_wise_post_content($post_id){
+    global $post; 
+    if(function_exists('get_field')) {
+        $field_name = 'flexible_content';
+        //iterate each flexible section
+        if ( have_rows( $field_name, $post_id ) ) {
+            $content = '';
+            while(have_rows( $field_name, $post_id )) {
+                the_row();	
+                $row_layout = get_row_layout();
+                /*if($row_layout == 'heading') {
+                    $heading = get_sub_field('heading');
+                    $tag = get_sub_field('tag');
+                    $content .= '<'.$tag.'>'.$heading.'</'.$tag.'>';
+                }*/
+                if($row_layout == 'wysiwyg') {
+                    $content .= get_sub_field('content');
+                }
+                if($row_layout == 'shortcode') {
+                    $content .= get_sub_field('shortcode');
+                }
+            }
+            if($content == '') {
+                $content = '<!--'.print_r(get_post_meta($post_id),true).'-->';
+            }
+            $post = get_post( $post_id );
+            $post->post_content = $content;
+            remove_action('save_post','append_to_wise_post_content');
+            wp_update_post( $post );
+            add_action('save_post','append_to_wise_post_content');
+        }
+    }    
+}
+
+//add_filter('the_content','wise_content_filter',99,1);
+function wise_content() {
     global $post;
     $acf_post_types = array(
         'post',
         'page',
-        'product',
     );
     if(!in_array(get_post_type(),$acf_post_types)) {
         //return $content;
     }
-    ob_start();
+    
     if ( post_password_required( $post )) {
         echo get_the_password_form();
     } else {
@@ -178,7 +215,7 @@ function wise_content_filter($content) {
                 echo '<section class="'.$post_type.'">';
                     echo '<div class="container container__'.$container_width.' block-style-dark text-alignment-left">';
                         echo '<div class="container-content">';
-                            echo $content;
+                            echo apply_filters('the_content',get_the_content());
                         echo '</div>';
                     echo '</div>';
                 echo '</section>';
@@ -187,14 +224,12 @@ function wise_content_filter($content) {
             echo '<section class="default">';
                 echo '<div class="container container__normal block-style-dark text-alignment-left">';
                     echo '<div class="container-content">';
-                        echo $content;
+                        echo apply_filters('the_content',get_the_content());
                     echo '</div>';
                 echo '</div>';
             echo '</section>';
         }
     }
-    $content = str_replace("\r\n",'',trim(ob_get_clean()));
-    return $content;
 }
 
 /**

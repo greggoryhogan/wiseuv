@@ -46,8 +46,8 @@ if ( have_posts() ) {
 			echo '</section>';
 		}
 		//output content
-		if(function_exists('rb_content')) {
-			rb_content();
+		if(function_exists('wise_content')) {
+			wise_content();
 		} else {
 			$the_content = apply_filters('the_content',get_the_content());
 			echo $the_content;
