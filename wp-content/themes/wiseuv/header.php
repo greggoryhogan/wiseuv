@@ -44,6 +44,7 @@
                             'container_class' => 'header-menu primary-menu-container',
                             'items_wrap'      => '<ul id="primary-menu" class="%2$s">%3$s</ul>',
                             'fallback_cb'     => false,
+                            'depth'           => 3,
                         )
                     );
                     ?>

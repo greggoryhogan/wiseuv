@@ -415,10 +415,31 @@ h6,
                                         padding: $gutter / 2 $gutter;
                                         text-align: left;
                                         color: $white;
+                                        line-height: $gutter * 1.5;
                                         &:hover,
                                         &:active,
                                         &:focus {
                                             color: $body-font;
+                                        }
+                                    }
+                                    ul.sub-menu {
+                                        position: relative;
+                                        top: 0;
+                                        padding: 0 0 0 $gutter * 1.5;
+                                        white-space: normal;
+                                        &:before {
+                                            display: none;
+                                        }
+                                        li {
+                                            white-space: normal;
+                                            a {
+                                                padding: 0 $gutter $gutter * .5;
+                                            }
+                                            &:last-of-type {
+                                                a {
+                                                    padding-bottom: 0;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -447,7 +468,20 @@ h6,
                                 transition: .2s max-height;
                                 padding: 0;
                                 a {
-                                    padding: .5rem 0 .5rem 3rem;
+                                    padding: $gutter * .5 0 $gutter * .5 $gutter * 3;
+                                }
+                                .sub-menu {
+                                    padding: $gutter * .5 0 $gutter * .5 $gutter * 1.5;
+                                    li {
+                                        a {
+                                            padding: 0 0 $gutter * .5 $gutter * 3;
+                                        }
+                                        &:last-of-type {
+                                            a {
+                                                padding-bottom: 0;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                             .menu-toggle {
