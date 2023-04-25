@@ -445,6 +445,13 @@ h6,
                                             }
                                         }
                                     }
+                                    &.current-menu-item,
+                                    &.current-menu-parent,
+                                    &.current-menu-ancestor {
+                                        a {
+                                            color: $dark-purple!important;
+                                        }
+                                    }
                                 }
                             }
                             &:hover,
@@ -1520,9 +1527,23 @@ h6,
                                 }
                                 a {
                                     color: $white;
+                                    &:hover,
+                                    &:focus,
+                                    &:active {
+                                        color: $dartmouth-lightest-green;
+                                    }
                                 }
                                 &:before {
                                     border-bottom-color: $darmouth-dark-green;
+                                }
+                                li {
+                                    &.current-menu-item,
+                                    &.current-menu-parent,
+                                    &.current-menu-ancestor {
+                                        a {
+                                            color: $dartmouth-lightest-green!important;
+                                        }
+                                    }
                                 }
                             }
                         }
