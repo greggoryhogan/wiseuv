@@ -685,3 +685,13 @@ add_action( 'wp_enqueue_scripts', 'wpcu_remove_wp_block_library_css', 100 );
  */
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+/** Make edit post open in new window */
+add_filter( 'edit_post_link', 'wise_edit_link', 10, 3);
+function wise_edit_link( $link, $post_id, $text ) {
+    // Add the target attribute 
+    if( false === strpos( $link, 'target=' ) )
+        $link = str_replace( '<a ', '<a target="_blank" ', $link );
+
+    return $link;
+}
