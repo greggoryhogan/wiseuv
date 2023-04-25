@@ -51,6 +51,30 @@ function create_wise_custom_post_types() {
 	);
 	register_taxonomy( 'page-category', array( 'page' ), $args );*/
 
+    /**
+	 * Taxonomy: Page Tags
+	 */
+	register_taxonomy('page_tags', 'page', array(
+        'hierarchical' => false,
+        'public' => true, //hide from back end
+        'labels' => array(
+            'name' => _x( 'Page Tags', 'taxonomy general name' ),
+            'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
+            'search_items' =>  __( 'Search Tags' ),
+            'all_items' => __( 'All Tags' ),
+            'edit_item' => __( 'Edit Tag' ),
+            'update_item' => __( 'Update Tag' ),
+            'add_new_item' => __( 'Add New Tag' ),
+            'new_item_name' => __( 'New Tag' ),
+            'menu_name' => __( 'Page Tags' ),
+        ),
+        'rewrite' => array(
+            'slug' => 'page_tags', // This controls the base slug that will display before each term
+            'with_front' => false, // Don't display the category base before "/locations/"
+            'hierarchical' => false // This will allow URL's like "/locations/boston/cambridge/"
+        ),
+    ));
+
 }
 add_action( 'init', 'create_wise_custom_post_types', 10 );
 
