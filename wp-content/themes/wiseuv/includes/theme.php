@@ -113,8 +113,6 @@ add_action( 'admin_notices', 'wise_core_plugin_check' );
 function wise_navs(){
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'wise' ),
-        'footer'  => __( 'Footer Menu', 'wise' ),
-        'footer-2'  => __( 'Footer Secondary Menu', 'wise' ),
         'sticky'  => __( 'Sticky Footer Menu', 'wise' ),
     ) );
 }
