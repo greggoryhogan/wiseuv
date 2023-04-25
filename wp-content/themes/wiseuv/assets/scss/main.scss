@@ -593,12 +593,12 @@ h6,
     }
     .content {
         background: #fff;
-        min-height: calc(100vh - 300px); /* TODO: Convert to rem? */
+        min-height: calc(100vh - 540px); /* TODO: Convert to rem? */
         @media all and (max-width: $tablet) {
-            min-height: calc(100vh - 212px); /* TODO: Convert to rem? */
+            min-height: calc(100vh - 520px); /* TODO: Convert to rem? */
         }
         @media all and (max-width: $mobile) {
-            min-height: calc(100vh - 509px); /* TODO: Convert to rem? */
+            min-height: calc(100vh - 677px); /* TODO: Convert to rem? */
         }
         transition: .2s opacity;
         &.is-inactive {
