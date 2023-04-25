@@ -1160,6 +1160,13 @@ h6,
             @media all and (max-width: $mobile) {
                 flex-direction: column;
             }
+            .sticky-edit {
+                a {
+                    .feather-icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
             .contact {
                 flex: 1;
                 display: flex;

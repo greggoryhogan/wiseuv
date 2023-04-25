@@ -86,12 +86,12 @@
 			<div class="contact">
 				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 				<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
+				<?php edit_post_link(featherIcon('edit-2').'Edit Page','<div class="sticky-edit">','</div>'); ?>
 			</div>
 			<div class="actions">
 				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat">Live Chat</a>
 				<a href="<?php echo $close_location; ?>" class="exitsite">Exit Site Now</a>
 			</div>
-
 		</div>
 	</nav>
 </div>
