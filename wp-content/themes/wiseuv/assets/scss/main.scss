@@ -446,7 +446,7 @@ h6,
                                         }
                                     }
                                     &.current-menu-item {
-                                        a {
+                                        > a {
                                             color: $dark-purple!important;
                                         }
                                     }
@@ -1536,7 +1536,7 @@ h6,
                                 }
                                 li {
                                     &.current-menu-item {
-                                        a {
+                                        > a {
                                             color: $dartmouth-lightest-green!important;
                                         }
                                     }
