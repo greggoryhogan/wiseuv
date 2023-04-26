@@ -52,7 +52,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "You can define padding explicitly using 1rem 1rem 1rem 1rem or shorthand, 1rem 1rem. Explicit padding starts at the top and moves clockwise, top right bottom left. Shorthand adds the same for top and bottom, then sides. Typical types of padding are rem, px, vw, and %\r\n\r\nSuggestions: \r\n\r\nHero blocks use padding 6rem 0 1rem 0, 3rem 0 1rem 0 and 3rem 0 1rem 0 for desktop, tablet, and mobile, respectively.\r\n\r\nHeadings at the top of the page use padding 3rem 0rem 1rem, 2rem 0rem 1rem and 1rem 0 for desktop, tablet, and mobile, respectively.\r\n\r\nCTA Buttons (Arrow) use padding 4rem 0rem, 3rem 0rem and 2rem 0rem for desktop, tablet, and mobile, respectively.",
+            "message": "You can define padding explicitly using 1rem 1rem 1rem 1rem or shorthand, 1rem 1rem. Explicit padding starts at the top and moves clockwise, top right bottom left. Shorthand adds the same for top and bottom, then sides. Typical types of padding are rem, px, vw, and %\r\n\r\nSuggestions: \r\n\r\nFull Screen Hero blocks use a default padding on 10rem 0 20rem 0, 8rem 0 10rem 0 and 6rem 0 6rem 0 for desktop, tablet, and mobile, respectively.\r\n\r\nHeadings at the top of the page use padding 3rem 0rem 1rem, 2rem 0rem 1rem and 1rem 0 for desktop, tablet, and mobile, respectively.\r\n\r\nCTA Buttons (Arrow) use padding 4rem 0rem, 3rem 0rem and 2rem 0rem for desktop, tablet, and mobile, respectively.",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -77,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682527172
+    "modified": 1682530486
 }
