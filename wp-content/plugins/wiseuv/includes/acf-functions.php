@@ -104,6 +104,17 @@ function append_to_wise_post_content($post_id){
                     
                     endif;
                 }
+                if($row_layout == 'two_column_content' || $row_layout == 'three_column_content') {
+                    $heading_type = get_sub_field('heading_type');
+                    $content .= '<'.$heading_type.'>'.get_sub_field( 'heading' ).'</'.$heading_type.'>';
+                    $content .= get_sub_field('content');
+                    $content .= '<'.$heading_type.'>'.get_sub_field( 'heading_2' ).'</'.$heading_type.'>';
+                    $content .= get_sub_field('content_2');
+                    if($row_layout == 'three_column_content') {
+                        $content .= '<'.$heading_type.'>'.get_sub_field( 'heading_3' ).'</'.$heading_type.'>';
+                        $content .= get_sub_field('content_3');
+                    }
+                }
                 if($row_layout == 'wysiwyg') {
                     $content .= get_sub_field('content');
                 }
