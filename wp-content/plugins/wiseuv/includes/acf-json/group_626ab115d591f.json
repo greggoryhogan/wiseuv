@@ -139,7 +139,7 @@
                                 "cropped-wave": "Banner",
                                 "full": "Full Background Image"
                             },
-                            "default_value": "full",
+                            "default_value": "cropped-wave",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -4136,5 +4136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682523410
+    "modified": 1682523857
 }
