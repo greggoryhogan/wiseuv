@@ -454,7 +454,8 @@ section {
         }
         &-arrow {
             .btn {
-                display: inline-block;
+                display: flex;
+                align-items: center;
                 padding: 1.5rem 4rem 1.5rem 2.5rem;
                 border-radius: $border-radius-xl;
                 position: relative;
