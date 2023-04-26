@@ -3,6 +3,7 @@ $first_row_shows = get_sub_field('first_row_shows'); //image-left or image-right
 $heading_tag = get_sub_field('heading_tag');
 $heading_size = get_sub_field('heading_size');
 $font_weight = get_sub_field('font_weight');
+$vertical_align = get_sub_field('vertical_align');
 if( have_rows('rows') ):
     echo '<div class="flexible-content alternating-text-image '.$first_row_shows.'">';
         
@@ -11,7 +12,7 @@ if( have_rows('rows') ):
             $heading = get_sub_field('heading');
             $content = get_sub_field('content');
             $link = get_sub_field('link');
-            echo '<div class="row">';
+            echo '<div class="row '.$vertical_align.'">';
                 echo '<div class="image">';
                     if($image) {
                         echo wp_get_attachment_image( $image, 'large' );

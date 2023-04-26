@@ -3009,7 +3009,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -3039,7 +3039,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -3068,7 +3068,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -3079,6 +3079,33 @@
                                 "extra-bold": "Extra Bold"
                             },
                             "default_value": "normal",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_644968162b8f9",
+                            "label": "Vertical Align",
+                            "name": "vertical_align",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "align-top": "Top",
+                                "align-middle": "Middle",
+                                "align-bottom": "Bottom"
+                            },
+                            "default_value": "align-middle",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -4136,5 +4163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682523857
+    "modified": 1682532473
 }
