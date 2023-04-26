@@ -75,6 +75,8 @@ function create_wise_custom_post_types() {
         ),
     ));
 
+    add_post_type_support( 'page', 'excerpt' );
+
 }
 add_action( 'init', 'create_wise_custom_post_types', 10 );
 
