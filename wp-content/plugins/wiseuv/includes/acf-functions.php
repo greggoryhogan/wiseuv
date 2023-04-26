@@ -130,9 +130,9 @@ function append_to_wise_post_content($post_id){
             $post = get_post( $post_id );
             $post->post_content = $content;
             //Add excerpt if it isn't set
-            if(!has_excerpt($post_id)) {
+            /*if(!has_excerpt($post_id)) {
                 $post->post_excerpt = substr(strip_tags($content), 0, 100);
-            }
+            }*/
             remove_action('save_post','append_to_wise_post_content');
             wp_update_post( $post );
             add_action('save_post','append_to_wise_post_content');
