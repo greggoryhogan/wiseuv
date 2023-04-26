@@ -63,46 +63,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "default"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
             }
         ]
     ],
@@ -117,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682527142
+    "modified": 1682527172
 }

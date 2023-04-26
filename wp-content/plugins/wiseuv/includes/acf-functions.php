@@ -79,11 +79,31 @@ function append_to_wise_post_content($post_id){
             while(have_rows( $field_name, $post_id )) {
                 the_row();	
                 $row_layout = get_row_layout();
-                /*if($row_layout == 'heading') {
+                if($row_layout == 'heading') {
                     $heading = get_sub_field('heading');
                     $tag = get_sub_field('tag');
                     $content .= '<'.$tag.'>'.$heading.'</'.$tag.'>';
-                }*/
+                }
+                if($row_layout == 'list') {
+                    $list_ordering = get_sub_field('list_ordering');
+                    if( have_rows('list_items') ):
+                        $content .= '<'.$list_ordering.'>';
+                            while ( have_rows('list_items') ) : the_row();
+                                $content .= '<li>';
+                                    $label = get_sub_field('label');
+                                    $text = get_sub_field('text');
+                                    if($label != '') {
+                                        $content .= $label.' ';
+                                    }
+                                    if($text != '') {
+                                        $content .= $text;
+                                    }
+                                $content .= '</li>';
+                            endwhile;
+                        $content .= '</'.$list_ordering.'>';
+                    
+                    endif;
+                }
                 if($row_layout == 'wysiwyg') {
                     $content .= get_sub_field('content');
                 }
