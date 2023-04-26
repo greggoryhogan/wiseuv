@@ -80,12 +80,11 @@ function create_wise_custom_post_types() {
 }
 add_action( 'init', 'create_wise_custom_post_types', 10 );
 
-add_filter( 'gettext', 'change_wise_excerpt_description', 20, 3 );
-function change_wise_excerpt_description( $translated_text, $text, $domain ) {
-    switch ( $translated_text ) {
-        case 'Excerpts are optional hand-crafted summaries of your content that can be used in your theme. <a href="https://wordpress.org/documentation/article/what-is-an-excerpt-classic-editor/">Learn more about manual excerpts</a>.' :
-            $translated_text = 'Exerpts are optional summaries of your content. For the WISE theme, they are used primarily as page summaries in search results.';
-            break;
+add_filter( 'gettext', 'change_wise_excerpt_description' );
+function change_wise_excerpt_description( $translation, $original ) {
+    $pos = strpos($original, 'Excerpts are optional hand-crafted summaries of your');
+    if ($pos !== false) {
+        return  'Exerpts are optional summaries of your content. For the WISE theme, they are used primarily as page summaries in search results.';
     }
-    return $translated_text;
+    return $translation;
 }
