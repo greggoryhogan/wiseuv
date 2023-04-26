@@ -6,13 +6,13 @@ $border-radius-lg: 50px;
 $scaling: 1;
 $bgscale: 1.1;
 $gutter: 1rem;
-$gutter-sm: .75rem;
-$wrapper-xxs: 44rem; /*975px * .75*/
-$wrapper-xs: 53rem; /*1130*.75*/
-$wrapper-sm: 70rem; /*1500*.75*/
-$wrapper: 77rem;/*1645*.75*/
-$wrapper-lg: 101rem;/*2170*.75*/
+$gutter-sm: .5rem;
+$wrapper-xxs: 34rem; /*975px * .75*/
+$wrapper-xs: 54rem; /*1130*.75*/
+$wrapper-sm: 58rem; /*1500*.75*/
+$wrapper: 65rem;/*1645*.75*/
+$wrapper-lg: 74rem;/*2170*.75*/
 $wrapper-xl: calc(100vw - #{$gutter * 2});
-$tablet: 74rem;
-$mobile: 50rem;
+$tablet: 68rem;
+$mobile: 48rem;
 $mobile-sm: 35rem;
