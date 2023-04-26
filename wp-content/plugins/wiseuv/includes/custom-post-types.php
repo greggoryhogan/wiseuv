@@ -80,7 +80,7 @@ function create_wise_custom_post_types() {
 }
 add_action( 'init', 'create_wise_custom_post_types', 10 );
 
-add_filter( 'gettext', 'change_wise_excerpt_description' );
+add_filter( 'gettext', 'change_wise_excerpt_description',10,2 );
 function change_wise_excerpt_description( $translation, $original ) {
     $pos = strpos($original, 'Excerpts are optional hand-crafted summaries of your');
     if ($pos !== false) {
