@@ -2589,11 +2589,12 @@
                                 "id": ""
                             },
                             "choices": {
+                                "auto": "Auto",
                                 "one": "One",
                                 "two": "Two",
                                 "three": "Three"
                             },
-                            "default_value": "three",
+                            "default_value": "auto",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -4215,5 +4216,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682534423
+    "modified": 1682535988
 }

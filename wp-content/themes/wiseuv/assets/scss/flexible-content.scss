@@ -436,6 +436,7 @@ section {
                 text-transform: uppercase;
                 border-radius: $border-radius-lg;
                 font-weight: $font-bold;
+                text-align: center;
             }
         }
         &-arrow,
@@ -923,16 +924,28 @@ section {
             }
             &.cta-buttons {
                 @media all and (min-width: $mobile) {
-                    display: grid;
                     &.columns {
+                        &-auto {
+                            .btn {
+                                margin-right: $gutter;
+                                margin-bottom: $gutter;
+                                &:last-of-type {
+                                    margin-right: 0;    
+                                }
+                            }
+                        }
                         &-one {
+                            display: grid;
                             grid-template-columns: 1fr;
+                            gap: $gutter;
                         }
                         &-two {
+                            display: grid;
                             grid-template-columns: 1fr 1fr;
                             gap: $gutter * 2.5;
                         }
                         &-three {
+                            display: grid;
                             grid-template-columns: 1fr 1fr 1fr;
                             gap: $gutter * 2;
                         }
