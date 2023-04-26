@@ -1015,6 +1015,9 @@ section {
                         }
                     }
                     margin-bottom: $gutter * 3;
+                    &:only-child {
+                        margin-bottom: 0;
+                    }
                     .row-content {
                         @media all and (min-width: $mobile) {
                             width: 60%;
