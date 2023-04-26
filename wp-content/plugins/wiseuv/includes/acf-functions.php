@@ -76,10 +76,12 @@ function append_to_wise_post_content($post_id){
         //iterate each flexible section
         if ( have_rows( $field_name, $post_id ) ) {
             $content = '';
+            $rowct = 0;
             while(have_rows( $field_name, $post_id )) {
                 the_row();	
+                ++$rowct;
                 $row_layout = get_row_layout();
-                if($row_layout == 'heading') {
+                if($row_layout == 'heading' && $rowct > 1) {
                     $heading = get_sub_field('heading');
                     $tag = get_sub_field('tag');
                     $content .= '<'.$tag.'>'.$heading.'</'.$tag.'>';
@@ -127,6 +129,10 @@ function append_to_wise_post_content($post_id){
             }
             $post = get_post( $post_id );
             $post->post_content = $content;
+            //Add excerpt if it isn't set
+            if(!has_excerpt($post_id)) {
+                $post->post_excerpt = substr($content, 0, 100);
+            }
             remove_action('save_post','append_to_wise_post_content');
             wp_update_post( $post );
             add_action('save_post','append_to_wise_post_content');
