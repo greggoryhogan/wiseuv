@@ -45,7 +45,7 @@ $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
             echo '<p class="eyebrow">'.wise_content_filters($eyebrow).'</p>';
         }
         if($heading != '') {
-            echo '<'.$heading_type.' class="'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
+            echo '<'.$heading_type.' class="font-'.$font_size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$heading_type.'>';
         }
         if($subheading != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading).'</p>';
@@ -77,7 +77,7 @@ $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
             echo '<p class="eyebrow">'.wise_content_filters($eyebrow2).'</p>';
         }
         if($heading2 != '') {
-            echo '<'.$heading_type.' class="'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading2).'</'.$heading_type.'>';
+            echo '<'.$heading_type.' class="font-'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading2).'</'.$heading_type.'>';
         }
         if($subheading2 != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading2).'</p>';
@@ -109,7 +109,7 @@ $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
             echo '<p class="eyebrow">'.wise_content_filters($eyebrow3).'</p>';
         }
         if($heading3 != '') {
-            echo '<'.$heading_type.' class="'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading3).'</'.$heading_type.'>';
+            echo '<'.$heading_type.' class="font-'.$font_size.'" font-weight-'.$font_weight.'>'.wise_content_filters($heading3).'</'.$heading_type.'>';
         }
         if($subheading3 != '') {
             echo '<p class="subheading bodoni">'.wise_content_filters($subheading3).'</p>';
