@@ -951,7 +951,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "66",
                                 "class": "",
                                 "id": ""
                             },
@@ -966,6 +966,31 @@
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_644942eac1b5d",
+                            "label": "Remove Column Gap on Mobile",
+                            "name": "remove_column_gap_on_mobile",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "has-mobile-gap": "No",
+                                "no-mobile-gap": "Yes"
+                            },
+                            "default_value": "has-mobile-gap",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
                         },
                         {
                             "key": "field_626c2f0d2a1b8",
@@ -1735,7 +1760,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "66",
                                 "class": "",
                                 "id": ""
                             },
@@ -1750,6 +1775,31 @@
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_644944e99d6ce",
+                            "label": "Remove Column Gap on Mobile",
+                            "name": "remove_column_gap_on_mobile",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "has-mobile-gap": "No",
+                                "no-mobile-gap": "Yes"
+                            },
+                            "default_value": "has-mobile-gap",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
                         },
                         {
                             "key": "field_644019265a517",
@@ -4072,11 +4122,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "template-blog.php"
             }
         ]
     ],
@@ -4091,5 +4136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682432385
+    "modified": 1682523410
 }

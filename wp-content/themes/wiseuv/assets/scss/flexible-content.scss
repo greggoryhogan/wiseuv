@@ -852,6 +852,14 @@ section {
                 @media all and (max-width: $tablet) {
                     gap: $gutter * 2;
                 }
+                @media all and (max-width: $tablet) {
+                    &.no-mobile-gap {
+                        gap: 0;
+                        .column-content p:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
             &.accordion {
                 .accordion__item {

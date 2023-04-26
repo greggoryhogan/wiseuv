@@ -26,8 +26,9 @@ $column_animation_easinganimation_speed = get_sub_field('column_animation_easing
 $image_style = get_sub_field('image_style');
 $column_width = get_sub_field('column_width');
 $column_height = get_sub_field('column_height');
+$remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
 ?>
-<div class="flexible-content two-column-content <?php echo $row_order; ?> <?php echo $vertical_align; ?> column-width-<?php echo $column_width; ?>  column-height-<?php echo $column_height; ?>"><?php
+<div class="flexible-content two-column-content <?php echo $row_order; ?> <?php echo $vertical_align; ?> <?php echo $remove_column_gap_on_mobile; ?> column-width-<?php echo $column_width; ?>  column-height-<?php echo $column_height; ?>"><?php
     //if($link || $heading != '' || $column_content != '' || $image) {
         echo '<div class="contain-content"';
         if($column_1_animation != 'none') {

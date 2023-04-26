@@ -27,8 +27,9 @@ $font_weight = get_sub_field('font_weight');
 $image_style = get_sub_field('image_style');
 $column_width = get_sub_field('column_width');
 $column_height = get_sub_field('column_height');
+$remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
 ?>
-<div class="flexible-content three-column-content column-height-<?php echo $column_height; ?>"><?php
+<div class="flexible-content three-column-content column-height-<?php echo $column_height; ?> <?php echo $remove_column_gap_on_mobile; ?>"><?php
     
     echo '<div class="contain-content">';
         if($image) {
