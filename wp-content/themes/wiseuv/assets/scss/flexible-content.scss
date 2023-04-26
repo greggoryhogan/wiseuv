@@ -923,17 +923,19 @@ section {
                 }
             }
             &.cta-buttons {
-                @media all and (min-width: $mobile) {
-                    &.columns {
-                        &-auto {
-                            .btn {
-                                margin-right: $gutter;
-                                margin-bottom: $gutter;
-                                &:last-of-type {
-                                    margin-right: 0;    
-                                }
+                &.columns {
+                    &-auto {
+                        .btn {
+                            margin-right: $gutter;
+                            margin-bottom: $gutter;
+                            &:last-of-type {
+                                margin-right: 0;    
                             }
                         }
+                    }
+                }
+                @media all and (min-width: $mobile) {
+                    &.columns {
                         &-one {
                             display: grid;
                             grid-template-columns: 1fr;
@@ -952,9 +954,13 @@ section {
                     }
                 }
                 @media all and (max-width: $mobile) {
-                    .btn {
-                        display: block;
-                        margin-bottom: $gutter * 1.5;
+                    &.columns-one,
+                    &.columns-two,
+                    &.columns-three {
+                        .btn {
+                            display: block;
+                            margin-bottom: $gutter * 1.5;
+                        }
                     }
                 }
             }
