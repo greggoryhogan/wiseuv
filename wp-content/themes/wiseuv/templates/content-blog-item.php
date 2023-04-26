@@ -12,11 +12,7 @@ echo '<section class="two_column_content blog-post">';
 							echo '<a href="'.$permalink.'" title="Read '.$title.'">';
 								the_post_thumbnail('rb-blog');
 							echo '</a>';
-						} else if(get_post_type() == 'podcasts') {
-							echo '<a href="'.$permalink.'" title="Read '.$title.'">';
-								echo '<img src="'.get_bloginfo('template_url').'/assets/img/good-faith-podcast.jpg" alt="Good Faith Podcast" />';
-							echo '</a>';
-						}
+						} 
 						echo '</div>';
 					echo '</div>';
 				}
