@@ -780,7 +780,23 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_64496bc8e9190",
+                            "label": "CTA 2",
+                            "name": "cta_second",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -918,7 +934,23 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_64496be6e9191",
+                            "label": "CTA 2",
+                            "name": "cta_2_second",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1458,6 +1490,22 @@
                             "return_format": "array"
                         },
                         {
+                            "key": "field_64496e09f10a1",
+                            "label": "CTA 2",
+                            "name": "cta_second",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
                             "key": "field_644019265a50c",
                             "label": "Column 2",
                             "name": "",
@@ -1596,6 +1644,22 @@
                             "return_format": "array"
                         },
                         {
+                            "key": "field_64496e1ff10a2",
+                            "label": "CTA 2",
+                            "name": "cta_2_second",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
                             "key": "field_6440195a5a520",
                             "label": "Column 3",
                             "name": "",
@@ -1721,6 +1785,22 @@
                             "key": "field_6440196a5a521",
                             "label": "CTA",
                             "name": "cta_3",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_64496e2af10a3",
+                            "label": "CTA 2",
+                            "name": "cta_3_second",
                             "aria-label": "",
                             "type": "link",
                             "instructions": "",
@@ -4163,5 +4243,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682532473
+    "modified": 1682533937
 }

@@ -861,6 +861,23 @@ section {
                         }
                     }
                 }
+                .buttons {
+                    a {
+                        margin-bottom: $gutter;
+                        margin-right: $gutter;
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                    @media all and (max-width: $mobile) {
+                        flex-direction: column;
+                        display: flex;
+                        gap: $gutter;
+                        a {
+                            margin: 0;
+                        }
+                    }
+                }
             }
             &.accordion {
                 .accordion__item {
