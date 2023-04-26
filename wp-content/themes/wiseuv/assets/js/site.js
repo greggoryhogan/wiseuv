@@ -99,7 +99,7 @@
 
     var chatWindow = '';
     var chatWindowOpen = false;
-    $('.openchat').on('click',function(e) {
+    $('.openchat,a[href="https://www.resourceconnect.com/wiseuv/chat"]').on('click',function(e) {
       e.preventDefault();
       chatWindowOpen = true;
       chatWindow = open(theme_js.chat_url,'_blank');
