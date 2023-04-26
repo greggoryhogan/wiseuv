@@ -964,6 +964,12 @@ section {
                     }
                 }
             }
+            &.wysiwyg {
+                ul, ol {
+                    margin: 0 0 0 $gutter * 3;
+                    list-style: outside;
+                }
+            }
             &.banner-content {
                 &.no-right {
                     gap: 0;
