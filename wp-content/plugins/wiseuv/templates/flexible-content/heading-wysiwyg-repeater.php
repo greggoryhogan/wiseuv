@@ -6,13 +6,13 @@ if(have_rows('sections')) {
         $tag = get_sub_field('tag');
         $size = get_sub_field('size');
         $font_weight = get_sub_field('font_weight');
-        $contents = get_sub_field('content'); ?>
+        $content = get_sub_field('content'); ?>
         <div class="flexible-content heading">
             <?php if($heading != '') {
                 echo '<'.$tag.' class="'.$size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$tag.'>';
             }
             if($content != '') {
-                echo $contents;
+                echo $content;
             }
             ?>
         </div><?php 
