@@ -978,11 +978,11 @@ section {
                     h1,h2,h3,h4,h5,h6 {
                         margin: 0!important;
                     }
-                    p {
+                    /*p {
                         &:first-of-type {
                             margin-top: $gutter * .5;
                         }
-                    }
+                    }*/
                 }
             }
             &.flexible-grid {
@@ -996,7 +996,7 @@ section {
                     flex: 1;
                     .row-content {
                         &:not(:first-of-type) {
-                            margin-top: $gutter * 1.5;
+                            margin-top: $gutter * .5;
                         }
                         p {
                             &:first-of-type {

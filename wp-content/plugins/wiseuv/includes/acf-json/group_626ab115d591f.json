@@ -516,9 +516,9 @@
                                     },
                                     "default_value": "",
                                     "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0,
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "delay": 1,
                                     "parent_repeater": "field_6451478b0cf92"
                                 },
                                 {
@@ -2400,7 +2400,7 @@
                                             "tabs": "all",
                                             "toolbar": "basic",
                                             "media_upload": 0,
-                                            "delay": 0,
+                                            "delay": 1,
                                             "parent_repeater": "field_645150c151ce0"
                                         },
                                         {
@@ -4740,5 +4740,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683053171
+    "modified": 1683055075
 }
