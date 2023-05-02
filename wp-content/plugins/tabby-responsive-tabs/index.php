@@ -1,1 +1,0 @@
-<?php // in a silent way
