@@ -982,6 +982,11 @@ section {
             }
             &.flexible-grid {
                 display: flex;
+                gap: $gutter * 2;
+                @media all and (max-width: $mobile) {
+                    flex-direction: column;
+                    gap: $gutter * .5;
+                }
                 .flexible-column {
                     flex: 1;
                     .row-content {

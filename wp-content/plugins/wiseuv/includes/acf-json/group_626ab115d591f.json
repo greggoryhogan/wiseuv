@@ -2336,7 +2336,7 @@
                             "layout": "block",
                             "min": 1,
                             "max": 0,
-                            "collapsed": "",
+                            "collapsed": "field_645150c151ce0",
                             "button_label": "Add Column",
                             "rows_per_page": 20,
                             "sub_fields": [
@@ -2355,10 +2355,9 @@
                                         "id": ""
                                     },
                                     "layout": "block",
-                                    "pagination": 0,
                                     "min": 1,
                                     "max": 0,
-                                    "collapsed": "",
+                                    "collapsed": "field_6451506551cd7",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
                                     "sub_fields": [
@@ -4741,5 +4740,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683051512
+    "modified": 1683053171
 }
