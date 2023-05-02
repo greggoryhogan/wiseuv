@@ -35,7 +35,7 @@ function load_WISE_THEME_scripts() {
     
     //wp_enqueue_style( 'aos-css', WISE_THEME_URI . '/assets/aos-master/dist/aos.css',null,'3.0.0' );
     wp_enqueue_style('google-fonts','https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
-    wp_enqueue_style('adone-fonts','https://use.typekit.net/lmo5yiv.css');
+    wp_enqueue_style('adobe-fonts','https://use.typekit.net/lmo5yiv.css');
     wp_enqueue_script( 'hoverIntent' ); //wp version of hoverintent
     //wp_enqueue_script( 'aos-js', WISE_THEME_URI. '/assets/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
     wp_enqueue_script( 'theme-js', WISE_THEME_URI. '/assets/js/site.js', array('jquery'),$version, true );
@@ -51,14 +51,14 @@ function load_WISE_THEME_scripts() {
 		)
 	);
     //javascript cookie
-    wp_enqueue_script( 'rb-cookie', WISE_THEME_URI. '/assets/js/js.cookie.min.js', array('jquery'),'1.0', false );
+    //wp_enqueue_script( 'rb-cookie', WISE_THEME_URI. '/assets/js/js.cookie.min.js', array('jquery'),'1.0', false );
     //disable cart fragments
-    wp_dequeue_script('wc-cart-fragments'); 
+    //wp_dequeue_script('wc-cart-fragments'); 
     //testimonials
-	wp_register_style( 'slick-css', WISE_THEME_URI .'/assets/slick-slider/slick.css', array(), '1.0');
-	wp_register_script('slick-js', WISE_THEME_URI .'/assets/slick-slider/slick.min.js', array('jquery'),'1.0', true);
+	//wp_register_style( 'slick-css', WISE_THEME_URI .'/assets/slick-slider/slick.css', array(), '1.0');
+	//wp_register_script('slick-js', WISE_THEME_URI .'/assets/slick-slider/slick.min.js', array('jquery'),'1.0', true);
     //countUp
-    wp_register_script('countup', WISE_THEME_URI .'/assets/js/countUp.umd.js', array('jquery'),'1.0', true);
+    //wp_register_script('countup', WISE_THEME_URI .'/assets/js/countUp.umd.js', array('jquery'),'1.0', true);
     
 }
 add_action( 'wp_enqueue_scripts', 'load_WISE_THEME_scripts' );

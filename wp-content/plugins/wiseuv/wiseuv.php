@@ -101,6 +101,8 @@ function enqueue_wise_scripts() {
 	); //had 'affiliation_optons' => get_available_church_affiliations(),*/
     wp_register_script('flexible-accordion', WISE_URL .'/includes/js/accordion.js', array('jquery'),$plugin_version, true);
 
+    wp_dequeue_style( 'classic-theme-styles' );
+
 } 
 add_action( 'wp_enqueue_scripts', 'enqueue_wise_scripts' );
 
