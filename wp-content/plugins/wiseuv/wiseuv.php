@@ -76,8 +76,8 @@ function enqueue_wise_scripts() {
 	//wp_enqueue_script('lozad-js');
 
 	//plugin
-	//wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
-	//wp_enqueue_script('wise-plugin');
+	wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
+	wp_enqueue_script('wise-plugin');
 
     //AOS
     wp_register_script('wise-aos', WISE_URL .'/includes/js/aos.js', array('jquery'),$plugin_version, true);

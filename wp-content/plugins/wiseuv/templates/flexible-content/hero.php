@@ -3,7 +3,7 @@ $heading = get_sub_field('heading');
 $content = get_sub_field('content');
 $style = get_sub_field('style');
 $link = get_sub_field('link');
-$background_image = get_sub_field('background_image');
+/*$background_image = get_sub_field('background_image');*/
 ?>
 <div class="flexible-content hero style-<?php echo $style; ?>">
     <?php if($heading != '') { 
