@@ -975,6 +975,23 @@ section {
                     &:not(:first-of-type) {
                         margin-top: $gutter * 1.5;
                     }
+                    h1,h2,h3,h4,h5,h6 {
+                        margin: 0!important;
+                    }
+                }
+            }
+            &.flexible-grid {
+                display: flex;
+                .flexible-column {
+                    flex: 1;
+                    .row-content {
+                        &:not(:first-of-type) {
+                            margin-top: $gutter * 1.5;
+                        }
+                    }
+                    h1,h2,h3,h4,h5,h6 {
+                        margin: 0!important;
+                    }
                 }
             }
             &.banner-content {
