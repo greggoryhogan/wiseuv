@@ -697,7 +697,7 @@ section {
     .container {
         .flexible-content {
             width: 100%;
-
+            z-index: 10;
             //50, 40, 30, 20, 16
             .font-biggest {
                 font-size: 3.125rem;

@@ -123,7 +123,6 @@ h6,
         width: 100%;
         position: relative;
         max-width: $wrapper;
-        z-index: 10;
         &.container__xxs {
             max-width: $wrapper-xxs;
         }
@@ -214,7 +213,7 @@ h6,
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 10;
+        z-index: 12;
         position: relative;
         @media all and (min-width: $tablet) {
             height: 5.3 * $gutter;
