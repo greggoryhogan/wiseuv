@@ -348,7 +348,7 @@
                 "layout_64514752d5bc7": {
                     "key": "layout_64514752d5bc7",
                     "name": "heading-wysiwyg-repeater",
-                    "label": "Repeating Heading\/WYSIWYG",
+                    "label": "Repeating Heading \/ WYSIWYG",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -4442,5 +4442,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683049164
+    "modified": 1683049331
 }
