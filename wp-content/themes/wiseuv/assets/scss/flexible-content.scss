@@ -996,11 +996,11 @@ section {
                     flex: 1;
                     .row-content {
                         &:not(:first-of-type) {
-                            margin-top: $gutter * .5;
+                            margin-top: $gutter * 1.5;
                         }
                         p {
                             &:first-of-type {
-                                margin-top: 0;
+                                margin-top: $gutter * .5;
                             }
                         }
                     }
