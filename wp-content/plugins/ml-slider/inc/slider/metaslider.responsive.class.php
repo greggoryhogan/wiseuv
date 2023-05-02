@@ -12,6 +12,26 @@ class MetaResponsiveSlider extends MetaSlider
     protected $js_function = 'responsiveSlides';
     protected $js_path = 'sliders/responsiveslides/responsiveslides.min.js';
     protected $css_path = 'sliders/responsiveslides/responsiveslides.css';
+    
+    /**
+     * Constructor
+     *
+     * @param integer $id slideshow ID
+     */
+    public function __construct($id, $shortcodeSettings)
+    {
+        parent::__construct($id, $shortcodeSettings);
+        add_filter('metaslider_css_classes', array($this,'addNoTextCss'), 11, 3);
+    }
+
+    public function addNoTextCss($class, $id, $settings)
+    {
+        if (empty($settings["prevText"]) || empty($settings["nextText"])) {
+            return $class .= " no-text";
+        }
+        remove_filter('metaslider_css_classes', array($this, 'addNoTextCss'), 12);
+        return $class;
+    }
 
     /**
      * Detect whether thie slide supports the requested setting,

@@ -619,7 +619,14 @@ window.jQuery(function ($) {
     $('.tipsy-tooltip-bottom').tipsy({live: false, delayIn: 500, html: true, gravity: 'n'})
     $('.tipsy-tooltip-bottom-toolbar').tipsy({live: false, delayIn: 500, html: true, gravity: 'n', offset: 2})
 
+    // welcome screen dropdown
+    $('#sampleslider-btn').on('click', function () {
+        window.location.href = $('#sampleslider-options').val();
+    });
 
+    if (window.location.href.indexOf("withcaption") > -1) {
+        $("input[value='override']").attr('checked', true).trigger('click');
+    }
 });
 
 /**

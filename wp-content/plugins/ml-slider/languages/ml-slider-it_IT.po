@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - Slider, Gallery, and Carousel by MetaSlider &#8211; Responsive WordPress Plugin - Stable (latest release)\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-12-29 09:52+0100\n"
+"PO-Revision-Date: 2023-01-10 12:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -3272,11 +3272,11 @@ msgstr "Quadrati casuali"
 
 #: ml-slider.php:1595
 msgid "Slide in Left"
-msgstr ""
+msgstr "Entrata da sinistra"
 
 #: ml-slider.php:1591
 msgid "Slide in Right"
-msgstr ""
+msgstr "Entrata da destra"
 
 #: ml-slider.php:1587
 msgid "Fade"
@@ -3288,23 +3288,23 @@ msgstr "Avvolgimento"
 
 #: ml-slider.php:1579
 msgid "Slice Up Down Left"
-msgstr ""
+msgstr "Bande dall'alto in basso a sinistra"
 
 #: ml-slider.php:1575
 msgid "Slide Up Down"
-msgstr ""
+msgstr "Entrata dall'alto in basso"
 
 #: ml-slider.php:1571
 msgid "Slice Up Left"
-msgstr ""
+msgstr "Strisce dall'alto a sinistra"
 
 #: ml-slider.php:1567
 msgid "Slice Up"
-msgstr "Dissolvenza a strisce"
+msgstr "Strisce in alto"
 
 #: ml-slider.php:1563
 msgid "Slice Down"
-msgstr ""
+msgstr "Strisce in basso"
 
 #: ml-slider.php:1559
 msgid "Straight"

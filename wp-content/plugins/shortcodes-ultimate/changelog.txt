@@ -1,3 +1,21 @@
+### 5.12.10
+
+This update provides minor improvements to the plugin codebase and removes connectivity test upon activation
+It also fixes the fatal error introduced in version 5.12.9
+
+
+### 5.12.9
+
+This update provides minor improvements to the plugin codebase and removes connectivity test upon activation
+
+
+### 5.12.8
+
+**Security update**
+
+This update features security improvements and is recommended for all users
+
+
 ### 5.12.7
 
 **Security update**

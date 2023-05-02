@@ -3,10 +3,10 @@ Contributors: gn_themes
 License: GPLv3
 Donate link: https://paypal.me/anovladimir
 Tags: shortcode, toggle, columns, button, slider
-Stable tag: 5.12.8
+Stable tag: 5.12.11
 Requires PHP: 5.4
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.2
 
 
 A comprehensive collection of visual components for your site
@@ -138,11 +138,11 @@ First, visit the [Help Center](https://getshortcodes.com/support/). If you get s
 ## Changelog
 
 
-### 5.12.8
+### 5.12.11
 
-**Security update**
+**Stability release**
 
-This update features security improvements and is recommended for all users
+This update provides minor improvements to the plugin codebase and bugfixes
 
 
 ---

@@ -5,11 +5,11 @@
  * Plugin Name: MetaSlider
  * Plugin URI:  https://www.metaslider.com
  * Description: Easy to use slideshow plugin. Create SEO optimised responsive slideshows with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides.
- * Version:     3.28.3
+ * Version:     3.30.0
  * Author:      MetaSlider
  * Author URI:  https://www.metaslider.com
  * License:     GPL-2.0+
- * Copyright:   2020- MetaSlider LLC
+ * Copyright:   2023 - MetaSlider LLC
  *
  * Text Domain: ml-slider
  * Domain Path: /languages
@@ -35,11 +35,6 @@ if (! class_exists('MetaSliderPlugin')) {
      */
     class MetaSliderPlugin
     {
-        /**
-         * Delay in days, for displaying the extendify notice.
-         */
-        const EXTENDIFY_NOTICE_DELAY_IN_DAYS = 3;
-
         const DEFAULT_CAPABILITY_EDIT_SLIDES = 'edit_others_posts';
 
         /**
@@ -47,7 +42,7 @@ if (! class_exists('MetaSliderPlugin')) {
          *
          * @var string
          */
-        public $version = '3.28.3';
+        public $version = '3.30.0';
 
         /**
          * Pro installed version number
@@ -70,6 +65,26 @@ if (! class_exists('MetaSliderPlugin')) {
          * @see get_instance()
          */
         protected static $instance = null;
+
+        /**
+         * @var MetaSlider_Admin_Pages
+         */
+        public $admin = null;
+
+        /**
+         * @var \MetaSlider_Themes|object|null
+         */
+        public $themes;
+
+        /**
+         * @var \MetaSlider_Api|object|null
+         */
+        public $api;
+
+        /**
+         * @var \MetaSlider_Gutenberg
+         */
+        public $gutenberg;
 
         /**
          * Constructor
@@ -141,10 +156,6 @@ if (! class_exists('MetaSliderPlugin')) {
             }
 
             // require_once(METASLIDER_PATH . 'admin/lib/temporary.php');
-
-            if (MetaSliderPlugin::should_load_extendify_sdk()) {
-                require_once METASLIDER_PATH . 'admin/lib/extendify-notice.php';
-            }
             // require_once(METASLIDER_PATH . 'admin/lib/callout.php');
         }
 
@@ -187,6 +198,7 @@ if (! class_exists('MetaSliderPlugin')) {
                 'simple_html_dom' => METASLIDER_PATH . 'inc/simple_html_dom.php',
                 'metaslider_notices' => METASLIDER_PATH . 'admin/Notices.php',
                 'metaslider_admin_pages' => METASLIDER_PATH . 'admin/Pages.php',
+                'metaslider_admin_table' => METASLIDER_PATH . 'admin/Table.php',
                 'metaslider_slideshows' => METASLIDER_PATH . 'admin/Slideshows/Slideshows.php',
                 'metaslider_settings' => METASLIDER_PATH . 'admin/Slideshows/Settings.php',
                 'metaslider_slide' => METASLIDER_PATH . 'admin/Slideshows/slides/Slide.php',
@@ -427,6 +439,8 @@ if (! class_exists('MetaSliderPlugin')) {
             $title = metaslider_pro_is_active() ? 'MetaSlider Pro' : 'MetaSlider';
 
             $this->admin->add_page($title, 'metaslider');
+            $this->admin->add_page(__('Home', 'ml-slider'), 'metaslider', 'metaslider');
+            $this->admin->add_page(__('Quick Start', 'ml-slider'), 'metaslider-start', 'metaslider');
             $this->admin->add_page(__('Settings & Help', 'ml-slider'), 'metaslider-settings', 'metaslider');
 
             if (metaslider_user_sees_upgrade_page()) {
@@ -917,9 +931,54 @@ if (! class_exists('MetaSliderPlugin')) {
 
             $id = MetaSlider_Slideshows::create();
 
-            wp_redirect(admin_url("admin.php?page=metaslider&id={$id}"));
-            exit;
+            if (isset($_GET['metaslider_add_sample_slides'])) {
+                $slideInstance = new MetaSlider_Slideshows();
+                $sampleType = sanitize_key($_GET['metaslider_add_sample_slides']);
+                if ($sampleType == 'carousel') {
+                    $settings = array(
+                        'type' => 'flex',
+                        'printCss' => 'on',
+                        'printJs' => 'on',
+                        'width' => 1200,
+                        'height' => 600,
+                        'center' => 'on',
+                        'carouselMode' => 'on',
+                        'autoPlay' => 'on',
+                        'fullWidth' => 'on',
+                        'noConflict' => 'on'
+                    );
+                    $sampleId = $slideInstance->save($id, $settings);
+                } elseif ($sampleType == 'withcaption') {
+                    $settings = array(
+                        'type' => 'flex',
+                        'printCss' => 'on',
+                        'printJs' => 'on',
+                        'width' => 400,
+                        'height' => 400,
+                        'center' => 'on',
+                        'carouselMode' => 'on',
+                        'autoPlay' => 'on',
+                        'fullWidth' => 'on',
+                        'noConflict' => 'on'
+                    );
+                    $sampleId = $slideInstance->save($id, $settings);
+
+                    $themeInstance = new MetaSlider_Themes();
+                    $outlineTheme = $themeInstance->get_theme_object($id,'outline');
+                    $setTheme = $themeInstance->set($id, $outlineTheme);
+                } else {
+                    $sampleId = $id;
+                    $sampleType = "";
+                }
+
+                wp_redirect(esc_url_raw(admin_url("admin.php?page=metaslider&id={$sampleId}&metaslider_add_sample_slides={$sampleType}")));
+                exit;
+            } else {
+                wp_redirect(esc_url_raw(admin_url("admin.php?page=metaslider&id={$id}")));
+                exit;
+            }          
         }
+
 
 
         /**
@@ -1078,7 +1137,7 @@ if (! class_exists('MetaSliderPlugin')) {
                                 $navigation_row .= sprintf(
                                     " <a target='_blank' class='get-addon' href='%s' title='%s'>%s</a>",
                                     esc_url(metaslider_get_upgrade_link()),
-                                    esc_html__('Get the Add-on Pack today!', 'ml-slider'),
+                                    esc_html__('Get MetaSlider Pro today!', 'ml-slider'),
                                     esc_html__('Learn More', 'ml-slider')
                                 );
                             }
@@ -1998,7 +2057,7 @@ if (! class_exists('MetaSliderPlugin')) {
                                                             'label' => esc_html__("Easing", "ml-slider"),
                                                             'class' => 'option flex',
                                                             'helptext' => esc_html__(
-                                                                "Animation easing effect",
+                                                                "Easing is only available with the 'Slide' transition setting",
                                                                 "ml-slider"
                                                             ),
                                                             'value' => $this->slider->get_setting('easing'),
@@ -2322,7 +2381,7 @@ if (! class_exists('MetaSliderPlugin')) {
                     '<a class="probutton button button-primary button-hero" href="' . esc_url(
                         $link
                     ) . '" target="_blank">' . esc_html__(
-                        'Find out more about all the features of the Add-on Pack here',
+                        'Find out more about all the features of MetaSlider Pro here',
                         'ml-slider'
                     ) . "</a>",
                     "<p>" . esc_html__('Opens in a new window', 'ml-slider') . "</p>"
@@ -2363,7 +2422,7 @@ if (! class_exists('MetaSliderPlugin')) {
                         'ml-slider'
                     ) . "</p>",
                     "<a class='probutton button button-primary button-hero' href='{$link}' target='_blank'>" . esc_html__(
-                        'Find out more about all the features of the Add-on Pack here',
+                        'Find out more about all the features of MetaSlider Pro here',
                         'ml-slider'
                     ) . "</a>",
                     "<p>" . esc_html__('Opens in a new window', 'ml-slider') . "</p>"
@@ -2404,7 +2463,7 @@ if (! class_exists('MetaSliderPlugin')) {
                         'ml-slider'
                     ) . "</p>",
                     "<a class='probutton button button-primary button-hero' href='{$link}' target='_blank'>" . esc_html__(
-                        'Find out more about all the features of the Add-on Pack here',
+                        'Find out more about all the features of MetaSlider Pro here',
                         'ml-slider'
                     ) . "</a>",
                     "<p>" . esc_html__('Opens in a new window', 'ml-slider') . "</p>"
@@ -2452,7 +2511,7 @@ if (! class_exists('MetaSliderPlugin')) {
                     '<a class="probutton button button-primary button-hero" href="' . esc_url(
                         $link
                     ) . '" target="_blank">' . esc_html__(
-                        "Find out more about all the features of the Add-on Pack here",
+                        "Find out more about all the features of MetaSlider Pro here",
                         "ml-slider"
                     ) . '</a>',
                     "<p>" . esc_html__('Opens in a new window', 'ml-slider') . "</p>"
@@ -2570,18 +2629,6 @@ if (! class_exists('MetaSliderPlugin')) {
 
             return $tag;
         }
-
-        public static function should_load_extendify_sdk()
-        {
-            $extendify_min_wp = '5.4';
-
-            require ABSPATH . WPINC . '/version.php';
-
-            return ! MetaSlider_Settings::get_instance()->get_disable_extendify_sdk()
-                && is_readable(__DIR__ . '/extendify-sdk/loader.php')
-                && apply_filters('extendifysdk_load_library', true)
-                && version_compare($wp_version, $extendify_min_wp, '>=');
-        }
     }
 
     if (! class_exists('MetaSlider_Settings')) {
@@ -2600,16 +2647,6 @@ if (! class_exists('MetaSliderPlugin')) {
             define('METAGALLERY_BASE_URL', plugin_dir_url(__FILE__) . 'metagallery/');
             require plugin_dir_path(__FILE__) . 'metagallery/metagallery.php';
         }
-    }
-
-    // Load the Extendify SDK library
-    if (MetaSliderPlugin::should_load_extendify_sdk()) {
-        if (! isset($GLOBALS['extendify_sdk_partner'])) {
-            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-            $GLOBALS['extendify_sdk_partner'] = 'MetaSlider';
-        }
-
-        require plugin_dir_path(__FILE__) . 'extendify-sdk/loader.php';
     }
 }
 

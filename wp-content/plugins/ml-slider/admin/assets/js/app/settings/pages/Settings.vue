@@ -50,18 +50,6 @@
                     <small v-if="Object.prototype.hasOwnProperty.call(optinInfo, 'id')" class="italic">Activated by user id #{{ optinInfo.id }} ({{ optinInfo.email }}) on {{ new Date(optinInfo.time * 1000).toLocaleDateString() }}</small>
                 </template>
 			</switch-single-input>
-			<switch-single-input v-model="globalSettings.disableExtendify" @change="saveGlobalSettings()">
-				<template slot="header">{{ __('Disable Extendify', 'ml-slider') }}</template>
-				<template slot="description">
-                    <span v-html="disableExtendifyDescription"/>
-					<br>
-					<br>
-					<alert-warning-small :link="this.deactivateExtendifyUrl" v-if="this.extendifyPluginActive && globalSettings.disableExtendify">
-						<template slot="description">{{ __('Internal integration is disabled but Extendify is still activated as a standalone plugin.', 'ml-slider') }}</template>
-						<template slot="link-text">{{ __('Click here to deactivate it', 'ml-slider') }}</template>
-					</alert-warning-small>
-                </template>
-			</switch-single-input>
 		</template>
 	</split-layout>
 </div>
@@ -94,7 +82,6 @@ export default {
             globalSettings: {
 				license: '',
 				optIn: false,
-				disableExtendify: true,
 			},
 
 		}
@@ -115,12 +102,6 @@ export default {
                 `<a target="_blank" href="${this.privacyLink}">${this.__('View our detailed privacy policy', 'ml-slider')}</a>`
             )
 		},
-		disableExtendifyDescription() {
-			return this.__('Disable the internal Extendify integration.', 'ml-slider');
-		},
-		extendifyInstalledWarning() {
-			return this.__('Extendify plugin is installed.', 'ml-slider');
-		}
 	},
 	created() {
 		Settings.getSlideshowDefaults().then(({data}) => {

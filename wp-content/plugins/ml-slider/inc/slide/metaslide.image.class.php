@@ -316,7 +316,7 @@ class MetaImageSlide extends MetaSlide
         $row  = "<tr id='slide-" . esc_attr($this->slide->ID) . "' class='slide image flex responsive nivo coin' data-attachment-id='" . esc_attr($attachment_id) . "'>
                     <td class='col-1'>
                         <div class='metaslider-ui-controls ui-sortable-handle rtl:pl-0 rtl:pr-3'>
-                        <h4 class='slide-details'>" . esc_html($slide_label) . "</h4>";
+                        <h4 class='slide-details'>" . esc_html($slide_label) . " | ID: ". esc_html($this->slide->ID) ."</h4>";
         if (metaslider_this_is_trash($this->slide)) {
             $row .= '<div class="row-actions trash-btns">';
             $row .= "<span class='untrash'>{$this->get_undelete_button_html()}</span>";
