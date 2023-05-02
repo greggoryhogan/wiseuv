@@ -210,11 +210,16 @@ function wise_content() {
                             }
                             echo '<div class="container flex-content-container '.$container_size.' '.$container_alignment.'"';
                                 $aos_animation = get_sub_field('animation');
-                                if($aos_animation != 'none') {
-                                    $easing = get_sub_field('easing');
-                                    $anchor_placement = get_sub_field('anchor_placement');
-                                    $speed = get_sub_field('animation_speed');
-                                    echo ' data-aos="'.$aos_animation.'" data-aos-easing="'.$easing.'" data-aos-anchor-placement="'.$anchor_placement.'" data-aos-duration="'.$speed.'"';
+                                if($aos_animation) {
+                                    if($aos_animation != 'none') {
+                                        $easing = get_sub_field('easing');
+                                        $anchor_placement = get_sub_field('anchor_placement');
+                                        $speed = get_sub_field('animation_speed');
+                                        wp_enqueue_script('wise-aos');
+                                        wp_enqueue_style('aos-css');
+                                        wp_enqueue_script('aos-js');
+                                        echo ' data-aos="'.$aos_animation.'" data-aos-easing="'.$easing.'" data-aos-anchor-placement="'.$anchor_placement.'" data-aos-duration="'.$speed.'"';
+                                    }
                                 }
                             echo '>';
                                 

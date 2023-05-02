@@ -72,20 +72,24 @@ function enqueue_wise_scripts() {
     wp_enqueue_style( 'wise-plugin-flexible-content' );
 
     //lozad
-	wp_register_script('lozad-js', WISE_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
-	wp_enqueue_script('lozad-js');
+	//wp_register_script('lozad-js', WISE_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
+	//wp_enqueue_script('lozad-js');
 
 	//plugin
-	wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
-	wp_enqueue_script('wise-plugin');
+	//wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
+	//wp_enqueue_script('wise-plugin');
 
     //AOS
-    wp_enqueue_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
-    wp_enqueue_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
+    wp_register_script('wise-aos', WISE_URL .'/includes/js/aos.js', array('jquery'),$plugin_version, true);
+    wp_register_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
+    wp_register_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
+	//wp_enqueue_script('wise-plugin');
+    //wp_enqueue_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
+    //wp_enqueue_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
     
 	
 	/*Add church affiliations dropdown available in site.js*/
-	wp_localize_script(
+	/*wp_localize_script(
 		'wise-plugin',
 		'plugin_js',
 		array(
@@ -94,8 +98,7 @@ function enqueue_wise_scripts() {
 		   'current_user_id' => get_current_user_ID(),
 		   'page_title' => get_the_title(),
 		)
-	); //had 'affiliation_optons' => get_available_church_affiliations(),
-
+	); //had 'affiliation_optons' => get_available_church_affiliations(),*/
     wp_register_script('flexible-accordion', WISE_URL .'/includes/js/accordion.js', array('jquery'),$plugin_version, true);
 
 } 

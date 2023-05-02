@@ -47,7 +47,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -82,10 +82,10 @@
                 "zoom-out-right": "zoom-out-right"
             },
             "default_value": "none",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -99,7 +99,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -134,10 +134,62 @@
                 "zoom-out-right": "zoom-out-right"
             },
             "default_value": "none",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_645166afa8a9f",
+            "label": "Column 3 Animation (if applicable)",
+            "name": "column_3_animation",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "fade": "fade",
+                "fade-up": "fade-up",
+                "fade-down": "fade-down",
+                "fade-left": "fade-left",
+                "fade-right": "fade-right",
+                "fade-up-right": "fade-up-right",
+                "fade-up-left": "fade-up-left",
+                "fade-down-right": "fade-down-right",
+                "fade-down-left": "fade-down-left",
+                "flip-up": "flip-up",
+                "flip-down": "flip-down",
+                "flip-left": "flip-left",
+                "flip-right": "flip-right",
+                "slide-up": "slide-up",
+                "slide-down": "slide-down",
+                "slide-left": "slide-left",
+                "slide-right": "slide-right",
+                "zoom-in": "zoom-in",
+                "zoom-in-up": "zoom-in-up",
+                "zoom-in-down": "zoom-in-down",
+                "zoom-in-left": "zoom-in-left",
+                "zoom-in-right": "zoom-in-right",
+                "zoom-out": "zoom-out",
+                "zoom-out-up": "zoom-out-up",
+                "zoom-out-down": "zoom-out-down",
+                "zoom-out-left": "zoom-out-left",
+                "zoom-out-right": "zoom-out-right"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -166,7 +218,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -182,10 +234,10 @@
                 "bottom-top": "bottom-top"
             },
             "default_value": "top-bottom",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -214,7 +266,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -241,10 +293,10 @@
                 "ease-in-out-quart": "ease-in-out-quart"
             },
             "default_value": "ease",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
@@ -273,17 +325,17 @@
                 ]
             ],
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": 300,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "min": 0,
             "max": 3000,
-            "step": 50
+            "placeholder": "",
+            "step": 50,
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -304,5 +356,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678206123
+    "modified": 1683056380
 }

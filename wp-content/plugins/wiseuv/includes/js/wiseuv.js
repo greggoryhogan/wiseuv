@@ -2,7 +2,7 @@
     $(document).ready(function() {
         
         //lozad
-        const observer = lozad('.lozad', {
+        /*const observer = lozad('.lozad', {
             loaded: function(el) {
                 // Custom implementation on a loaded element
                 el.classList.add('loaded');
@@ -17,7 +17,7 @@
                 }
             }
         });
-        observer.observe();
+        observer.observe();*/
         
         //AOS init
         AOS.init({

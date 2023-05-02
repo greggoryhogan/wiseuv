@@ -31,10 +31,21 @@ $image_style = get_sub_field('image_style');
 $column_width = get_sub_field('column_width');
 $column_height = get_sub_field('column_height');
 $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
+$column_1_animation = get_sub_field('column_1_animation');
+$column_2_animation = get_sub_field('column_2_animation');
+$column_3_animation = get_sub_field('column_3_animation');
+$column_animation_anchor_placement = get_sub_field('column_animation_anchor_placement');
+$column_animation_easing = get_sub_field('column_animation_easing');
+$column_animation_easinganimation_speed = get_sub_field('column_animation_easinganimation_speed');
+
 ?>
 <div class="flexible-content three-column-content column-height-<?php echo $column_height; ?> <?php echo $remove_column_gap_on_mobile; ?>"><?php
     
-    echo '<div class="contain-content">';
+    echo '<div class="contain-content"';
+        if($column_1_animation != 'none') {
+            echo ' data-aos="'.$column_1_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
+        }
+        echo '>';
         if($image) {
             echo '<div class="image '.$force_images_full_width.' '.$image_style;
             if(!$link && $heading == '' && $column_content == '') {
@@ -74,7 +85,11 @@ $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
         echo '</div>';
     echo '</div>';  
 
-    echo '<div class="contain-content">';
+    echo '<div class="contain-content"';
+        if($column_2_animation != 'none') {
+            echo ' data-aos="'.$column_2_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
+        }
+        echo '>';
         if($image2 && $image_style) {
             echo '<div class="image '.$force_images_full_width.' '.$image_style;
             if(!$link2 && $heading2 == '' && $column_content2 == '') {
@@ -114,7 +129,11 @@ $remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
         echo '</div>';
     echo '</div>';  
 
-    echo '<div class="contain-content">';
+    echo '<div class="contain-content"';
+        if($column_3_animation != 'none') {
+            echo ' data-aos="'.$column_3_animation.'" data-aos-easing="'.$column_animation_easing.'" data-aos-anchor-placement="'.$column_animation_anchor_placement.'" data-aos-duration="'.$column_animation_easinganimation_speed.'"';
+        }
+        echo '>';
         if($image3 && $image_style) {
             echo '<div class="image '.$force_images_full_width.' '.$image_style;
             if(!$link3 && $heading3 == '' && $column_content3 == '') {
