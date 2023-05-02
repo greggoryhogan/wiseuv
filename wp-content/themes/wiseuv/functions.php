@@ -34,7 +34,7 @@ function load_WISE_THEME_scripts() {
     }
     
     //wp_enqueue_style( 'aos-css', WISE_THEME_URI . '/assets/aos-master/dist/aos.css',null,'3.0.0' );
-    wp_enqueue_style('google-fonts','https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+    //wp_enqueue_style('google-fonts','https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
     wp_enqueue_style('adobe-fonts','https://use.typekit.net/lmo5yiv.css');
     wp_enqueue_script( 'hoverIntent' ); //wp version of hoverintent
     //wp_enqueue_script( 'aos-js', WISE_THEME_URI. '/assets/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
