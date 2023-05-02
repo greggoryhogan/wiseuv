@@ -970,6 +970,13 @@ section {
                     list-style: outside;
                 }
             }
+            &.heading-wysiwyg-repeater {
+                .heading-w-content {
+                    &:not(:first-of-type) {
+                        margin-top: $gutter * 1.5;
+                    }
+                }
+            }
             &.banner-content {
                 &.no-right {
                     gap: 0;
