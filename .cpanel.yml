@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/wiseuvor/public_html/staging.wiseuv.org
-    - /bin/cp -R wp-content/themes $DEPLOYPATH
-    - /bin/cp -R wp-content/plugins $DEPLOYPATH
+    - export DEPLOYPATH=/home2/wiseuvor/public_html/staging.wiseuv.org/wp-content
+    - /bin/cp -R wp-content/themes $DEPLOYPATH/themes
+    - /bin/cp -R wp-content/plugins $DEPLOYPATH/plugins
     
