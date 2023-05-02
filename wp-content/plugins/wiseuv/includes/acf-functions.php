@@ -200,7 +200,7 @@ function wise_content() {
                                             echo wp_get_attachment_image( $background_image, 'full' );
                                         echo '</div>';
                                     } else {
-                                        echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile.png" class="clippingPath -middle" />';
+                                        echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
                                     }
                                 }
                             }

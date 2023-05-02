@@ -123,6 +123,7 @@ h6,
         width: 100%;
         position: relative;
         max-width: $wrapper;
+        z-index: 10;
         &.container__xxs {
             max-width: $wrapper-xxs;
         }
