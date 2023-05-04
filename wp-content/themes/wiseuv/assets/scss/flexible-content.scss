@@ -65,6 +65,9 @@ section {
             }
             .middle {
                 color: $white;
+                a {
+                    color: $white;
+                }
                 @media all and (min-width: $mobile) {
                     padding-top: $gutter * 1.5;
                 }
@@ -175,6 +178,9 @@ section {
         }
         &.banner_content {
             background-color: $banner-dark-bg;
+            a {
+                color: $body-font;
+            }
             .top {
                 background-image: url('../img/bg/banner-dark-top.jpg');
                 padding-bottom: 19.5%;
