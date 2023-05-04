@@ -939,11 +939,14 @@ h6,
                 display: flex;
                 justify-content: space-between;
                 gap: $gutter;
-                font-size: $gutter * 1.2;
                 font-weight: $font-bold;
                 margin: $gutter 0;
                 width: 100%;
+                @media all and (min-width: $mobile) {
+                    font-size: $gutter * 1.2;
+                }
                 @media all and (max-width: $mobile) {
+                    font-size: $gutter;
                     flex-direction: column;
                     margin-bottom: 0;
                     text-align: center;
