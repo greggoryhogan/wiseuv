@@ -2,9 +2,9 @@
 /**
  * Hide ACF Settings page
  */
-add_filter('acf/settings/show_admin','wise_acf_admin_show');
+//add_filter('acf/settings/show_admin','wise_acf_admin_show');
 function wise_acf_admin_show() {
-    if(is_local_env()) {
+    if(is_staging()) {
         return true;
     }
     return false;
