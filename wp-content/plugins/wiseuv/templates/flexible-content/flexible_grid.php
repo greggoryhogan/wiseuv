@@ -2,8 +2,9 @@
 $tag = get_sub_field('tag');
 $size = get_sub_field('size');
 $font_weight = get_sub_field('font_weight');
+$remove_column_gap_on_mobile = get_sub_field('remove_column_gap_on_mobile');
 if(have_rows('columns')) {
-    echo '<div class="flexible-content flexible-grid">';
+    echo '<div class="flexible-content flexible-grid '.$remove_column_gap_on_mobile.'">';
         while(have_rows('columns')) {
             the_row();
             echo '<div class="flexible-column">';

@@ -2471,7 +2471,7 @@
                         },
                         {
                             "key": "field_6451506551cd9",
-                            "label": "Heading Settings",
+                            "label": "Options",
                             "name": "",
                             "aria-label": "",
                             "type": "tab",
@@ -2487,8 +2487,33 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_6453de909544c",
+                            "label": "Remove Column Gap on Mobile",
+                            "name": "remove_column_gap_on_mobile",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "has-mobile-gap": "No",
+                                "no-mobile-gap": "Yes"
+                            },
+                            "default_value": "has-mobile-gap",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_6451506551cda",
-                            "label": "Tag",
+                            "label": "Heading Tag",
                             "name": "tag",
                             "aria-label": "",
                             "type": "select",
@@ -2496,7 +2521,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -2518,7 +2543,7 @@
                         },
                         {
                             "key": "field_6451506551cdb",
-                            "label": "Size",
+                            "label": "Heading Size",
                             "name": "size",
                             "aria-label": "",
                             "type": "select",
@@ -2526,7 +2551,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -2547,7 +2572,7 @@
                         },
                         {
                             "key": "field_6451506551cdc",
-                            "label": "Font Weight",
+                            "label": "Heading Font Weight",
                             "name": "font_weight",
                             "aria-label": "",
                             "type": "select",
@@ -2555,7 +2580,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "33",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -5131,5 +5156,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683214219
+    "modified": 1683218156
 }

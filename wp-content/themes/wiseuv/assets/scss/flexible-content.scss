@@ -1063,10 +1063,6 @@ section {
             &.flexible-grid {
                 display: flex;
                 gap: $gutter * 2;
-                @media all and (max-width: $mobile) {
-                    flex-direction: column;
-                    gap: $gutter * .5;
-                }
                 .flexible-column {
                     flex: 1;
                     .row-content {
@@ -1081,6 +1077,24 @@ section {
                     }
                     h1,h2,h3,h4,h5,h6 {
                         margin: 0!important;
+                    }
+                }
+                @media all and (max-width: $mobile) {
+                    flex-direction: column;
+                    gap: $gutter * .5;
+                    &.no-mobile-gap {
+                        gap: 0;
+                        .row-content {
+                            margin-top: 0!important;
+                            p {
+                                &:last-of-type {
+                                    margin-bottom: 0;
+                                }
+                                &:first-of-type {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
                     }
                 }
             }
