@@ -4205,6 +4205,97 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6453e8298f19c": {
+                    "key": "layout_6453e8298f19c",
+                    "name": "html",
+                    "label": "HTML",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6453e8298f19f",
+                            "label": "Content",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6453e8298f1a0",
+                            "label": "html",
+                            "name": "html",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_6453e8298f1a2",
+                            "label": "Style",
+                            "name": "style",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_626c005c78fe0"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6453e8298f1a3",
+                            "label": "Animation",
+                            "name": "animation",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_626ade57e9efe"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6453c702eee5f": {
                     "key": "layout_6453c702eee5f",
                     "name": "media_gallery",
@@ -5156,5 +5247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683218156
+    "modified": 1683220638
 }
