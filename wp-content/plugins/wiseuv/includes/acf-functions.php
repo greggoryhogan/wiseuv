@@ -4,7 +4,7 @@
  */
 add_filter('acf/settings/show_admin','wise_acf_admin_show');
 function wise_acf_admin_show() {
-    if(is_staging()) {
+    if(is_local_env()) {
         return true;
     }
     return false;

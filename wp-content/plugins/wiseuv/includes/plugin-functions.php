@@ -279,6 +279,20 @@ function is_staging() {
     }
 }
 
+/*
+ *
+ * Helper for if we are in local env
+ * 
+ */
+function is_local_env() {
+	//we shouldn't make it past the first condition but keeping as fallback
+	if (defined('IS_LOCAL')) {
+		return IS_STAGING;
+	} else {
+        return false; //default, allow all functionalit
+    }
+}
+
 /** Change passwoird protected message */
 function wise_custom_password_form() {
     global $post;
