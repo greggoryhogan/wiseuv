@@ -2,6 +2,11 @@
 
 section {
     &.block-style-primary {
+        &.media_gallery {
+            p {
+                color: $dark-purple;
+            }
+        }
         .btn {
             background: $light-purple;
             &:hover,
@@ -115,6 +120,11 @@ section {
     &.block-style-alternate {
         h1,h2,h3,h4,h5,h6 {
             color: $pink;
+        }
+        &.media_gallery {
+            p {
+                color: $pink;
+            }
         }
         &.hero {
             &.style-cropped-wave {
@@ -323,6 +333,11 @@ section {
         h1,h2,h3,h4,h5,h6 {
             color: $darmouth-dark-green;
         }
+        &.media_gallery {
+            p {
+                color: $darmouth-dark-green;
+            }
+        }
         &.blockquote {
             .blockquote {
                 background: $darmouth-dark-green;
@@ -377,6 +392,11 @@ section {
     &.block-style-alternate-dartmouth {
         h1,h2,h3,h4,h5,h6 {
             color: $darmouth-light-green;
+        }
+        &.media_gallery {
+            p {
+                color: $darmouth-light-green;
+            }
         }
         &.blockquote {
             .blockquote {
@@ -468,6 +488,18 @@ section {
                     top: 50%;
                     transform: translateY(-50%);
                 }
+                &.btn-small {
+                    font-size: $gutter!important;
+                    &:after {
+                        position: relative;
+                        top: auto;
+                        right: auto;
+                        transform: none;
+                        margin-left: 10px;  
+                        width:15px;
+                        height: 15px;         
+                    }
+                }
             }
         }
         &-arrow__large {
@@ -491,6 +523,19 @@ section {
                     bottom: 2.75rem;
                     left: 50%;
                     transform: translateX(-50%);
+                }
+                &.btn-small {
+                    font-size: $gutter!important;
+                    &:after {
+                        position: relative;
+                        bottom: auto;
+                        right: auto;
+                        transform: none;
+                        width:15px;
+                        height: 15px;         
+                        display: block;
+                        margin: 5px 0;
+                    }
                 }
             }
         }
@@ -797,6 +842,9 @@ section {
                 &:active {
                     color: $white;
                 }
+                &.btn-small {
+                    padding: $gutter * .1 $gutter * 1.25;
+                }
             }
             /** Content bands */
             &.hero {
@@ -829,6 +877,33 @@ section {
                     &.color-light {
                         color: $list-label;
                     }
+                }
+            }
+            &.media-gallery {
+                display: grid;
+                grid-gap: $gutter * 1.5;
+                @media all and (min-width: $mobile) {
+                    &.columns {
+                        &-one {
+                            grid-template-columns: 1fr;
+                        }
+                        &-two {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        &-three {
+                            grid-template-columns: 1fr 1fr 1fr;
+                        }
+                        &-four {
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                        }
+                    }
+                }   
+                @media all and (max-width: $mobile) {
+                    grid-template-columns: 1fr;
+                }
+                p {
+                    margin: $gutter * .25 0 0;
+                    font-weight: $font-extra-bold;
                 }
             }
             &.two-column-content,
@@ -1060,6 +1135,10 @@ section {
             &.list {
                 .list-label {
                     padding-right: 5px;
+                }
+                .list-link {
+                    margin-left: 15px;
+                    display: inline-block;
                 }
                 .traditional {
                     .list-label {

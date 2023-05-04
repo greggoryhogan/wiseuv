@@ -1,4 +1,14 @@
 <?php 
+/**
+ * Hide ACF Settings page
+ */
+add_filter('acf/settings/show_admin','wise_acf_admin_show');
+function wise_acf_admin_show() {
+    if(is_staging()) {
+        return true;
+    }
+    return false;
+}
 /*
  *
  * Add acf json folder for saving
