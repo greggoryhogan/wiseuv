@@ -43,7 +43,7 @@
 					if($instagram != '') {
 						echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
 					}
-					$email = get_option('social_media_instagram');
+					$email = get_option('social_media_email');
 					if($email != '') {
 						echo '<a href="mailto:'.$email.'" title="Email us!" target="_blank" class="email">Email us!</a>';
 					}
@@ -71,6 +71,7 @@
 				);
 				?>
 				<div class="contact">
+					<!-- $crisis_number is not defined! -->
 					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 					<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
 				</div>

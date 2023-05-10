@@ -55,7 +55,7 @@ function featherIcon($icon,$classes = NULL, $size = NULL, $color = NULL, $backgr
  * Add body classes for conditional css display
  * 
  */
-add_filter( 'body_class','wise_woo_body_classes' );
+//add_filter( 'body_class','wise_woo_body_classes' );
 function wise_woo_body_classes( $classes ) {
     global $current_user;
     $user_id = $current_user->ID;
@@ -187,21 +187,6 @@ function add_search_form($items, $args) {
   return $items;
 }
 //add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
-
-/*
- *
- * Replace text on site using gettext
- * 
- */
-function wise_update_using_gettext( $translated_text, $text, $domain ) {
-	switch ( $translated_text ) {
-		case '( in Unit Price )' :
-			$translated_text = __( '', 'woocommerce' );
-			break;
-	}
-	return $translated_text;
-}
-//add_filter( 'gettext', 'wise_update_using_gettext', 20, 3 ); 
 
 /*
  *

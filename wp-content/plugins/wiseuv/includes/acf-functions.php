@@ -21,6 +21,25 @@ function wise_acf_json_save_point( $path ) {
     // return
     return $path; 
 }
+
+/**
+ * Redirect page if set
+ */
+add_action('template_redirect','wise_page_redirect');
+function wise_page_redirect() {
+    global $post;
+    if($post) {
+        $post_id = $post->ID;
+        if($post_id) {
+            $redirect_page = get_field('redirect_page',$post_id);
+            if($redirect_page != '') {
+                wp_redirect( $redirect_page );
+                exit;
+            }
+        }
+    }
+}
+
 /*
  *
  * Add acf json folder for loading
@@ -34,25 +53,6 @@ function wise_acf_json_load_point( $paths ) {
     $paths[] = WISE_PLUGIN_DIR . '/includes/acf-json';
     // return
     return $paths;
-}
-
-/*
- *
- * Add Custom Block Category for Sacred theme
- * 
- */
-add_filter( 'block_categories_all', 'wise_block_categories', 10, 2 );
-function wise_block_categories( $categories, $post ) {
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'redeeming-wise',
-                'title' => __( 'Redeeming wise', 'sacred' ),
-                'icon'  => '',
-            ),
-        )
-    );
 }
 
 /**
