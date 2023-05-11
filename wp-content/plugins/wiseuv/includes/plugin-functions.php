@@ -55,15 +55,15 @@ function featherIcon($icon,$classes = NULL, $size = NULL, $color = NULL, $backgr
  * Add body classes for conditional css display
  * 
  */
-//add_filter( 'body_class','wise_woo_body_classes' );
+add_filter( 'body_class','wise_woo_body_classes' );
 function wise_woo_body_classes( $classes ) {
     global $current_user;
     $user_id = $current_user->ID;
-    if(!is_front_page()) {
+    /*if(!is_front_page()) {
         if(is_page('login') || is_page('register')) {
             $classes[] = 'wise-registration-page';
         }
-    }
+    }*/
     if($user_id > 0) {
         $classes[] = 'is-logged-in';
     } else {
