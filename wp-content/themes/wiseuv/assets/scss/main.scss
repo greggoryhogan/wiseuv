@@ -1623,6 +1623,11 @@ h6,
                     color: $darmouth-dark-green;
                 }
             }
+            .social {
+                a {
+                    filter: invert(23%) sepia(59%) saturate(1301%) hue-rotate(120deg) brightness(106%) contrast(99%);
+                }
+            }
         }
     }
     .site {
