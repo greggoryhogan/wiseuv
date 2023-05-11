@@ -134,10 +134,8 @@ function wise_theme_support() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'lazy-load' );
-    //add_image_size( 'rb-hero', 1818, 816, true );
-    //add_image_size( 'rb-portfolio', 894, 552, true );
-    add_image_size( 'rb-blog', 557, 384, true );
-    add_theme_support( 'lazy-load' );
+    //add_image_size( 'rb-blog', 557, 384, true );
+    add_image_size('wise-grid',500,500,true);
 }
 add_action( 'after_setup_theme', 'wise_theme_support' );
 

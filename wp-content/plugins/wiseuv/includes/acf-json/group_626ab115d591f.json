@@ -1422,11 +1422,9 @@
                                 "thumbnail": "Thumbnail",
                                 "medium": "Medium",
                                 "large": "Large",
-                                "rb-hero": "Hero",
-                                "rb-grid": "Square",
-                                "rb-portfolio": "Portfolio"
+                                "wise-grid": "Square"
                             },
-                            "default_value": "hero",
+                            "default_value": "medium",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -2202,11 +2200,9 @@
                                 "thumbnail": "Thumbnail",
                                 "medium": "Medium",
                                 "large": "Large",
-                                "rb-hero": "Hero",
-                                "rb-grid": "Square",
-                                "rb-portfolio": "Portfolio"
+                                "wise-grid": "Square"
                             },
-                            "default_value": "hero",
+                            "default_value": "medium",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -3010,11 +3006,9 @@
                                 "thumbnail": "Thumbnail",
                                 "medium": "Medium",
                                 "large": "Large",
-                                "rb-hero": "Hero",
-                                "rb-grid": "Square",
-                                "rb-portfolio": "Portfolio"
+                                "wise-grid": "Square"
                             },
-                            "default_value": "thumbnail",
+                            "default_value": "medium",
                             "return_format": "value",
                             "multiple": 0,
                             "allow_null": 0,
@@ -3979,15 +3973,13 @@
                                 "thumbnail": "Thumbnail",
                                 "medium": "Medium",
                                 "large": "Large",
-                                "rb-hero": "Hero",
-                                "rb-grid": "Square",
-                                "rb-portfolio": "Portfolio"
+                                "wise-grid": "Square"
                             },
-                            "default_value": "rb-hero",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
+                            "default_value": "large",
                             "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
                             "ajax": 0,
                             "placeholder": ""
                         },
@@ -4456,11 +4448,9 @@
                                         "thumbnail": "Thumbnail",
                                         "medium": "Medium",
                                         "large": "Large",
-                                        "rb-hero": "Hero",
-                                        "rb-grid": "Square",
-                                        "rb-portfolio": "Portfolio"
+                                        "wise-grid": "Square"
                                     },
-                                    "default_value": "rb-grid",
+                                    "default_value": "wise-grid",
                                     "return_format": "value",
                                     "multiple": 0,
                                     "allow_null": 0,
@@ -5247,5 +5237,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683220884
+    "modified": 1683817462
 }
