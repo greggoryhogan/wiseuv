@@ -3601,7 +3601,7 @@
                                 },
                                 {
                                     "key": "field_64189e91ac1ff",
-                                    "label": "content",
+                                    "label": "Content",
                                     "name": "content",
                                     "aria-label": "",
                                     "type": "wysiwyg",
@@ -3622,7 +3622,7 @@
                                 },
                                 {
                                     "key": "field_64189eb6ac200",
-                                    "label": "link",
+                                    "label": "Link",
                                     "name": "link",
                                     "aria-label": "",
                                     "type": "link",
@@ -5237,5 +5237,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683817462
+    "modified": 1684335369
 }

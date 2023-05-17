@@ -1205,6 +1205,11 @@ section {
                     &:only-child {
                         margin-bottom: 0;
                     }
+                    .image {
+                        img {
+                            display: block;
+                        }
+                    }
                     .row-content {
                         @media all and (min-width: $mobile) {
                             width: 60%;
