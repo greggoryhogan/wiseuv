@@ -53,6 +53,12 @@
 		</div>
 	</footer>
 	<nav id="sticky-nav">
+		<?php 
+			$chat_url = get_option('live_chat_url');
+			$close_location = get_option('exit_site_url');
+			$crisis_number = '+1'.str_replace('-','',get_option('contact_crisis_line_number'));
+			$text = '+1'.str_replace('-','',get_option('contact_text')); 
+		?>
 		<div class="toggle text">See how we can help</div>
 		<!--<div class="toggle close"><?php echo featherIcon('x','','20'); ?></div>-->
 		<div class="toggle"><?php echo featherIcon('chevron-up','','40'); ?></div>
@@ -71,19 +77,12 @@
 				);
 				?>
 				<div class="contact">
-					<!-- $crisis_number is not defined! -->
 					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 					<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
 				</div>
 			</div>
 		</div>
 		<div class="sticky-content">
-			<?php 
-			$chat_url = get_option('live_chat_url');
-			$close_location = get_option('exit_site_url');
-			$crisis_number = '+1'.str_replace('-','',get_option('contact_crisis_line_number'));
-			$text = '+1'.str_replace('-','',get_option('contact_text')); 
-			?>
 			<div class="contact">
 				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 				<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>

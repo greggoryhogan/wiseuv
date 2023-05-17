@@ -7,6 +7,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php 
+/* if ( function_exists( 'mail' ) ) {
+    echo 'mail() is available';
+} else {
+    echo 'Mail is not active';
+}*/ ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lshlss' ); ?></a>
     <header class="header">

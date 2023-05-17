@@ -131,10 +131,13 @@ section {
         }
         &.hero {
             &.style-cropped-wave {
-                background: $dark-purple;
+                background: $light-purple;
                 color: $white;
                 h1,h2,h3,h4,h5,h6 {
                     color: $white;
+                }
+                .btn {
+                    background: $dark-purple;
                 }
             }
         }
