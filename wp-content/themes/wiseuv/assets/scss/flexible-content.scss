@@ -1216,6 +1216,11 @@ section {
                             flex: 0 0 auto;
                         }
                     }
+                    h1, h2, h3, h4, h5, h6 {
+                        @media all and (min-width: $mobile) {
+                            margin-top: 0;
+                        }
+                    }
                 }
                 &.image-left {
                     .row {
