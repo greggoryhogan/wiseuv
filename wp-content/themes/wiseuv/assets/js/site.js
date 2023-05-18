@@ -3,6 +3,30 @@
 (function($) {
 	$(document).ready(function() {
 
+    //scroll to div onload
+    function scrollOnPageLoad() {
+      // to top right away
+      if (window.location.hash) scroll(0, 0);
+      // void some browsers issue
+      setTimeout(scroll(0, 0), 1);
+      var hashLink = window.location.hash;
+        if ($(hashLink).length) {
+          $(function () {
+              // *only* if we have anchor on the url
+              // smooth scroll to the anchor id
+              console.log($(window.location.hash).closest('.wise-section').attr('id'));
+              var parent = $(window.location.hash).closest('.wise-section').offset().top;
+              console.log(parent);
+              $('html, body').animate({
+                scrollTop: parent
+              }, 100);
+          });
+        }
+    }
+    
+    scrollOnPageLoad();
+    
+    
     //Set window width and tablet width
     var windowWidth = $(window).width();
     var tabletWidth = 1184;

@@ -976,6 +976,9 @@ h6,
                     }
                 }
             }
+            .gform_anchor {
+                position: absolute;
+            }
             .gform_footer {
                 padding: $gutter * 2 0;
             }

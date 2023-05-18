@@ -177,7 +177,8 @@ function wise_content() {
                     $button_style = get_sub_field('button_style');
                     $first_button_color = get_sub_field('first_button_color');
                     $text_alignment = get_sub_field('text_alignment');
-                    echo '<section id="wise-content-band-'.$band.'" class="'.$row_layout.' block-style-'.$block_color_scheme.' button-style-'.$button_style.' button-alternating-'.$first_button_color.' text-alignment-'.$text_alignment;
+                    $band_id = get_sub_field('band_id');
+                    echo '<section id="wise-content-band-'.$band.'" class="wise-section '.$row_layout.' block-style-'.$block_color_scheme.' button-style-'.$button_style.' button-alternating-'.$first_button_color.' text-alignment-'.$text_alignment;
                         if($row_layout == 'hero') {
                             $style = get_sub_field('style');
                             $background_image = get_sub_field('background_image');
@@ -232,7 +233,9 @@ function wise_content() {
                                     }
                                 }
                             echo '>';
-                                
+                                if($band_id != '') {
+                                    echo '<div id="'.$band_id.'" tabindex="-1"></div>';
+                                }
                                 $filename = WISE_PLUGIN_DIR.'templates/flexible-content/' . get_row_layout().'.php';
                                 if(file_exists($filename)) {
                                     include($filename);
