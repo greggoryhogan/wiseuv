@@ -7,7 +7,11 @@ section {
                 color: $pink;
             }
         }
-        .btn {
+        .gform_validation_errors {
+            background: $dark-purple!important;
+        }
+        .btn,
+        input[type=submit] {
             background: $light-purple;
             &:hover,
             &:active,
@@ -123,6 +127,9 @@ section {
     &.block-style-alternate {
         h1,h2,h3,h4,h5,h6 {
             color: $pink;
+        }
+        .gform_validation_errors {
+            background: $dark-purple!important;
         }
         &.media_gallery {
             p {
@@ -269,6 +276,9 @@ section {
     }
     &.block-style-primary-dartmouth,
     &.block-style-alternate-dartmouth {
+        .gform_validation_errors {
+            background: $darmouth-dark-green!important;
+        }
         .banner-content {
             @media all and (min-width: $tablet) {
                 &.align-top {
@@ -282,7 +292,8 @@ section {
             }
         }
         &.button-alternating-light {
-            .btn {
+            .btn,
+            input[type=submit] {
                 &:nth-of-type(odd) {
                     background: $darmouth-dark-green;
                     &:hover,
@@ -302,7 +313,8 @@ section {
             }
         }
         &.button-alternating-dark {
-            .btn {
+            .btn,
+            input[type=submit] {
                 &:nth-of-type(odd) {
                     background: $darmouth-light-green;
                     &:hover,
@@ -388,7 +400,8 @@ section {
                 }
             }
         }
-        .btn {
+        .btn,
+        input[type=submit] {
             background: $darmouth-dark-green;
             &:hover,
             &:active,
@@ -447,7 +460,8 @@ section {
                 }
             }
         }
-        .btn {
+        .btn,
+        input[type=submit] {
             background: $darmouth-light-green;
             &:hover,
             &:active,
@@ -459,7 +473,8 @@ section {
     /** Buttons **/
     &.button-style {
         &-normal {
-            .btn {
+            .btn,
+            input[type=submit] {
                 display: inline-block;
                 padding: $gutter * .5 $gutter * 2.75;
                 text-transform: uppercase;
@@ -470,7 +485,8 @@ section {
         }
         &-arrow,
         &-arrow__large {
-            .btn {
+            .btn,
+            input[type=submit] {
                 &:after {
                     content: '';
                     background-image: url('../img/button-arrow.png');
@@ -483,7 +499,8 @@ section {
             }
         }
         &-arrow {
-            .btn {
+            .btn,
+            input[type=submit] {
                 display: flex;
                 align-items: center;
                 padding: 1.5rem 4rem 1.5rem 2.5rem;
@@ -512,7 +529,8 @@ section {
             }
         }
         &-arrow__large {
-            .btn {
+            .btn,
+            input[type=submit] {
                 display: inline-block;
                 padding: 2.75rem 2rem 5.75rem 2rem;
                 border-radius: $border-radius-lg;
@@ -551,7 +569,8 @@ section {
     }
     /*alternating bg colors*/
     &.button-alternating-light {
-        .btn {
+        .btn,
+        input[type=submit] {
             &:nth-of-type(odd) {
                 background: $light-purple;
                 &:hover,
@@ -571,7 +590,8 @@ section {
         }
     }
     &.button-alternating-dark {
-        .btn {
+        .btn,
+        input[type=submit] {
             &:nth-of-type(odd) {
                 background: $purple;
                 &:hover,
@@ -844,7 +864,8 @@ section {
                 font-size: $gutter * 1.5;
             }
             /** Buttons */
-            .btn {
+            .btn,
+            input[type=submit] {
                 cursor: pointer;
                 color: $white!important;
                 border: none;

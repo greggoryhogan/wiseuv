@@ -3,7 +3,7 @@
 Plugin Name:  WISE Core
 Plugin URI:	  https://wise.org/
 Description:  This plugin separates core functionality for the website from the theme to a plugin.
-Version:	  1.0.6
+Version:	  1.0.7
 Author:		  Gregg Hogan
 Author URI:   https://mynameisgregg.com
 License:      GPL2
@@ -57,6 +57,12 @@ function wise_required_files() {
     //custom acf functionality
     if(function_exists('get_field')) {
         require_once( WISE_PLUGIN_DIR . 'includes/acf-functions.php' );
+    }
+    if(function_exists('get_field')) {
+        require_once( WISE_PLUGIN_DIR . 'includes/acf-functions.php' );
+    }
+    if ( class_exists( 'GFCommon' ) ) {
+        require_once( WISE_PLUGIN_DIR . 'includes/gravity-forms.php' );
     }
 }
 

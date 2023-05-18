@@ -1,0 +1,212 @@
+/*@media print {*/
+    body {
+        padding-top: 0px!important;
+    }
+    .u-3-of-4\@lg {
+        width: 75% !important;
+        float: left;
+    }
+    .u-1-of-4\@lg {
+        width: 25% !important;
+        float: right;
+    }
+    .u-1-of-2\@lg {
+        width: 50% !important;
+        float: left;
+    }
+    .u-2-of-3\@lg {
+        width: 66.66667% !important;
+        float: left;
+    }
+    .u-1-of-3\@lg {
+        float: right;
+        width: 33.33333% !important;
+      }
+    .j-form {
+        position: relative;
+        padding-top: 30px;
+    }
+    .j-form .header {
+        width: 100%;
+        position: relative;
+        height: 140px;
+        float: left;
+    }
+    .j-form .gfields {
+        page-break-before: auto;
+    }
+    .j-form .print-logo {width: 100px; position: absolute; left: 0; top: 0; filter: grayscale(1); display: block!important; float: left;}
+    .j-form .print-logo img {
+        position: relative; display: block; width: 100%; height: 100%;
+    }
+    .j-form .form-data-field {
+        display: flex;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+    .j-form .form-data-field.print-label-name {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .j-form .form-data-field.print-label-name .detail:nth-child(1) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .j-form .form-data-field.print-label-name .detail:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .j-form .form-data-field.print-label-name .detail:nth-child(3) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .j-form .section {
+        page-break-after: auto;
+        page-break-inside: avoid;
+    }
+    .j-form h3 {
+        margin: 0;
+        display: block;
+        width: 100%;
+        flex-basis: auto;
+        background: #ccc!important;
+        border: 1px solid #ccc;
+        border-right: none;
+        padding: 5px;
+        clear: both;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+    .clear { clear: both; }
+    .j-form .gform_fields {
+        border-right: 1px solid #ccc;
+        margin: 0 0px 20px 0px;
+    }
+    .j-form .gform_fields p {
+        margin: 5px 0;
+    }
+    .j-form .gform_fields .message-heading p {
+          font-size: 13px;
+    }
+    .j-form .form-data-field.type-education .detail,
+    .j-form .form-data-field.type-message .detail,
+    .j-form .form-data-field.type-availability .detail,
+    .j-form .form-data-field.type-references .detail,
+    .j-form .form-data-field.type-availability .detail .ginput_container,
+    .j-form .form-data-field.type-employment_history .detail {
+        width: 100%;
+    }
+    .j-form .form-data-field.type-education .detail,
+    .j-form .form-data-field.type-availability .detail,
+    .j-form .form-data-field.type-references .detail,
+    .j-form .form-data-field.type-employment_history .detail {
+        padding: 0;
+        border-left: 0;
+    }
+    
+    .j-form .form-data-field .detail,
+    .j-form .form-data-field.type-education .detail .ginput_container > span,
+    .j-form .form-data-field.type-references .detail .ginput_container > span,
+    .j-form .form-data-field.type-availability .detail .ginput_container,
+    .j-form .form-data-field.type-employment_history .detail .ginput_container > span {
+        display: inline-block;
+        border-left: 1px solid #ccc;
+        padding: 5px;
+        min-width: 25%;
+        box-sizing: border-box;
+    }
+    
+    .j-form .form-data-field.type-education .detail .ginput_container > span,
+    .j-form .form-data-field.type-references .detail .ginput_container > span,
+    .j-form .form-data-field.type-employment_history .ginput_container > span,
+    .j-form .form-data-field.type-availability .detail .ginput_container {
+        border-bottom: 1px solid #ccc;
+        
+    }
+    .j-form .form-data-field.type-availability .detail .ginput_container:last-child {
+        border-bottom: none;
+    }
+    .j-form .form-data-field.type-availability .detail .ginput_container {
+        padding: 5px;
+    }
+    .j-form .form-data-field.type-education .detail .ginput_container .school,
+    .j-form .form-data-field.type-education .detail .ginput_container .address,
+    .j-form .form-data-field.type-references .detail .ginput_container > span,
+    .j-form .form-data-field.type-employment_history .ginput_container > span {
+        width: 50%;
+    }
+    .j-form .form-data-field.type-employment_history .ginput_container > .starting-salary,
+    .j-form .form-data-field.type-employment_history .ginput_container > .ending-salary,
+    .j-form .form-data-field.type-employment_history .ginput_container > .from,
+    .j-form .form-data-field.type-employment_history .ginput_container > .to {
+        width: 25%;
+    }
+    .j-form .form-data-field.type-references .detail .ginput_container > span:last-child,
+    .j-form .form-data-field.type-employment_history .ginput_container > .responsibilities,
+    .j-form .form-data-field.type-employment_history .ginput_container > .may-we-contact-your-previous-supervisor-for-a-reference {
+        width: 100%;
+    }
+    .j-form .form-data-field.type-references .detail .ginput_container:last-child > span:last-child {
+        border-bottom: none;;
+    }
+    
+    .j-form .form-data-field .detail .label {
+        padding-right: 5px;
+        font-weight: bold;
+    }
+    .j-form .form-data-field .detail:first-child .label {
+        padding-left: 0;
+    }
+    .j-form .form-data-field.print-label-address .detail:nth-child(1),
+    .j-form .form-data-field.print-label-address .detail:nth-child(2) {
+        width: 50%;
+        border-bottom: 1px solid #ccc;
+    }
+    .locations-div {
+        float: right;
+    }
+    .locations-div .form-data-field.print-label-location {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 250px;
+        border: none;
+        gap: 5px;
+        font-size: 16px;
+    }
+    .locations-div .form-data-field.print-label-location .detail {
+        border: none;
+        line-height: 15px;
+    }
+    .locations-div .label {
+        padding-left: 0!important;
+        vertical-align: bottom;
+        font-size: 18px;
+    }
+    .locations-div .check {
+        width: 15px;
+        height: 15px;
+        border: 2px solid #000;
+        line-height: 15px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    .j-form .form-data-field.type-education .ginput_container:last-child .to,
+    .j-form .form-data-field.type-education .ginput_container:last-child .from,
+    .j-form .form-data-field.type-education .ginput_container:last-child .did-you-graduate,
+    .j-form .form-data-field.type-education .ginput_container:last-child .degree {
+        border-bottom: 0!important;
+    }
+    .j-form .form-data-field.print-label-citizen,
+    .j-form .form-data-field.print-label-ever-worked {
+        clear: both;
+    }
+    .j-form .form-data-field.print-label-choice-1 .label,
+    .j-form .form-data-field.print-label-choice-2 .label {
+        display: block;
+        padding-bottom: 5px;
+    }
+/*}*/
