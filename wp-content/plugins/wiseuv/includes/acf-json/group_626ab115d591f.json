@@ -5026,7 +5026,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Every hour, every day ^866-348-wise",
+                            "default_value": "Every hour, every day ^866-348-WISE",
                             "maxlength": "",
                             "placeholder": "",
                             "prepend": "",
@@ -5237,5 +5237,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684335369
+    "modified": 1684861525
 }
