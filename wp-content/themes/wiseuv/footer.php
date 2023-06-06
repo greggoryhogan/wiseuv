@@ -43,6 +43,10 @@
 					if($instagram != '') {
 						echo '<a href="'.$instagram.'" title="Follow us on Instagram" target="_blank" class="instagram">Follow us on Instagram</a>';
 					}
+					$youtube = get_option('social_media_youtube');
+					if($youtube != '') {
+						echo '<a href="'.$youtube.'" title="Follow us on YouTube" target="_blank" class="youtube">Follow us on YouTube</a>';
+					}
 					$email = get_option('social_media_email');
 					if($email != '') {
 						echo '<a href="mailto:'.$email.'" title="Email us!" target="_blank" class="email">Email us!</a>';

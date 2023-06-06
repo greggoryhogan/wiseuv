@@ -25,6 +25,8 @@ function wise_register_settings() {
     register_setting( 'wise_settings', 'social_media_instagram' );
     add_option( 'social_media_email', '');
     register_setting( 'wise_settings', 'social_media_email' );
+    add_option( 'social_media_youtube', '');
+    register_setting( 'wise_settings', 'social_media_youtube' );
 
     //containers
     add_option( 'default_container_width', 'normal');
@@ -153,6 +155,10 @@ function wise_settings_content() { ?>
                                         <div class="input-text-wrap">
                                             <label>Instagram URL</label>
                                             <input type="text" name="social_media_instagram" value="<?php echo get_option('social_media_instagram'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>YouTube URL</label>
+                                            <input type="text" name="social_media_youtube" value="<?php echo get_option('social_media_youtube'); ?>" />
                                         </div>
                                         <div class="input-text-wrap">
                                             <label>Email</label>
