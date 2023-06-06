@@ -49,6 +49,8 @@ function wise_register_settings() {
     register_setting( 'wise_settings', 'live_chat_url' );
     add_option( 'exit_site_url', 'https://wisesnacks.com');
     register_setting( 'wise_settings', 'exit_site_url' );
+    add_option( 'exit_site_tab_url', 'https://google.com');
+    register_setting( 'wise_settings', 'exit_site_tab_url' );
 
 }
 add_action( 'admin_init', 'wise_register_settings' );
@@ -132,6 +134,10 @@ function wise_settings_content() { ?>
                                         <div class="input-text-wrap">
                                             <label>Exit Site URL</label>
                                             <input type="text" name="exit_site_url" value="<?php echo get_option('exit_site_url'); ?>" />
+                                        </div>
+                                        <div class="input-text-wrap">
+                                            <label>Exit Site New Tab URL</label>
+                                            <input type="text" name="exit_site_tab_url" value="<?php echo get_option('exit_site_tab_url'); ?>" />
                                         </div>
                                     </div>
                                     <div class="postbox-header"><h2 class="post-box-heading">Social</h2></div>

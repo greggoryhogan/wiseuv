@@ -40,6 +40,7 @@ function load_WISE_THEME_scripts() {
     //wp_enqueue_script( 'aos-js', WISE_THEME_URI. '/assets/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
     wp_enqueue_script( 'theme-js', WISE_THEME_URI. '/assets/js/site.js', array('jquery'),$version, true );
     $close_url = get_option('exit_site_url');
+    $tab_url = get_option('exit_site_tab_url');
     $chat_url = get_option('live_chat_url');
     wp_localize_script(
 		'theme-js',
@@ -47,6 +48,7 @@ function load_WISE_THEME_scripts() {
 		array(
 		   'ajax_url' => admin_url( 'admin-ajax.php' ),
            'exit_url' => $close_url,
+           'exit_tab_url' => $tab_url,
            'chat_url' => $chat_url
 		)
 	);
