@@ -54,6 +54,10 @@ function wise_register_settings() {
     add_option( 'exit_site_tab_url', 'https://google.com');
     register_setting( 'wise_settings', 'exit_site_tab_url' );
 
+    //Sticky footer
+    add_option('sticky_footer','');
+    register_setting('wise_settings','sticky_footer');
+
 }
 add_action( 'admin_init', 'wise_register_settings' );
 
@@ -86,11 +90,14 @@ function wise_settings_content() { ?>
                     <input type="radio" name="tabset" id="tab1" aria-controls="defaults" checked>
                     <label for="tab1">General</label>
 
-                    <input type="radio" name="tabset" id="tab2" aria-controls="defaults">
-                    <label for="tab2">Defaults</label>
-
                     <input type="radio" name="tabset" id="tab3" aria-controls="scripts">
                     <label for="tab3">Scripts</label>
+
+                    <input type="radio" name="tabset" id="tab4" aria-controls="sticky">
+                    <label for="tab4">Sticky Footer</label>
+
+                    <input type="radio" name="tabset" id="tab2" aria-controls="defaults">
+                    <label for="tab2">Misc</label>
 
                     <div class="wise-tab-panels">
                         <section id="about" class="wise-tab-panel">
@@ -124,7 +131,7 @@ function wise_settings_content() { ?>
                                             <input type="text" name="contact_crisis_line_number" value="<?php echo get_option('contact_crisis_line_number'); ?>" />
                                         </div>
                                     </div>
-                                    <p><em>Note: Sticky Footer menu is managed under <a href="<?php echo get_bloginfo('url'); ?>/wp-admin/nav-menus.php">Appearance &gt; Menus</a> </em></p>    
+                                    <!--<p><em>Note: Sticky Footer menu is managed under <a href="<?php echo get_bloginfo('url'); ?>/wp-admin/nav-menus.php">Appearance &gt; Menus</a> </em></p>-->
                                 </div>
                                 <div class="postbox">
                                     <div class="postbox-header"><h2 class="post-box-heading">Links</h2></div>
@@ -170,6 +177,49 @@ function wise_settings_content() { ?>
                             </div>
                             <div class="clear"></div>
                         </section>
+                        
+                        <!--learndash-->
+                        <section id="scripts" class="wise-tab-panel">
+                            <div class="wise-settings-panel">
+                                <!--analytics-->
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2 class="post-box-heading">Header Scripts (Google Analytics, Facebook Pixel, Etc)</h2></div>
+                                    <div class="inside">
+                                        <div class="input-text-wrap">
+                                            <textarea name="google_analytics_code" rows="10"><?php echo get_option('google_analytics_code'); ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                <div class="postbox">
+                                        <div class="postbox-header"><h2 class="post-box-heading">Footer Scripts (Trackers, External Scripts)</h2></div>
+                                        <div class="inside">
+                                            <div class="input-text-wrap">
+                                                <textarea name="footer_scripts" rows="10"><?php echo get_option('footer_scripts'); ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </section>
+                        <section id="sticky" class="wise-tab-panel">
+                            <div class="wise-settings-panel">
+                                <!--analytics-->
+                                <div class="postbox">
+                                    <div class="postbox-header"><h2 class="post-box-heading">Sticky Footer</h2></div>
+                                    <div class="inside">
+                                        <div class="input-text-wrap">
+                                            <?php $old_description = get_option('sticky_footer'); 
+                                            $editor_id = 'sticky_footer';
+                                            $settings = array( 'media_buttons' => false );
+
+                                            wp_editor( $old_description , $editor_id, $settings ); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                               
+                        </section>
+
                         <section id="defaults" class="wise-tab-panel">
                             <div class="wise-settings-panel">
                                 <!--labels-->
@@ -207,29 +257,6 @@ function wise_settings_content() { ?>
                                 
                             </div>
                             <div class="clear"></div>
-                        </section>
-                        <!--learndash-->
-                        <section id="scripts" class="wise-tab-panel">
-                            <div class="wise-settings-panel">
-                                <!--analytics-->
-                                <div class="postbox">
-                                    <div class="postbox-header"><h2 class="post-box-heading">Header Scripts (Google Analytics, Facebook Pixel, Etc)</h2></div>
-                                    <div class="inside">
-                                        <div class="input-text-wrap">
-                                            <textarea name="google_analytics_code" rows="10"><?php echo get_option('google_analytics_code'); ?></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                           
-                                <div class="postbox">
-                                        <div class="postbox-header"><h2 class="post-box-heading">Footer Scripts (Trackers, External Scripts)</h2></div>
-                                        <div class="inside">
-                                            <div class="input-text-wrap">
-                                                <textarea name="footer_scripts" rows="10"><?php echo get_option('footer_scripts'); ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                         </section>
                     </div><!--close tab panels-->
                 </div><!--close tabset-->

@@ -70,7 +70,7 @@
 			<div class="content-container">
 				<div class="sticky-heading">See How We Can Help</div>
 				<?php
-				wp_nav_menu(
+				/*wp_nav_menu(
 					array(
 						'theme_location'  => 'sticky',
 						'menu_class'      => 'menu-wrapper',
@@ -78,7 +78,19 @@
 						'items_wrap'      => '<ul id="sticky-menu" class="%2$s">%3$s</ul>',
 						'fallback_cb'     => false,
 					)
-				);
+				);*/
+				$sticky_footer_content = get_option('sticky_footer');
+				if($sticky_footer_content != '') {
+					echo '<div class="sticky-menu">';
+						echo '<ul id="sticky-menu" class="menu-wrapper">';
+						//$simple = nl2br($sticky_footer_content);
+						$explode = explode(PHP_EOL,$sticky_footer_content);
+						foreach($explode as $ex) {
+							echo '<li>'.$ex.'</li>';
+						}
+						echo '</ul>';
+					echo '</div>';
+				}
 				?>
 				<div class="contact">
 					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
