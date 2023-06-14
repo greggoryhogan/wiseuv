@@ -49,8 +49,13 @@ function search_filter_posts($query) {
             $redirected_posts = get_posts(array(
                 'numberposts'   => -1,
                 'post_type'     => 'any',
-                'meta_key'      => 'redirect_page',
-                'compare' => 'EXISTS',
+                'meta_query' => array(
+                    array(
+                        'key' => 'redirect_page',
+                        'value'   => array(''),
+                        'compare' => 'NOT IN'
+                    )
+                    ),
                 'fields' => 'ids'
             ));
             $query->set( 'post__not_in', $redirected_posts );
@@ -59,6 +64,7 @@ function search_filter_posts($query) {
     return $query;
 }
 add_filter('pre_get_posts','search_filter_posts');
+
 /*
  *
  * Add acf json folder for loading

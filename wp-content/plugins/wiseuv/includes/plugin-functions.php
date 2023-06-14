@@ -312,3 +312,43 @@ function space_shortcode($atts) {
     ), $atts );
     return '<span class="wise-spacer '.$atts['display'].'" style="height:'.$atts['height'].'"></span>';
 }
+
+//Extend WordPress search to include custom fields
+function henry_search_join( $join ) {
+    global $wpdb;
+
+    if ( is_search() ) {    
+        $join .=' LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id';
+    }
+   
+    return $join;
+}
+add_filter('posts_join', 'henry_search_join' );
+
+//Modify the search query with posts_where
+function henry_search_where( $where ) {
+    global $wpdb;
+    //add post meta to wp search
+    if ( is_search() && !is_admin()) {
+        // echo get_search_query();
+        $where = preg_replace(
+            "/\(\s*" . $wpdb->posts . ".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+            "(" . $wpdb->posts . ".post_title LIKE $1) OR (" . $wpdb->postmeta . ".meta_value LIKE '".get_search_query()."')", $where );     
+        //print_r($where);
+	}
+	
+    return $where;
+}
+add_filter( 'posts_where', 'henry_search_where' );
+
+//Prevent duplicates
+function henry_search_distinct( $where ) {
+    global $wpdb;
+
+    if ( is_search() ) {
+        return "DISTINCT";
+    }
+
+    return $where;
+}
+add_filter( 'posts_distinct', 'henry_search_distinct' );
