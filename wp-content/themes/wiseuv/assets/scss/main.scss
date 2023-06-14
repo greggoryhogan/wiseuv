@@ -1750,5 +1750,61 @@ h6,
                 }
             }
         }   
+        #tip {
+            background: $darmouth-light-green!important;
+            &:before {
+                border-bottom-color: $darmouth-light-green!important;
+                border-top-color: $darmouth-light-green!important;
+            }
+        }
     }
+}
+
+#tip {
+    @media all and (max-width: $tablet) {
+        display:none!important;
+    }
+    @media all and (min-width: $tablet) {
+        position: fixed;
+        color: $white;
+        background: $dark-purple;
+        border-radius: $border-radius-md;
+        padding: $gutter;
+        z-index: 999;
+        width: 220px;
+        text-align: center;
+        font-size: $gutter * .85;
+        &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+        &.tip-beneath {
+            &:before {
+                top: -.375rem;
+                left: 75%;
+                border-left: .5rem solid transparent;
+                border-right: .5rem solid transparent;
+                border-bottom: .5rem solid $dark-purple;
+            }
+        }
+        &.tip-above {
+            &:before {
+                left: 25%;
+                bottom: -.375rem;
+                border-left: .5rem solid transparent;
+                border-right: .5rem solid transparent;
+                border-top: .5rem solid $dark-purple;
+            }
+        }
+        &.exitsite {
+            left: auto!important;
+            right: $gutter!important;
+            &:before {
+                left: 55%;
+            }
+        }
+    }
+    
 }

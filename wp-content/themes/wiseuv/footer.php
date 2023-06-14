@@ -62,6 +62,7 @@
 			$close_location = get_option('exit_site_url');
 			$crisis_number = '+1'.str_replace('-','',get_option('contact_crisis_line_number'));
 			$text = '+1'.str_replace('-','',get_option('contact_text')); 
+			$exit_tooltip = get_option('exit_tooltip');
 		?>
 		<div class="toggle text">See how we can help</div>
 		<!--<div class="toggle close"><?php echo featherIcon('x','','20'); ?></div>-->
@@ -106,7 +107,7 @@
 			</div>
 			<div class="actions">
 				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat">Live Chat</a>
-				<a href="<?php echo $close_location; ?>" class="exitsite">Exit Site Now</a>
+				<a href="<?php echo $close_location; ?>" class="exitsite" <?php if($exit_tooltip != '') { echo 'data-tooltip="'.$exit_tooltip.'" data-tooltip-position="above"'; } ?>>Exit Site Now</a>
 			</div>
 		</div>
 	</nav>

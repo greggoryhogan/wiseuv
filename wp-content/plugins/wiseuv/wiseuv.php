@@ -3,7 +3,7 @@
 Plugin Name:  WISE Core
 Plugin URI:	  https://wise.org/
 Description:  This plugin separates core functionality for the website from the theme to a plugin.
-Version:	  1.0.7
+Version:	  1.0.8
 Author:		  Gregg Hogan
 Author URI:   https://mynameisgregg.com
 License:      GPL2
@@ -82,8 +82,16 @@ function enqueue_wise_scripts() {
 	//wp_enqueue_script('lozad-js');
 
 	//plugin
-	//wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
-	//wp_enqueue_script('wise-plugin');
+	wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
+	wp_enqueue_script('wise-plugin');
+    $call_tooltip = get_option('call_tooltip');
+    wp_localize_script(
+		'wise-plugin',
+		'plugin_js',
+		array(
+		   'call_tip' => $call_tooltip,
+		)
+	);
 
     //AOS
     wp_register_script('wise-aos', WISE_URL .'/includes/js/aos.js', array('jquery'),$plugin_version, true);

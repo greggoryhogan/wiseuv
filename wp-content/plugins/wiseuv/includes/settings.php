@@ -58,6 +58,11 @@ function wise_register_settings() {
     add_option('sticky_footer','');
     register_setting('wise_settings','sticky_footer');
 
+    add_option('exit_tooltip','You can quickly and safely leave this website by clicking this button or by pressing the Escape key twice. &lt;br&gt;&lt;br&gt; To browse this site safely, be sure to regularly clear your browser history.');
+    register_setting('wise_settings','exit_tooltip');
+    add_option('call_tooltip','Clicking CALL will open the default app on your machine.');
+    register_setting('wise_settings','call_tooltip');
+
 }
 add_action( 'admin_init', 'wise_register_settings' );
 
@@ -130,6 +135,17 @@ function wise_settings_content() { ?>
                                             <label>Crisis Line (Number)</label>
                                             <input type="text" name="contact_crisis_line_number" value="<?php echo get_option('contact_crisis_line_number'); ?>" />
                                         </div>
+                                    </div>
+                                    <div class="postbox-header"><h2 class="post-box-heading">Tooltips</h2></div>
+                                    <div class="inside">
+                                        <div class="input-text-wrap">
+                                            <label>Exit Site</label>
+                                            <input type="text" name="exit_tooltip" value="<?php echo get_option('exit_tooltip'); ?>" />
+                                        </div>    
+                                        <div class="input-text-wrap">
+                                            <label>Call Buttons</label>
+                                            <input type="text" name="call_tooltip" value="<?php echo get_option('call_tooltip'); ?>" />
+                                        </div>    
                                     </div>
                                     <!--<p><em>Note: Sticky Footer menu is managed under <a href="<?php echo get_bloginfo('url'); ?>/wp-admin/nav-menus.php">Appearance &gt; Menus</a> </em></p>-->
                                 </div>

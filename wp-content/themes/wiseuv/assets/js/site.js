@@ -128,14 +128,22 @@
       window.open(theme_js.exit_tab_url);
       window.location.replace(theme_js.exit_url);
     });
-    //Pressing Esc also exists site
+    //Pressing Esc twice also exists site
+    var needtoexit = false;
     $(document).keyup(function(e) {
       if (e.keyCode == 27) { // escape key
-        if(chatWindowOpen) {
-          chatWindow.close();
+        if(needtoexit) {
+          if(chatWindowOpen) {
+            chatWindow.close();
+          }
+          window.open(theme_js.exit_tab_url);
+          window.location.replace(theme_js.exit_url);
+        } else {
+          needtoexit = true;
         }
-        window.open(theme_js.exit_tab_url);
-        window.location.replace(theme_js.exit_url);
+      } else {
+        //reset exit prompt
+        needtoexit = false;
       }
     });
 
