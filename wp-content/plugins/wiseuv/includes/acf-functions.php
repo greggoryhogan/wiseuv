@@ -141,6 +141,26 @@ function append_to_wise_post_content($post_id){
                     
                     endif;
                 }
+                if($row_layout == 'heading-wysiwyg-repeater') {
+                    if(have_rows('sections')) {
+                        
+                        while(have_rows('sections')) {
+                            the_row();
+                            $heading = get_sub_field( 'heading' );
+                            $tag = get_sub_field('tag');
+                            $contents = get_sub_field('content'); 
+                            
+                            if($heading != '') {
+                                $content .= '<'.$tag.'>'.$heading.'</'.$tag.'>';
+                            }
+                            if($contents != '') {
+                                $content .= $contents;
+                            }
+                            
+                        }
+                        
+                    }
+                }
                 if($row_layout == 'two_column_content' || $row_layout == 'three_column_content') {
                     $heading_type = get_sub_field('heading_type');
                     $content .= '<'.$heading_type.'>'.get_sub_field( 'heading' ).'</'.$heading_type.'>';
