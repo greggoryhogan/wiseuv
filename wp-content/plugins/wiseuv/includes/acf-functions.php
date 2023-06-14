@@ -40,6 +40,25 @@ function wise_page_redirect() {
     }
 }
 
+/**
+ * Exclude redirected pages from search
+ */
+function search_filter_posts($query) {
+    if (!is_admin()) {
+        if ($query->is_search) {
+            $redirected_posts = get_posts(array(
+                'numberposts'   => -1,
+                'post_type'     => 'any',
+                'meta_key'      => 'redirect_page',
+                'compare' => 'EXISTS',
+                'fields' => 'ids'
+            ));
+            $query->set( 'post__not_in', $redirected_posts );
+        }
+    }
+    return $query;
+}
+add_filter('pre_get_posts','search_filter_posts');
 /*
  *
  * Add acf json folder for loading
