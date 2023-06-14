@@ -1750,13 +1750,6 @@ h6,
                 }
             }
         }   
-        #tip {
-            background: $darmouth-light-green!important;
-            &:before {
-                border-bottom-color: $darmouth-light-green!important;
-                border-top-color: $darmouth-light-green!important;
-            }
-        }
     }
 }
 
@@ -1807,4 +1800,13 @@ h6,
         }
     }
     
+}
+.theme-dartmouth {
+    #tip {
+        background: $darmouth-light-green!important;
+        &:before {
+            border-bottom-color: $darmouth-light-green!important;
+            border-top-color: $darmouth-light-green!important;
+        }
+    }
 }
