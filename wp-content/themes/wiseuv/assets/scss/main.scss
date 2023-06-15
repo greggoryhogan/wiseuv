@@ -1767,6 +1767,7 @@ h6,
         width: 220px;
         text-align: center;
         font-size: $gutter * .85;
+        line-height: $gutter * 1.6;
         &:before {
             content: '';
             width: 0;
