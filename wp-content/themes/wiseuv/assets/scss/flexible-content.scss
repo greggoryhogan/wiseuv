@@ -265,6 +265,7 @@ section {
             }
             .bottom {
                 background-image: url('../img/bg/banner-dark-bottom.jpg');
+                background-color: $white;
                 padding-bottom: 18%;
                 margin-top: -5%;
                 @media all and (max-width: $mobile) {
