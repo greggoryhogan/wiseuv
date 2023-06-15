@@ -265,7 +265,6 @@ section {
             }
             .bottom {
                 background-image: url('../img/bg/banner-dark-bottom.jpg');
-                background-color: $white;
                 padding-bottom: 18%;
                 margin-top: -5%;
                 @media all and (max-width: $mobile) {
@@ -760,6 +759,10 @@ section {
         .middle {
             position: relative;
             z-index: 10;
+        }
+        .bottom {
+            background-color: $white;
+            background-repeat: no-repeat;
         }
     }
     &.call_wise {
