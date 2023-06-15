@@ -1768,6 +1768,14 @@ h6,
         text-align: center;
         font-size: $gutter * .85;
         line-height: $gutter * 1.6;
+        p {
+            &:first-of-type {
+                margin-top: 0;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
         &:before {
             content: '';
             width: 0;
