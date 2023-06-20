@@ -1083,6 +1083,11 @@ section {
                     list-style: outside;
                 }
             }
+            &.heading {
+                a {
+                    text-decoration: none;
+                }
+            }
             &.heading-wysiwyg-repeater {
                 .heading-w-content {
                     &:not(:first-of-type) {
@@ -1090,6 +1095,9 @@ section {
                     }
                     h1,h2,h3,h4,h5,h6 {
                         margin: 0!important;
+                    }
+                    a {
+                        text-decoration: none;
                     }
                     /*p {
                         &:first-of-type {
