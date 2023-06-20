@@ -10,5 +10,5 @@ $button_text = get_sub_field('button_text'); ?>
     <?php if($heading != '') {
         echo '<'.$tag.' class="'.$size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$tag.'>';
     } ?>
-    <a href="tel:<?php echo $crisis_number; ?>" class="btn" title="'.$button_text.'"><?php echo $button_text; ?></a>
+    <a href="tel:<?php echo $crisis_number; ?>" class="btn" title="<?php echo $button_text; ?>"><?php echo $button_text; ?></a>
 </div>
