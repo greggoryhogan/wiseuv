@@ -29,7 +29,7 @@ if(have_rows('sections')) {
                 }
                 echo '<div class="flexible-content cta-buttons columns-auto">';
                     if( $link ): 
-                        echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                        echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
                     endif;
                 echo '</div>';
                 ?>

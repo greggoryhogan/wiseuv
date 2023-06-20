@@ -20,7 +20,7 @@ if( have_rows('list_items') ):
                         $link_url = $link['url'];
                         $link_title = $link['title'];
                         $link_target = $link['target'] ? $link['target'] : '_self';
-                        echo '<span class="list-link"><a class="btn btn-small" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a></span>';
+                        echo '<span class="list-link"><a class="btn btn-small" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a></span>';
                     endif;
                 echo '</li>';
             endwhile;

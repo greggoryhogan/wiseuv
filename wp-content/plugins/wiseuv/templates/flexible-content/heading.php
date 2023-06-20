@@ -7,7 +7,7 @@ $heading_links_to = get_sub_field('heading_links_to'); ?>
 <div class="flexible-content heading">
     <?php if($heading != '') {
         if($heading_links_to != '') {
-            echo '<a href="'.$heading_links_to.'">';
+            echo '<a href="'.$heading_links_to.'" title="'.$heading.'">';
         }
         echo '<'.$tag.' class="'.$size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$tag.'>';
         if($heading_links_to != '') {

@@ -74,13 +74,13 @@ $column_animation_easinganimation_speed = get_sub_field('column_animation_easing
                 $link_url = $link['url'];
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
             if( $link_second ): 
                 $link_url = $link_second['url'];
                 $link_title = $link_second['title'];
                 $link_target = $link_second['target'] ? $link_second['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
         echo '</div>';
     echo '</div>';  
@@ -118,13 +118,13 @@ $column_animation_easinganimation_speed = get_sub_field('column_animation_easing
                 $link_url = $link2['url'];
                 $link_title = $link2['title'];
                 $link_target = $link2['target'] ? $link2['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
             if( $link2_second ): 
                 $link_url = $link2_second['url'];
                 $link_title = $link2_second['title'];
                 $link_target = $link2_second['target'] ? $link2_second['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
         echo '</div>';
     echo '</div>';  
@@ -162,13 +162,13 @@ $column_animation_easinganimation_speed = get_sub_field('column_animation_easing
                 $link_url = $link3['url'];
                 $link_title = $link3['title'];
                 $link_target = $link3['target'] ? $link3['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
             if( $link3_second ): 
                 $link_url = $link3_second['url'];
                 $link_title = $link3_second['title'];
                 $link_target = $link3_second['target'] ? $link3_second['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
         echo '</div>';
     echo '</div>';  

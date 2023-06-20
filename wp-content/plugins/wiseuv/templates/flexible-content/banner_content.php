@@ -61,7 +61,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
                 $link_url = $link['url'];
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
-                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
             endif;
         echo '</div>';  
     //}
@@ -91,7 +91,7 @@ if($link2 || $heading2 != '' || $column_content2 != '' || $image2) {
                     $link_url = $link2['url'];
                     $link_title = $link2['title'];
                     $link_target = $link2['target'] ? $link2['target'] : '_self';
-                    echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                    echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
                 endif;
             echo '</div>';
         echo '</div>';  

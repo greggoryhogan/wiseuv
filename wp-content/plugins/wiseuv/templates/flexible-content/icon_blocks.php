@@ -41,7 +41,7 @@ if( have_rows('blocks') ):
                 echo $text;
                 if( $link ) {
                     if($link_title != '') {
-                        echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
+                        echo '<a class="btn" href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'" title="'.esc_html( $link_title ).'">'.wise_content_filters(esc_html( $link_title )).'</a>';
                     }
                 }
             echo '</div>';
