@@ -22,7 +22,7 @@ if(isset($_GET['check_mail'])) {
             
             <div class="site-branding <?php echo get_field('animate_logo','options'); ?>">
                 <h1>
-                    <a href="<?php echo get_bloginfo('url'); ?>">
+                    <a href="<?php echo get_bloginfo('url'); ?>" title="Go to Homepage">
                         <?php if ( has_custom_logo() ) {
                             the_custom_logo();
                         } else {
@@ -33,7 +33,7 @@ if(isset($_GET['check_mail'])) {
             </div><!-- .site-branding -->
             <?php $close_location = get_option('exit_site_url'); ?>
             <!--<a href="<?php echo $close_location; ?>" class="exitsite btn header-exit">Exit Site Now</a>-->
-            <a href="<?php echo get_bloginfo('url'); ?>/?s=" class="header-search"><?php echo featherIcon('search'); ?></a>
+            <a href="<?php echo get_bloginfo('url'); ?>/?s=" class="header-search" title="Search"><?php echo featherIcon('search'); ?></a>
             <div class="mobile-nav">
                 <button class="nav-toggle">
                     <span></span>

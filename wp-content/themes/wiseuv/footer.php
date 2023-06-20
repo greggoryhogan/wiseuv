@@ -4,17 +4,17 @@
 			<div class="footer line">
 				<?php $address = get_option('contact_program_center');
 				if($address != '') { ?>
-					<div><span>Program Center:</span><?php echo '<a href="https://www.google.com/maps/dir//'.urlencode($address).'" target="_blank">'.$address.'</a>'; ?></div>
+					<div><span>Program Center:</span><?php echo '<a href="https://www.google.com/maps/dir//'.urlencode($address).'" target="_blank" title="View in Google Maps">'.$address.'</a>'; ?></div>
 				<?php } ?>
 				<?php 
 				$fax = get_option('contact_fax');
 				if($fax != '') { ?>
-					<div><span>Fax:</span><?php echo '<a href="fax:+1'.$fax.'">'.$fax.'</a>'; ?></div>
+					<div><span>Fax:</span><?php echo '<a href="fax:+1'.$fax.'" title="Fax">'.$fax.'</a>'; ?></div>
 				<?php } ?>
 				<?php 
 				$tel = get_option('contact_tel');
 				if($tel != '') { ?>
-					<div><span>Tel:</span><?php echo '<a href="tel:'.$tel.'">'.$tel.'</a>'; ?></div>
+					<div><span>Tel:</span><?php echo '<a href="tel:'.$tel.'" title="Tel">'.$tel.'</a>'; ?></div>
 				<?php } ?>
 			</div>
 			<div class="footer line">
@@ -22,12 +22,12 @@
 				$tel = get_option('contact_crisis_line_number');
 				if($tel != '') { 
 					$teltext = get_option('contact_crisis_line_text'); ?>
-					<div><span>WISE Crisis Line:</span><?php echo '<a href="tel:'.$tel.'">'.$teltext.'</a>'; ?></div>
+					<div><span>WISE Crisis Line:</span><?php echo '<a href="tel:'.$tel.'" title="WISE Crisis Line">'.$teltext.'</a>'; ?></div>
 				<?php } ?>
 				<?php 
 				$text = get_option('contact_text');
 				if($text != '') { ?>
-					<div><span>Text:</span><?php echo '<a href="sms:'.$text.'">'.$text.'</a>'; ?></div>
+					<div><span>Text:</span><?php echo '<a href="sms:'.$text.'" title="Text">'.$text.'</a>'; ?></div>
 				<?php } ?>
 				<div class="social">
 					<?php 
@@ -94,20 +94,20 @@
 				}
 				?>
 				<div class="contact">
-					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="<?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 					<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
 				</div>
 			</div>
 		</div>
 		<div class="sticky-content">
 			<div class="contact">
-				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
-				<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
+				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="<?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+				<div>Text: <a href="sms:<?php echo $text; ?>" title="<?php echo get_option('contact_text'); ?>"><?php echo get_option('contact_text'); ?></a></div>
 				<?php edit_post_link(featherIcon('edit-2').'Edit Page','<div class="sticky-edit">','</div>'); ?>
 			</div>
 			<div class="actions">
-				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat">Live Chat</a>
-				<a href="<?php echo $close_location; ?>" class="exitsite" <?php if($exit_tooltip != '') { echo 'data-tooltip="'.$exit_tooltip.'" data-tooltip-position="above"'; } ?>>Exit Site Now</a>
+				<a href="<?php echo $chat_url; ?>" target="_blank" class="openchat" title="Live Chat">Live Chat</a>
+				<a href="<?php echo $close_location; ?>" class="exitsite" title="Exit Site Now" <?php if($exit_tooltip != '') { echo 'data-tooltip="'.$exit_tooltip.'" data-tooltip-position="above"'; } ?>>Exit Site Now</a>
 			</div>
 		</div>
 	</nav>
