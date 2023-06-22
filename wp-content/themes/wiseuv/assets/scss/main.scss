@@ -850,6 +850,13 @@ h6,
                                     border-top-right-radius: $border-radius-md;
                                     border-bottom-right-radius: $border-radius-md;
                                     margin-top: 0!important;
+                                    background-color: $purple;
+                                    padding: $gutter $gutter * 2;
+                                    &:hover,
+                                    &:focus,
+                                    &:active {
+                                        background-color: $light-purple;
+                                    }
                                 }
                             }
                         }
