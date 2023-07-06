@@ -147,5 +147,20 @@
       }
     });
 
+    //Convert text emails to mailto emails
+    $(".flexible-content table").filter(function () {
+      var html = $(this).html();
+      var emailPattern = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/g;  
+      var matched_str = $(this).html().match(emailPattern);
+      if ( matched_str ) {
+        var text = $(this).html();
+        $.each(matched_str, function (index, value) {
+            text = text.replace(value,"<a href='mailto:"+value+"'>"+value+"</a>");
+        });
+        $(this).html(text);
+        return $(this)
+      }    
+  })
+
   }); //Close doc ready
 })(jQuery); // Fully reference jQuery after this point.

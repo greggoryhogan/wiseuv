@@ -1289,9 +1289,25 @@ section {
                     tr {
                         &:nth-child(odd) {
                             color: $white;
+                            a {
+                                color: $white;
+                                &:hover,
+                                &:focus,
+                                &:active {
+                                    color: #662B8C;
+                                }
+                            }
                         }
                         &:nth-child(even) {
                             color: #662B8C;
+                            a {
+                                color: $white;
+                                &:hover,
+                                &:focus,
+                                &:active {
+                                    color: $white;
+                                }
+                            }
                         }
                     }
                     th,
