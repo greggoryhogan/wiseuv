@@ -408,6 +408,11 @@ section {
                 
             }
         }
+        &.two-column-shortcode {
+            .imp-wrap {
+                margin: 0 auto;
+            }
+        }
         &.grid-content {
             @media (min-width: $mobile) {
                 display: grid;
