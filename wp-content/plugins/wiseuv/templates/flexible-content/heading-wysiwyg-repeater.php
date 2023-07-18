@@ -16,13 +16,15 @@ if(have_rows('sections')) {
             endif; ?>
             <div class="heading-w-content">
                 <?php if($heading != '') {
-                    if( $link ): 
+                     echo '<'.$tag.' class="'.$size.' font-weight-'.$font_weight.'">';
+                     if( $link ): 
                         echo '<a href="'.esc_url( $link_url ).'" target="'.esc_attr( $link_target ).'">';
                     endif;
-                    echo '<'.$tag.' class="'.$size.' font-weight-'.$font_weight.'">'.wise_content_filters($heading).'</'.$tag.'>';
+                    echo wise_content_filters($heading);
                     if( $link ): 
                         echo '</a>';
                     endif;
+                    echo '</'.$tag.'>';
                 }
                 if($content != '') {
                     echo $content;

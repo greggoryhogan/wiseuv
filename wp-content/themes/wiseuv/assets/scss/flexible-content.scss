@@ -1095,9 +1095,9 @@ section {
                     }
                     h1,h2,h3,h4,h5,h6 {
                         margin: 0!important;
-                    }
-                    a {
-                        text-decoration: none;
+                        a {
+                            text-decoration: none;
+                        }
                     }
                     /*p {
                         &:first-of-type {
@@ -1301,7 +1301,7 @@ section {
                         &:nth-child(even) {
                             color: #662B8C;
                             a {
-                                color: $white;
+                                color: #662B8C;
                                 &:hover,
                                 &:focus,
                                 &:active {

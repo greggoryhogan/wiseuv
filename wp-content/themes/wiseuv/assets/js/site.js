@@ -148,7 +148,7 @@
     });
 
     //Convert text emails to mailto emails
-    $(".flexible-content table").filter(function () {
+    $(".flexible-content table td").filter(function () {
       var html = $(this).html();
       var emailPattern = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/g;  
       var matched_str = $(this).html().match(emailPattern);
@@ -160,7 +160,7 @@
         $(this).html(text);
         return $(this)
       }    
-  })
+  });
 
   }); //Close doc ready
 })(jQuery); // Fully reference jQuery after this point.
