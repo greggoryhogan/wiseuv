@@ -94,14 +94,14 @@
 				}
 				?>
 				<div class="contact">
-					<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="<?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+					<div>WISE Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="<?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 					<div>Text: <a href="sms:<?php echo $text; ?>"><?php echo get_option('contact_text'); ?></a></div>
 				</div>
 			</div>
 		</div>
 		<div class="sticky-content">
 			<div class="contact">
-				<div>Wise Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="Call <?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
+				<div>WISE Crisis Line: <a href="tel:<?php echo $crisis_number; ?>" title="Call <?php echo get_option('contact_crisis_line_text'); ?>"><?php echo get_option('contact_crisis_line_text'); ?></a></div>
 				<div>Text: <a href="sms:<?php echo $text; ?>" title="Text <?php echo get_option('contact_text'); ?>"><?php echo get_option('contact_text'); ?></a></div>
 				<?php edit_post_link(featherIcon('edit-2').'Edit Page','<div class="sticky-edit">','</div>'); ?>
 			</div>
