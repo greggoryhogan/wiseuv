@@ -422,12 +422,12 @@ h6,
                                         position: relative;
                                         top: 0;
                                         padding: 0 0 0 $gutter * 1.5;
-                                        white-space: normal;
+                                        /*white-space: normal;*/
                                         &:before {
                                             display: none;
                                         }
                                         li {
-                                            white-space: normal;
+                                            /*white-space: normal;*/
                                             a {
                                                 padding: 0 $gutter $gutter * .3;
                                             }
