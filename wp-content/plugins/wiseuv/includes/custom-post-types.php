@@ -88,3 +88,32 @@ function change_wise_excerpt_description( $translation, $original ) {
     }
     return $translation;
 }
+
+/**
+ * Force flexible content and tips to always be after title
+ */
+add_filter( 'get_user_option_meta-box-order_page', 'metabox_order' );
+function metabox_order( $order ) {
+	$flexible_content = array('acf-group_626ab115d591f','acf-group_626adffe4b0c0');
+    foreach($order as $k => $v) {
+        if($k == 'acf_after_title') {
+            $va = explode(',',$v);
+            foreach($flexible_content as $flex_box) {
+                if(!in_array($flex_box,$va)) {
+                    $va[] = $flex_box;
+                }
+            }
+            $order['acf_after_title'] = join( ",", $va);
+            //$order[$k] = $v;
+        } else {
+            $va = explode(',',$v);
+            foreach($flexible_content as $flex_box) {
+                if(in_array($flex_box,$va)) {
+                   unset($va[$flex_box]);
+                }
+            }
+            $order[$k] = join( ",", $va);
+        }
+    }
+    return $order;
+}
