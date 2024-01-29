@@ -15,74 +15,74 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WISE_PLUGIN_DIR', dirname(__FILE__).'/' );
-if(!defined('WISE_URL')) {
-    define('WISE_URL',plugins_url() . '/wiseuv/');
+define( 'bhfe_PLUGIN_DIR', dirname(__FILE__).'/' );
+if(!defined('bhfe_URL')) {
+    define('bhfe_URL',plugins_url() . '/wiseuv/');
 }
 
 /**
  * Add option to check for flushing permalinks on activation
  */
-register_activation_hook( __FILE__, 'wise_activate' );
-function wise_activate() {
-    if ( ! get_option( 'wise_flush_rewrite_rules_flag' ) ) {
-        add_option( 'wise_flush_rewrite_rules_flag', true );
+register_activation_hook( __FILE__, 'bhfe_activate' );
+function bhfe_activate() {
+    if ( ! get_option( 'bhfe_flush_rewrite_rules_flag' ) ) {
+        add_option( 'bhfe_flush_rewrite_rules_flag', true );
     }
 }
 
 /**
  * Flush rewrite rules if the previously added flag exists and then remove the flag.
  */
-add_action( 'init', 'wise_flush_rewrite_rules_maybe', 20 );
-function wise_flush_rewrite_rules_maybe() {
-    if ( get_option( 'wise_flush_rewrite_rules_flag' ) ) {
+add_action( 'init', 'bhfe_flush_rewrite_rules_maybe', 20 );
+function bhfe_flush_rewrite_rules_maybe() {
+    if ( get_option( 'bhfe_flush_rewrite_rules_flag' ) ) {
         flush_rewrite_rules();
-        delete_option( 'wise_flush_rewrite_rules_flag' );
+        delete_option( 'bhfe_flush_rewrite_rules_flag' );
     }
 }
 
 /**
  * Required files for plugin
  */
-add_action( 'plugins_loaded', 'wise_required_files' );
-function wise_required_files() {
+add_action( 'plugins_loaded', 'bhfe_required_files' );
+function bhfe_required_files() {
     //customizing functions for WP
-	require_once( WISE_PLUGIN_DIR . 'includes/wp-customizations.php' );
+	require_once( bhfe_PLUGIN_DIR . 'includes/wp-customizations.php' );
     //general functionality for theme
-    require_once( WISE_PLUGIN_DIR . 'includes/plugin-functions.php' );
+    require_once( bhfe_PLUGIN_DIR . 'includes/plugin-functions.php' );
     //theme settings and documentation
-	require_once( WISE_PLUGIN_DIR . 'includes/settings.php' );
+	require_once( bhfe_PLUGIN_DIR . 'includes/settings.php' );
 	//custom post types
-    require_once( WISE_PLUGIN_DIR . 'includes/custom-post-types.php' );
+    require_once( bhfe_PLUGIN_DIR . 'includes/custom-post-types.php' );
     //custom acf functionality
     if(function_exists('get_field')) {
-        require_once( WISE_PLUGIN_DIR . 'includes/acf-functions.php' );
+        require_once( bhfe_PLUGIN_DIR . 'includes/acf-functions.php' );
     }
     if(function_exists('get_field')) {
-        require_once( WISE_PLUGIN_DIR . 'includes/acf-functions.php' );
+        require_once( bhfe_PLUGIN_DIR . 'includes/acf-functions.php' );
     }
     if ( class_exists( 'GFCommon' ) ) {
-        require_once( WISE_PLUGIN_DIR . 'includes/gravity-forms.php' );
+        require_once( bhfe_PLUGIN_DIR . 'includes/gravity-forms.php' );
     }
 }
 
 /**
  * Scripts / CSS for plugin
  */
-function enqueue_wise_scripts() {
+function enqueue_bhfe_scripts() {
     $plugin_data = get_plugin_data( __FILE__ );
     $plugin_version = $plugin_data['Version'];
 
     //CSS for Plugin
-    wp_register_style( 'wise-plugin-flexible-content', WISE_URL .'includes/css/flexible-content.css', array(), $plugin_version);
+    wp_register_style( 'wise-plugin-flexible-content', bhfe_URL .'includes/css/flexible-content.css', array(), $plugin_version);
     wp_enqueue_style( 'wise-plugin-flexible-content' );
 
     //lozad
-	//wp_register_script('lozad-js', WISE_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
+	//wp_register_script('lozad-js', bhfe_URL .'/includes/js/lozad.min.js', array('jquery'),$plugin_version, true);
 	//wp_enqueue_script('lozad-js');
 
 	//plugin
-	wp_register_script('wise-plugin', WISE_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
+	wp_register_script('wise-plugin', bhfe_URL .'/includes/js/wiseuv.js', array('jquery'),$plugin_version, true);
 	wp_enqueue_script('wise-plugin');
     $call_tooltip = get_option('call_tooltip');
     wp_localize_script(
@@ -94,12 +94,12 @@ function enqueue_wise_scripts() {
 	);
 
     //AOS
-    wp_register_script('wise-aos', WISE_URL .'/includes/js/aos.js', array('jquery'),$plugin_version, true);
-    wp_register_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
-    wp_register_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
+    wp_register_script('wise-aos', bhfe_URL .'/includes/js/aos.js', array('jquery'),$plugin_version, true);
+    wp_register_style( 'aos-css', bhfe_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
+    wp_register_script( 'aos-js', bhfe_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
 	//wp_enqueue_script('wise-plugin');
-    //wp_enqueue_style( 'aos-css', WISE_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
-    //wp_enqueue_script( 'aos-js', WISE_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
+    //wp_enqueue_style( 'aos-css', bhfe_URL . '/includes/lib/aos-master/dist/aos.css',null,'3.0.0' );
+    //wp_enqueue_script( 'aos-js', bhfe_URL. '/includes/lib/aos-master/dist/aos.js', array('jquery'),'3.0.0', true );
     
 	
 	/*Add church affiliations dropdown available in site.js*/
@@ -113,36 +113,36 @@ function enqueue_wise_scripts() {
 		   'page_title' => get_the_title(),
 		)
 	); //had 'affiliation_optons' => get_available_church_affiliations(),*/
-    wp_register_script('flexible-accordion', WISE_URL .'/includes/js/accordion.js', array('jquery'),$plugin_version, true);
+    wp_register_script('flexible-accordion', bhfe_URL .'/includes/js/accordion.js', array('jquery'),$plugin_version, true);
 
     wp_dequeue_style( 'classic-theme-styles' );
 
 } 
-add_action( 'wp_enqueue_scripts', 'enqueue_wise_scripts' );
+add_action( 'wp_enqueue_scripts', 'enqueue_bhfe_scripts' );
 
 /*
  *
  * Admin CSS for settings page
  * 
  */ 
-function wise_admin_scripts() {
+function bhfe_admin_scripts() {
 	$version = wp_get_theme()->get('Version');
-	wp_register_style( 'wise-admin-css', WISE_URL . '/includes/css/admin.css' );
+	wp_register_style( 'wise-admin-css', bhfe_URL . '/includes/css/admin.css' );
     wp_enqueue_style( 'wise-admin-css' );	
     /*$classic_editor_styles = array(
-		WISE_URL . '/includes/css/editor.css',
+		bhfe_URL . '/includes/css/editor.css',
 	);
 	add_editor_style( $classic_editor_styles );*/
 }
-add_action('admin_init', 'wise_admin_scripts');
+add_action('admin_init', 'bhfe_admin_scripts');
 
 /**
  * Filter colors and font sizes for acf wysiwyg
  */
-function wise_acf_styles() {
-	wp_enqueue_script( 'wise-acf-admin-js', WISE_URL . '/includes/js/acf-admin.js', array(), '1.0.1', true );
+function bhfe_acf_styles() {
+	wp_enqueue_script( 'wise-acf-admin-js', bhfe_URL . '/includes/js/acf-admin.js', array(), '1.0.1', true );
 }
-add_action('acf/input/admin_enqueue_scripts', 'wise_acf_styles');
+add_action('acf/input/admin_enqueue_scripts', 'bhfe_acf_styles');
 
 /**
  * Admin bar

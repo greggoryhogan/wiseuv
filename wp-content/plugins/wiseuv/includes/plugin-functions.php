@@ -26,6 +26,17 @@ function wise_get_current_user_roles() {
    
 }
 
+
+//allow author to edit pages
+add_action( 'admin_init', 'add_theme_caps');
+function add_theme_caps() {
+    // gets the author role
+    $role = get_role( 'author' );
+    $role->add_cap( 'edit_pages' );
+    $role->add_cap( 'edit_published_pages' );
+}
+
+
 /*
  *
  * Show our own icon

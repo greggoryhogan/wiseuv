@@ -27,7 +27,7 @@ body {
         height: 100%;
         overflow: hidden;
     }
-    font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+    font-family: Palatino Linotype, Palatino, Palatino LT STD, Book Antiqua, Georgia, serif;
 }
 img {
     max-width: 100%;
@@ -942,7 +942,7 @@ h6,
                 * {
                     color: $white!important;
                     /*font-family: 'Roboto', sans-serif!important;*/
-                    font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif!important;
+                    font-family: Palatino Linotype, Palatino, Palatino LT STD, Book Antiqua, Georgia, serif!important;
                 }
             }
             .validation_message {

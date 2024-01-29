@@ -2,8 +2,8 @@
 /**
  * Hide ACF Settings page
  */
-//add_filter('acf/settings/show_admin','wise_acf_admin_show');
-function wise_acf_admin_show() {
+//add_filter('acf/settings/show_admin','bhfe_acf_admin_show');
+function bhfe_acf_admin_show() {
     if(is_staging()) {
         return true;
     }
@@ -14,10 +14,10 @@ function wise_acf_admin_show() {
  * Add acf json folder for saving
  *
  */    
-add_filter('acf/settings/save_json', 'wise_acf_json_save_point');
-function wise_acf_json_save_point( $path ) {
+add_filter('acf/settings/save_json', 'bhfe_acf_json_save_point');
+function bhfe_acf_json_save_point( $path ) {
     // update path
-    $path = WISE_PLUGIN_DIR . '/includes/acf-json';
+    $path = bhfe_PLUGIN_DIR . '/includes/acf-json';
     // return
     return $path; 
 }
@@ -25,8 +25,8 @@ function wise_acf_json_save_point( $path ) {
 /**
  * Redirect page if set
  */
-add_action('template_redirect','wise_page_redirect');
-function wise_page_redirect() {
+add_action('template_redirect','bhfe_page_redirect');
+function bhfe_page_redirect() {
     global $post;
     if($post) {
         $post_id = $post->ID;
@@ -70,12 +70,12 @@ add_filter('pre_get_posts','search_filter_posts');
  * Add acf json folder for loading
  *
  */
-add_filter('acf/settings/load_json', 'wise_acf_json_load_point');
-function wise_acf_json_load_point( $paths ) {
+add_filter('acf/settings/load_json', 'bhfe_acf_json_load_point');
+function bhfe_acf_json_load_point( $paths ) {
     // remove original path (optional)
     unset($paths[0]);
     // append path
-    $paths[] = WISE_PLUGIN_DIR . '/includes/acf-json';
+    $paths[] = bhfe_PLUGIN_DIR . '/includes/acf-json';
     // return
     return $paths;
 }
@@ -83,8 +83,8 @@ function wise_acf_json_load_point( $paths ) {
 /**
  * Filter link popup to only include specific post type
  */
-add_filter( 'wp_link_query_args', 'wise_wp_link_query_args' ); 
-function wise_wp_link_query_args( $query ) {
+add_filter( 'wp_link_query_args', 'bhfe_wp_link_query_args' ); 
+function bhfe_wp_link_query_args( $query ) {
     // check to make sure we are not in the admin
     if ( is_admin() ) {
         $flexible_post_types = array('post','page','product','sfwd-courses','sfwd-lesson','sfwd-topic');
@@ -103,8 +103,8 @@ function testimonial_assets() {
 /**
  * Add hook to add shortcodes to the content during save. This is a hack to make the has_shortcode($post->content) work with other plugins
  */
-add_action('save_post','append_to_wise_post_content');
-function append_to_wise_post_content($post_id){
+add_action('save_post','append_to_bhfe_post_content');
+function append_to_bhfe_post_content($post_id){
     global $post; 
     if(function_exists('get_field')) {
         $field_name = 'flexible_content';
@@ -188,15 +188,15 @@ function append_to_wise_post_content($post_id){
             /*if(!has_excerpt($post_id)) {
                 $post->post_excerpt = substr(strip_tags($content), 0, 100);
             }*/
-            remove_action('save_post','append_to_wise_post_content');
+            remove_action('save_post','append_to_bhfe_post_content');
             wp_update_post( $post );
-            add_action('save_post','append_to_wise_post_content');
+            add_action('save_post','append_to_bhfe_post_content');
         }
     }    
 }
 
-//add_filter('the_content','wise_content_filter',99,1);
-function wise_content() {
+//add_filter('the_content','bhfe_content_filter',99,1);
+function bhfe_content() {
     global $post;
     $acf_post_types = array(
         'post',
@@ -248,15 +248,15 @@ function wise_content() {
                                     echo '</div>';
                                 }
                                 if($style == 'cropped-wave') {
-                                    echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top.svg" class="clippingPath -top" />';
-                                    echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-bottom.svg" class="clippingPath -bottom" />';
+                                    echo '<img src="'.bhfe_URL.'includes/img/wave-1-clippath-top.svg" class="clippingPath -top" />';
+                                    echo '<img src="'.bhfe_URL.'includes/img/wave-1-clippath-bottom.svg" class="clippingPath -bottom" />';
                                     if($background_image != '') {
                                         echo '<div class="hero-image">';
-                                            echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
+                                            echo '<img src="'.bhfe_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
                                             echo wp_get_attachment_image( $background_image, 'full' );
                                         echo '</div>';
                                     } else {
-                                        echo '<img src="'.WISE_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
+                                        echo '<img src="'.bhfe_URL.'includes/img/wave-1-clippath-top-mobile-'.$block_color_scheme.'.png" class="clippingPath -middle" />';
                                     }
                                 }
                             }
@@ -281,7 +281,7 @@ function wise_content() {
                                 if($band_id != '') {
                                     echo '<div id="'.$band_id.'" tabindex="-1"></div>';
                                 }
-                                $filename = WISE_PLUGIN_DIR.'templates/flexible-content/' . get_row_layout().'.php';
+                                $filename = bhfe_PLUGIN_DIR.'templates/flexible-content/' . get_row_layout().'.php';
                                 if(file_exists($filename)) {
                                     include($filename);
                                 }
@@ -335,8 +335,8 @@ function wise_content() {
 /**
  * Add flexible content band paddings to css in header
  */
-add_action('wp_head','wise_acf_header_css');
-function wise_acf_header_css() {
+add_action('wp_head','bhfe_acf_header_css');
+function bhfe_acf_header_css() {
 	$flexible_post_types = array('post','page','product');
 	$post_type = get_post_type();
 	if(in_array($post_type,$flexible_post_types) && function_exists('get_field')) {
@@ -412,8 +412,8 @@ function wise_acf_header_css() {
 /**
  * Add font size to wysiwyg
  */
-add_filter( 'tiny_mce_before_init', 'wise_acf_text_sizes' );
-function wise_acf_text_sizes( $tiny_config ){
+add_filter( 'tiny_mce_before_init', 'bhfe_acf_text_sizes' );
+function bhfe_acf_text_sizes( $tiny_config ){
     $tiny_config['fontsize_formats'] = ".85rem .9rem .95rem 1rem 1.05rem 1.1rem 1.125rem";
 
     $custom_colours = '
@@ -431,7 +431,7 @@ function wise_acf_text_sizes( $tiny_config ){
 /**
  * Remove unneccessary buttons, add our font sizes to acf wysiwyg
  */
-function wise_wysiyg_buttons( $buttons ) {
+function bhfe_wysiyg_buttons( $buttons ) {
     //$teeny_mce_buttons = array( 'bold', 'italic', 'underline', 'blockquote', 'strikethrough', 'bullist', 'numlist', 'alignleft', 'aligncenter', 'alignright', 'undo', 'redo', 'link', 'fullscreen' );
     $block_key = array_search('blockquote', $buttons);
     unset($buttons[$block_key]);
@@ -450,14 +450,14 @@ function wise_wysiyg_buttons( $buttons ) {
     $buttons = array_merge($new_buttons,$buttons,$extra_buttons);
     return $buttons;
 }
-add_filter( 'teeny_mce_buttons', 'wise_wysiyg_buttons',99,1 ); //Basic
-add_filter( 'mce_buttons', 'wise_wysiyg_buttons',99,1 ); //Full
+add_filter( 'teeny_mce_buttons', 'bhfe_wysiyg_buttons',99,1 ); //Basic
+add_filter( 'mce_buttons', 'bhfe_wysiyg_buttons',99,1 ); //Full
 
 /**
  * Change acf wysiwyg height to something less robust
  */
-add_action('acf/input/admin_head', 'wise_acf_modify_wysiwyg_height');
-function wise_acf_modify_wysiwyg_height() { ?>
+add_action('acf/input/admin_head', 'bhfe_acf_modify_wysiwyg_height');
+function bhfe_acf_modify_wysiwyg_height() { ?>
     <style type="text/css">
         .mce-edit-area iframe{
             height: 150px !important;
